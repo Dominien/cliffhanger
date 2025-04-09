@@ -6,7 +6,7 @@ export default function Hero() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center items-center py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
+    <section className="relative pt-24 md:pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" 
@@ -21,12 +21,12 @@ export default function Hero() {
       </div>
 
       <div className="w-full max-w-4xl mx-auto relative">
-        {/* Urgency Indicator */}
+        {/* Urgency Indicator - Positioned with appropriate spacing */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center justify-center gap-2 mb-12"
+          className="absolute -top-12 md:-top-14 left-1/2 transform -translate-x-1/2 z-10"
         >
           <div className="relative flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full shadow-sm border border-white/20">
             <div className="relative">
@@ -39,23 +39,18 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Main Content - Centered Layout */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
-        >
+        {/* Main Content - Centered Layout with optimized spacing */}
+        <div className="flex flex-col items-center justify-center space-y-6 md:space-y-8">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative mb-10"
+            className="relative"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
               Dein digitaler Erfolg – 
               <br className="md:block hidden" />
-              <span className="text-[#db9e22] inline-block mt-2">Wir bringen dein Business online voran</span>
+              <span className="text-[#db9e22] inline-block mt-1 md:mt-2">Wir bringen dein Business online voran</span>
             </h1>
             <div className="absolute -inset-10 -z-10 bg-[#db9e22]/5 blur-3xl rounded-full opacity-30" />
           </motion.div>
@@ -64,7 +59,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl text-white/80 mb-12 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto"
           >
             Cliffhanger Studio entwickelt individuelle, leistungsstarke Online-Lösungen, 
             die deine Marke stärken und deinen Umsatz steigern.
@@ -74,37 +69,37 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="relative mb-20 mx-auto flex justify-center"
+            className="relative mx-auto flex justify-center"
           >
             <Button 
               size="lg"
-              className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-7 px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-xl"
+              className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 md:py-7 px-8 md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-xl"
               onClick={() => setLocation("/funnel")}
             >
               Jetzt kostenlosen Call buchen
             </Button>
             <div className="absolute -inset-5 -z-10 bg-[#db9e22]/20 blur-2xl rounded-full opacity-50" />
           </motion.div>
-        </motion.div>
+        </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {/* Stats Section - With appropriate spacing */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto mt-12 md:mt-16">
           {/* Conversion Stat */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors duration-300"
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-6 hover:bg-white/10 transition-colors duration-300"
           >
-            <div className="flex items-center justify-between gap-8">
+            <div className="flex items-center justify-between gap-4 md:gap-8">
               <div>
-                <h3 className="text-lg text-white/90 font-medium">Conversion-optimiert</h3>
-                <p className="text-sm text-white/60 mt-1">
+                <h3 className="text-base md:text-lg text-white/90 font-medium">Conversion-optimiert</h3>
+                <p className="text-xs md:text-sm text-white/60 mt-1">
                   Höhere Conversion-Rate durch KI-gestützte Optimierung
                 </p>
               </div>
               <div className="shrink-0">
-                <span className="text-3xl font-bold text-[#db9e22] whitespace-nowrap">+140%</span>
+                <span className="text-2xl md:text-3xl font-bold text-[#db9e22] whitespace-nowrap">+140%</span>
               </div>
             </div>
           </motion.div>
@@ -114,17 +109,17 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors duration-300"
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-6 hover:bg-white/10 transition-colors duration-300"
           >
-            <div className="flex items-center justify-between gap-8">
+            <div className="flex items-center justify-between gap-4 md:gap-8">
               <div>
-                <h3 className="text-lg text-white/90 font-medium">Kundenzufriedenheit</h3>
-                <p className="text-sm text-white/60 mt-1">
+                <h3 className="text-base md:text-lg text-white/90 font-medium">Kundenzufriedenheit</h3>
+                <p className="text-xs md:text-sm text-white/60 mt-1">
                   Zufriedene Kunden durch exzellenten Service
                 </p>
               </div>
               <div className="shrink-0">
-                <span className="text-3xl font-bold text-[#db9e22] whitespace-nowrap">98%</span>
+                <span className="text-2xl md:text-3xl font-bold text-[#db9e22] whitespace-nowrap">98%</span>
               </div>
             </div>
           </motion.div>
