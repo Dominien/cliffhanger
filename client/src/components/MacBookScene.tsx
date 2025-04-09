@@ -8,7 +8,7 @@ export default function MacBookScene() {
     <div className="w-full h-full absolute inset-0">
       <Canvas
         shadows
-        camera={{ position: [0, 0, 2.5], fov: 40 }}
+        camera={{ position: [0, 0, 3], fov: 45 }}
         gl={{ preserveDrawingBuffer: true }}
         style={{ width: '100%', height: '100%' }}
       >
@@ -21,7 +21,7 @@ export default function MacBookScene() {
             position={[10, 10, 10]}
             castShadow
           />
-          <MacBookModel position={[0, -0.2, 0]} scale={3.0} />
+          <MacBookModel position={[0, -0.2, 0]} scale={2.2} />
           <Environment preset="city" />
           <ContactShadows
             rotation-x={Math.PI / 2}
