@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, ContactShadows } from '@react-three/drei';
+import { OrbitControls, Environment, ContactShadows, useAnimations } from '@react-three/drei';
 import MacBookModel from './MacBookModel';
 
 export default function MacBookScene() {
