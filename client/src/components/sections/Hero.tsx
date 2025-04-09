@@ -6,7 +6,7 @@ export default function Hero() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="relative pt-24 md:pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
+    <section className="relative py-32 md:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" 
@@ -20,13 +20,13 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#101010] via-transparent to-[#101010]" />
       </div>
 
-      <div className="w-full max-w-4xl mx-auto relative">
-        {/* Urgency Indicator - Positioned with appropriate spacing */}
+      <div className="w-full max-w-4xl mx-auto">
+        {/* Urgency Indicator - Properly centered */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="absolute -top-12 md:-top-14 left-1/2 transform -translate-x-1/2 z-10"
+          className="flex justify-center mb-12"
         >
           <div className="relative flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full shadow-sm border border-white/20">
             <div className="relative">
@@ -39,8 +39,8 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Main Content - Centered Layout with optimized spacing */}
-        <div className="flex flex-col items-center justify-center space-y-6 md:space-y-8">
+        {/* Main Content - Centered Layout with balanced spacing */}
+        <div className="flex flex-col items-center justify-center space-y-8">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -82,7 +82,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Stats Section - With appropriate spacing */}
+        {/* Stats Section - With balanced spacing */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto mt-12 md:mt-16">
           {/* Conversion Stat */}
           <motion.div 
