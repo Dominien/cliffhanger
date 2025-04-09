@@ -1,14 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Container } from "@/components/ui/container";
 import { motion } from "framer-motion";
-import { ArrowDownIcon, ChevronDown } from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function Hero() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center items-center pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
+    <section className="relative min-h-[90vh] flex flex-col justify-center items-center py-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" 
@@ -22,64 +20,85 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#101010] via-transparent to-[#101010]" />
       </div>
 
-      <div className="max-w-3xl mx-auto relative">
+      <div className="w-full max-w-4xl mx-auto relative">
         {/* Urgency Indicator */}
-        <div className="flex items-center justify-center gap-2 mb-12">
-          <div className="relative flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-white/20">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center justify-center gap-2 mb-12"
+        >
+          <div className="relative flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full shadow-sm border border-white/20">
             <div className="relative">
-              <div className="w-2 h-2 bg-[#db9e22] rounded-full" />
-              <div className="absolute top-0 left-0 w-2 h-2 bg-[#db9e22] rounded-full animate-ping" />
+              <div className="w-2.5 h-2.5 bg-[#db9e22] rounded-full" />
+              <div className="absolute top-0 left-0 w-2.5 h-2.5 bg-[#db9e22] rounded-full animate-ping" />
             </div>
             <span className="text-sm font-medium text-white/90">
               Nur 5 Beratungsgespräche übrig
             </span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Content - Centered Layout */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl"
+          className="text-center"
         >
-          <div className="relative mb-8">
-            <h1 className="text-4xl sm:text-6xl font-bold leading-tight text-white">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative mb-10"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
               Dein digitaler Erfolg – 
               <br className="md:block hidden" />
-              <span className="text-[#db9e22]">Wir bringen dein Business online voran</span>
+              <span className="text-[#db9e22] inline-block mt-2">Wir bringen dein Business online voran</span>
             </h1>
-          </div>
+            <div className="absolute -inset-10 -z-10 bg-[#db9e22]/5 blur-3xl rounded-full opacity-30" />
+          </motion.div>
 
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl text-white/80 mb-12 max-w-2xl mx-auto"
+          >
             Cliffhanger Studio entwickelt individuelle, leistungsstarke Online-Lösungen, 
             die deine Marke stärken und deinen Umsatz steigern.
-          </p>
+          </motion.p>
 
-          <div className="relative mx-auto flex justify-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="relative mb-20 mx-auto flex justify-center"
+          >
             <Button 
               size="lg"
-              className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-7 px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-7 px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-xl"
               onClick={() => setLocation("/funnel")}
             >
               Jetzt kostenlosen Call buchen
             </Button>
-            <div className="absolute -inset-4 -z-10 bg-[#db9e22]/20 blur-2xl rounded-full opacity-50" />
-          </div>
+            <div className="absolute -inset-5 -z-10 bg-[#db9e22]/20 blur-2xl rounded-full opacity-50" />
+          </motion.div>
         </motion.div>
 
         {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {/* Conversion Stat */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors duration-300"
           >
             <div className="flex items-center justify-between gap-8">
               <div>
-                <h3 className="text-lg text-white/90">Conversion-optimiert</h3>
+                <h3 className="text-lg text-white/90 font-medium">Conversion-optimiert</h3>
                 <p className="text-sm text-white/60 mt-1">
                   Höhere Conversion-Rate durch KI-gestützte Optimierung
                 </p>
@@ -94,12 +113,12 @@ export default function Hero() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6"
+            transition={{ duration: 0.5, delay: 1 }}
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors duration-300"
           >
             <div className="flex items-center justify-between gap-8">
               <div>
-                <h3 className="text-lg text-white/90">Kundenzufriedenheit</h3>
+                <h3 className="text-lg text-white/90 font-medium">Kundenzufriedenheit</h3>
                 <p className="text-sm text-white/60 mt-1">
                   Zufriedene Kunden durch exzellenten Service
                 </p>
@@ -108,21 +127,6 @@ export default function Hero() {
                 <span className="text-3xl font-bold text-[#db9e22] whitespace-nowrap">98%</span>
               </div>
             </div>
-          </motion.div>
-        </div>
-        
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, y: [0, 10, 0] }}
-            transition={{ 
-              opacity: { delay: 1.5, duration: 1 },
-              y: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
-            }}
-            className="text-white/50 cursor-pointer"
-          >
-            <ChevronDown size={32} />
           </motion.div>
         </div>
       </div>
