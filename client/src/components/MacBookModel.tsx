@@ -47,7 +47,7 @@ export function MacBookModel(props) {
       // Initial rise from below
       group.current.position.y = THREE.MathUtils.lerp(
         -2,        // Start below view
-        0,        // End at center
+        0.4,        // End slightly above center for better view
         progress
       );
       
