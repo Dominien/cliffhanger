@@ -2,7 +2,6 @@ import { Link } from "wouter";
 import { 
   Mail,
   LayoutTemplate,
-  Camera,
   MessageSquare,
   FileText,
   Shield,
@@ -50,14 +49,6 @@ export default function Footer() {
                   <a className="group flex items-center text-gray-600 hover:text-[#db9e22] transition-colors">
                     <LayoutTemplate className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110" />
                     Landing Page Service
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/media">
-                  <a className="group flex items-center text-gray-600 hover:text-[#db9e22] transition-colors">
-                    <Camera className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110" />
-                    Foto & Video Service
                   </a>
                 </Link>
               </li>
