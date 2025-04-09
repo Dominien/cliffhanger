@@ -1,6 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { registerRoutes } from "./routes.js";
+import { setupVite, serveStatic, log } from "./vite.js";
 
 const app = express();
 app.use(express.json());
@@ -36,6 +36,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Health check endpoint for Vercel
+app.get("/api/health", (_req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
 (async () => {
   const server = await registerRoutes(app);
 
@@ -44,22 +49,29 @@ app.use((req, res, next) => {
     const message = err.message || "Internal Server Error";
 
     res.status(status).json({ message });
-    throw err;
+    console.error(err);
   });
 
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
+  if (process.env.NODE_ENV !== "production") {
     await setupVite(app, server);
   } else {
-    serveStatic(app);
+    try {
+      serveStatic(app);
+    } catch (error) {
+      console.error("Error setting up static serving:", error);
+      // Continue anyway since on Vercel the static files are served by Vercel
+    }
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client
-  const PORT = 5000;
+  // Get port from environment or use default
+  const PORT = process.env.PORT || 5000;
   server.listen(PORT, "0.0.0.0", () => {
-    log(`serving on port ${PORT}`);
+    log(`Server running on port ${PORT} in ${process.env.NODE_ENV || "development"} mode`);
   });
 })();
+
+// Export the Express API for Vercel serverless functions
+export default app;

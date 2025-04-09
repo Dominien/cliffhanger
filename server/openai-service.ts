@@ -3,9 +3,15 @@ import OpenAI from "openai";
 // Initialize OpenAI with graceful fallback
 let openai: OpenAI;
 try {
-  openai = new OpenAI({ 
-    apiKey: process.env.OPENAI_API_KEY || 'dummy-key-for-initialization' 
-  });
+  if (!process.env.OPENAI_API_KEY) {
+    console.warn('OPENAI_API_KEY is not set - chatbot will return default responses only');
+    // Create a dummy instance that won't be used for actual API calls
+    openai = {} as OpenAI;
+  } else {
+    openai = new OpenAI({ 
+      apiKey: process.env.OPENAI_API_KEY
+    });
+  }
 } catch (error) {
   console.error('Failed to initialize OpenAI client:', error);
   // Create a dummy instance that won't be used

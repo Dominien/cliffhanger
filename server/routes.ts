@@ -1,13 +1,19 @@
 import { createServer } from 'http';
 import { Express } from 'express';
-import { generateChatResponse } from './openai-service';
-import { insertLeadResponseSchema, insertFunnelResponseSchema } from '@shared/schema';
+import { generateChatResponse } from './openai-service.js';
+import { insertLeadResponseSchema, insertFunnelResponseSchema } from '../shared/schema.js';
 import { Resend } from 'resend';
 
 // Initialize Resend
 let resend: Resend;
 try {
-  resend = new Resend(process.env.RESEND_API_KEY || 'dummy-key');
+  if (!process.env.RESEND_API_KEY) {
+    console.warn('RESEND_API_KEY is not set - email notifications will be logged but not sent');
+    // Create a dummy instance that won't be used for actual email sending
+    resend = {} as Resend;
+  } else {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
 } catch (error) {
   console.error('Failed to initialize Resend:', error);
   resend = {} as Resend;
@@ -45,8 +51,8 @@ export async function registerRoutes(app: Express) {
       if (process.env.RESEND_API_KEY) {
         try {
           const emailResult = await resend.emails.send({
-            from: 'onboarding@resend.dev', // Update with your verified domain
-            to: process.env.NOTIFICATION_EMAIL || 'your-email@example.com',
+            from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
+            to: process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de',
             subject: 'New Lead Response',
             html: `
               <h1>New Lead Response</h1>
@@ -109,8 +115,8 @@ export async function registerRoutes(app: Express) {
       if (process.env.RESEND_API_KEY) {
         try {
           const emailResult = await resend.emails.send({
-            from: 'onboarding@resend.dev', // Update with your verified domain
-            to: process.env.NOTIFICATION_EMAIL || 'your-email@example.com',
+            from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
+            to: process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de',
             subject: 'New Funnel Response',
             html: `
               <h1>New Funnel Response</h1>
