@@ -1,18 +1,37 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
 export function MacBookModel(props) {
   const group = useRef();
   const { scene, animations } = useGLTF('/macbook_cliffhanger.glb');
   const { actions, names } = useAnimations(animations, group);
-
-  // Debug log to see what animations are available
-  useEffect(() => {
-    console.log("Available animations:", names);
-    console.log("Animation actions:", actions);
-  }, [names, actions]);
+  const { mouse } = useThree();
+  
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const [targetRotation] = useState(() => new THREE.Euler(0.3, 0, 0));
+  
+  // Mouse movement tracking
+  useFrame(({ mouse }) => {
+    if (!group.current) return;
+    
+    // Get the current rotation
+    const currentRotation = group.current.rotation;
+    
+    if (animationComplete) {
+      // Base forward tilt
+      const targetX = targetRotation.x;
+      
+      // Add mouse influence (limited range)
+      const mouseInfluenceX = THREE.MathUtils.mapLinear(mouse.y, -1, 1, -0.1, 0.1);
+      const mouseInfluenceY = THREE.MathUtils.mapLinear(mouse.x, -1, 1, -0.2, 0.2);
+      
+      // Smoothly interpolate to the target rotation
+      currentRotation.x = THREE.MathUtils.lerp(currentRotation.x, targetX + mouseInfluenceX, 0.05);
+      currentRotation.y = THREE.MathUtils.lerp(currentRotation.y, mouseInfluenceY, 0.05);
+    }
+  });
 
   // Start animations if available
   useEffect(() => {
@@ -21,14 +40,26 @@ export function MacBookModel(props) {
       // Play all available animations to ensure they run
       names.forEach(name => {
         if (actions[name]) {
-          actions[name].reset();
-          actions[name].setLoop(THREE.LoopOnce);
-          actions[name].clampWhenFinished = true;
-          actions[name].play();
+          const action = actions[name];
+          action.reset();
+          action.setLoop(THREE.LoopOnce);
+          action.clampWhenFinished = true;
+          
+          // Set up a callback for when the animation completes
+          action.getMixer().addEventListener('finished', () => {
+            console.log('Animation finished, starting tilt');
+            setAnimationComplete(true);
+          });
+          
+          action.play();
         }
       });
     } else {
       console.log("No animations found in the model");
+      // If no animations, we'll still enable the tilt after a delay
+      setTimeout(() => {
+        setAnimationComplete(true);
+      }, 1000);
     }
   }, [actions, names]);
 

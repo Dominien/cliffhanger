@@ -32,13 +32,7 @@ export default function MacBookScene() {
             blur={1.5}
             far={2}
           />
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            enableRotate={false}
-            minPolarAngle={Math.PI / 2 - 0.5}
-            maxPolarAngle={Math.PI / 2 + 0.5}
-          />
+          {/* OrbitControls removed to allow custom mouse tracking */}
         </Suspense>
       </Canvas>
     </div>
