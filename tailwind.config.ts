@@ -86,6 +86,9 @@ export default {
         "scroll-desktop": "scroll-desktop 30s linear infinite",
         "scroll-mobile": "scroll-mobile 45s linear infinite",
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
