@@ -12,8 +12,8 @@ export function MacBookModel(props) {
   const [animationComplete, setAnimationComplete] = useState(false);
   const [targetRotation] = useState(() => new THREE.Euler(0.3, 0, 0));
   
-  // Mouse movement tracking
-  useFrame(({ mouse }) => {
+  // Mouse movement tracking with global effect
+  useFrame(state => {
     if (!group.current) return;
     
     // Get the current rotation
@@ -23,13 +23,18 @@ export function MacBookModel(props) {
       // Base forward tilt
       const targetX = targetRotation.x;
       
-      // Add mouse influence (limited range)
-      const mouseInfluenceX = THREE.MathUtils.mapLinear(mouse.y, -1, 1, -0.1, 0.1);
-      const mouseInfluenceY = THREE.MathUtils.mapLinear(mouse.x, -1, 1, -0.2, 0.2);
+      // Get normalized mouse position from -1 to 1 across the entire window
+      // This ensures the model follows the mouse regardless of where it is on screen
+      const mouseX = (state.mouse.x + 1) / 2; // normalize to 0-1
+      const mouseY = (state.mouse.y + 1) / 2; // normalize to 0-1
       
-      // Smoothly interpolate to the target rotation
-      currentRotation.x = THREE.MathUtils.lerp(currentRotation.x, targetX + mouseInfluenceX, 0.05);
-      currentRotation.y = THREE.MathUtils.lerp(currentRotation.y, mouseInfluenceY, 0.05);
+      // Calculate influence with greater range for more dramatic effect
+      const mouseInfluenceX = THREE.MathUtils.mapLinear(mouseY, 0, 1, -0.2, 0.2);
+      const mouseInfluenceY = THREE.MathUtils.mapLinear(mouseX, 0, 1, -0.4, 0.4);
+      
+      // Smoothly interpolate to the target rotation (lower value = slower, smoother movement)
+      currentRotation.x = THREE.MathUtils.lerp(currentRotation.x, targetX + mouseInfluenceX, 0.03);
+      currentRotation.y = THREE.MathUtils.lerp(currentRotation.y, mouseInfluenceY, 0.03);
     }
   });
 

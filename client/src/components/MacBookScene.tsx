@@ -5,12 +5,15 @@ import MacBookModel from './MacBookModel';
 
 export default function MacBookScene() {
   return (
-    <div className="w-full h-full absolute inset-0">
+    <div className="w-full h-full absolute inset-0" style={{ cursor: 'none' }}>
       <Canvas
         shadows
         camera={{ position: [0, 0, 3], fov: 45 }}
         gl={{ preserveDrawingBuffer: true }}
         style={{ width: '100%', height: '100%' }}
+        onCreated={({ gl }) => {
+          gl.domElement.style.touchAction = 'none'; // Ensures mouse events work properly on touch devices
+        }}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
