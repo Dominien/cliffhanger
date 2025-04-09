@@ -37,7 +37,7 @@ export default function FailureSection() {
           className="text-center mb-16"
         >
           <span className="inline-block text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-4">⚠️ Achtung</span>
-          <h2 className="text-4xl font-bold text-[#272727] mb-6">
+          <h2 className="text-4xl font-bold text-[#101010] mb-6">
             Warte nicht – jeder Tag kostet dich Kunden.
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
@@ -75,7 +75,7 @@ export default function FailureSection() {
 
                   {/* Content */}
                   <div className="relative">
-                    <h3 className="text-xl font-semibold text-[#272727] mb-3 group-hover:translate-x-1 transition-transform duration-300">
+                    <h3 className="text-xl font-semibold text-[#101010] mb-3 group-hover:translate-x-1 transition-transform duration-300">
                       {failure.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed group-hover:translate-x-1 transition-transform duration-300 delay-75">

@@ -8,7 +8,7 @@ export default function Hero() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#272727]">
+    <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010]">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" 
@@ -19,7 +19,7 @@ export default function Hero() {
             transform: 'rotate(-2deg) scale(1.2)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#272727] via-transparent to-[#272727]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#101010] via-transparent to-[#101010]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative">

@@ -46,7 +46,7 @@ export default function GuideSection() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="py-24 bg-[#272727] relative overflow-hidden">
+    <section className="py-24 bg-[#101010] relative overflow-hidden">
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(5)].map((_, i) => (
@@ -120,7 +120,7 @@ export default function GuideSection() {
                 />
 
                 {/* Icon */}
-                <div className="relative z-10 w-16 h-16 rounded-xl bg-[#272727] border border-white/10 flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
+                <div className="relative z-10 w-16 h-16 rounded-xl bg-[#101010] border border-white/10 flex items-center justify-center transform group-hover:scale-110 transition-all duration-300">
                   <feature.icon className="w-8 h-8" style={{ color: feature.color }} />
                 </div>
 

@@ -335,7 +335,7 @@ export default function ChatBot() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className="fixed bottom-20 right-4 z-50 w-[360px] rounded-lg border bg-[#272727] shadow-lg"
+            className="fixed bottom-20 right-4 z-50 w-[360px] rounded-lg border bg-[#101010] shadow-lg"
           >
             <div className="flex items-center justify-between border-b border-white/10 p-4">
               <div className="flex items-center gap-2">

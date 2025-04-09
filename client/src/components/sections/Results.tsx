@@ -13,7 +13,7 @@ export const Results = () => {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold text-[#272727] mb-6">
+            <h2 className="text-4xl font-bold text-[#101010] mb-6">
               Ergebnisse, die für sich sprechen
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">

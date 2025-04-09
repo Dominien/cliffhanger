@@ -27,7 +27,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="py-24 bg-[#272727] relative overflow-hidden">
+    <section className="py-24 bg-[#101010] relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" 
@@ -38,7 +38,7 @@ export const Services = () => {
             transform: 'rotate(-2deg) scale(1.2)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#272727] via-transparent to-[#272727]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#101010] via-transparent to-[#101010]" />
       </div>
 
       <Container className="relative z-10">
@@ -84,7 +84,7 @@ export const Services = () => {
 
                       {/* Icon Background */}
                       <div className="relative w-16 h-16 bg-gradient-to-br from-[#db9e22] to-[#e4bb68] p-0.5 rounded-xl transform rotate-45">
-                        <div className="w-full h-full bg-[#272727] rounded-xl flex items-center justify-center transform -rotate-45">
+                        <div className="w-full h-full bg-[#101010] rounded-xl flex items-center justify-center transform -rotate-45">
                           <service.icon className="w-8 h-8 text-[#db9e22]" />
                         </div>
                       </div>

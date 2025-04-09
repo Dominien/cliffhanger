@@ -29,7 +29,7 @@ export default function NavBar() {
         <div className="flex justify-between h-16 items-center">
           <button 
             onClick={handleLogoClick}
-            className="flex items-center gap-2 flex-shrink-0 text-[#272727] hover:text-[#db9e22] transition-colors"
+            className="flex items-center gap-2 flex-shrink-0 text-[#101010] hover:text-[#db9e22] transition-colors"
           >
             <img 
               src="/CliffhangerLogoBW.svg" 
@@ -41,13 +41,13 @@ export default function NavBar() {
           <div className="hidden md:flex items-center space-x-8">
             <button 
               onClick={() => handleNavigation("/")}
-              className="flex items-center gap-2 text-[#272727] hover:text-[#db9e22] transition-colors font-medium"
+              className="flex items-center gap-2 text-[#101010] hover:text-[#db9e22] transition-colors font-medium"
             >
               <Home className="w-4 h-4" />
               <span>Startseite</span>
             </button>
             <div className="relative group">
-              <button className="flex items-center gap-2 text-[#272727] hover:text-[#db9e22] transition-colors group-hover:text-[#db9e22] font-medium">
+              <button className="flex items-center gap-2 text-[#101010] hover:text-[#db9e22] transition-colors group-hover:text-[#db9e22] font-medium">
                 <span>Leistungen</span>
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
@@ -55,7 +55,7 @@ export default function NavBar() {
                 <div className="p-3 space-y-1">
                   <button
                     onClick={() => handleNavigation("/services/landing-page")}
-                    className="flex items-center gap-3 w-full p-3 text-sm text-[#272727] hover:bg-gray-50 rounded-lg transition-colors"
+                    className="flex items-center gap-3 w-full p-3 text-sm text-[#101010] hover:bg-gray-50 rounded-lg transition-colors"
                   >
                     <Layout className="w-5 h-5 text-[#db9e22] flex-shrink-0" />
                     <div className="flex flex-col items-start">
@@ -65,7 +65,7 @@ export default function NavBar() {
                   </button>
                   <button
                     onClick={() => handleNavigation("/services/ai-chatbot")}
-                    className="flex items-center gap-3 w-full p-3 text-sm text-[#272727] hover:bg-gray-50 rounded-lg transition-colors"
+                    className="flex items-center gap-3 w-full p-3 text-sm text-[#101010] hover:bg-gray-50 rounded-lg transition-colors"
                   >
                     <MessageSquare className="w-5 h-5 text-[#db9e22] flex-shrink-0" />
                     <div className="flex flex-col items-start">
@@ -78,7 +78,7 @@ export default function NavBar() {
             </div>
             <button 
               onClick={() => handleNavigation("/contact")}
-              className="flex items-center gap-2 text-[#272727] hover:text-[#db9e22] transition-colors font-medium"
+              className="flex items-center gap-2 text-[#101010] hover:text-[#db9e22] transition-colors font-medium"
             >
               <Mail className="w-4 h-4" />
               <span>Kontakt</span>
@@ -92,7 +92,7 @@ export default function NavBar() {
           </div>
 
           <button 
-            className="md:hidden text-[#272727] hover:text-[#db9e22] z-50" 
+            className="md:hidden text-[#101010] hover:text-[#db9e22] z-50" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X /> : <Menu />}
@@ -113,7 +113,7 @@ export default function NavBar() {
             <div className="px-4 py-3 space-y-2">
               <button
                 onClick={() => handleNavigation("/")}
-                className="flex items-center gap-3 w-full p-3 text-[#272727] hover:bg-gray-50 rounded-lg transition-colors"
+                className="flex items-center gap-3 w-full p-3 text-[#101010] hover:bg-gray-50 rounded-lg transition-colors"
               >
                 <Home className="w-5 h-5 text-[#db9e22]" />
                 <span className="font-medium">Startseite</span>
@@ -122,14 +122,14 @@ export default function NavBar() {
               <div className="space-y-1">
                 <button
                   onClick={() => handleNavigation("/services/landing-page")}
-                  className="flex items-center gap-3 w-full p-3 text-[#272727] hover:bg-gray-50 rounded-lg transition-colors"
+                  className="flex items-center gap-3 w-full p-3 text-[#101010] hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   <Layout className="w-5 h-5 text-[#db9e22]" />
                   <span className="font-medium">Landing Page</span>
                 </button>
                 <button
                   onClick={() => handleNavigation("/services/ai-chatbot")}
-                  className="flex items-center gap-3 w-full p-3 text-[#272727] hover:bg-gray-50 rounded-lg transition-colors"
+                  className="flex items-center gap-3 w-full p-3 text-[#101010] hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   <MessageSquare className="w-5 h-5 text-[#db9e22]" />
                   <span className="font-medium">KI-Chatbot</span>
@@ -138,7 +138,7 @@ export default function NavBar() {
 
               <button
                 onClick={() => handleNavigation("/contact")}
-                className="flex items-center gap-3 w-full p-3 text-[#272727] hover:bg-gray-50 rounded-lg transition-colors"
+                className="flex items-center gap-3 w-full p-3 text-[#101010] hover:bg-gray-50 rounded-lg transition-colors"
               >
                 <Mail className="w-5 h-5 text-[#db9e22]" />
                 <span className="font-medium">Kontakt</span>

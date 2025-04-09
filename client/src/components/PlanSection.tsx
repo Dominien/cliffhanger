@@ -45,7 +45,7 @@ export default function PlanSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold text-[#272727] mb-4">
+          <h2 className="text-3xl font-bold text-[#101010] mb-4">
             Dein Weg zur perfekten Landing Page
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -91,7 +91,7 @@ export default function PlanSection() {
                         </div>
                       </div>
 
-                      <h3 className="text-xl font-semibold text-[#272727] mb-3 group-hover:text-[#db9e22] transition-colors">
+                      <h3 className="text-xl font-semibold text-[#101010] mb-3 group-hover:text-[#db9e22] transition-colors">
                         {step.title}
                       </h3>
                       <p className="text-gray-600 leading-relaxed">
@@ -103,7 +103,7 @@ export default function PlanSection() {
 
                 {/* Right side benefits - Now full width on mobile */}
                 <div className="w-full lg:w-80 mt-4 lg:mt-0">
-                  <div className="bg-[#272727] rounded-2xl p-6 text-white">
+                  <div className="bg-[#101010] rounded-2xl p-6 text-white">
                     <h4 className="text-lg font-semibold mb-4 text-[#db9e22]">Deine Vorteile</h4>
                     <ul className="space-y-3">
                       {step.benefits.map((benefit, bIndex) => (

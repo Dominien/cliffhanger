@@ -7,7 +7,7 @@ export const CallToAction = () => {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="py-24 bg-[#272727] relative overflow-hidden">
+    <section className="py-24 bg-[#101010] relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0"

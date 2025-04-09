@@ -124,7 +124,7 @@ export default function AIChatbotService() {
   return (
     <>
       {/* Hero Section with Chatbot Demo */}
-      <section className="py-24 bg-[#272727] relative overflow-hidden">
+      <section className="py-24 bg-[#101010] relative overflow-hidden">
         <Container>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -173,7 +173,7 @@ export default function AIChatbotService() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#272727] mb-6">
+            <h2 className="text-4xl font-bold text-[#101010] mb-6">
               Transformieren Sie Ihren Kundenservice
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -194,7 +194,7 @@ export default function AIChatbotService() {
                 <div className="w-16 h-16 rounded-xl bg-[#db9e22]/10 flex items-center justify-center mb-6">
                   <benefit.icon className="w-8 h-8 text-[#db9e22]" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#272727] mb-4">
+                <h3 className="text-xl font-semibold text-[#101010] mb-4">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600 mb-6">
@@ -215,7 +215,7 @@ export default function AIChatbotService() {
       </section>
 
       {/* Process Section */}
-      <section ref={sectionRef} className="py-24 bg-[#272727] relative overflow-hidden">
+      <section ref={sectionRef} className="py-24 bg-[#101010] relative overflow-hidden">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -286,7 +286,7 @@ export default function AIChatbotService() {
             <div className="w-20 h-20 mx-auto mb-6 bg-red-500/10 rounded-full flex items-center justify-center">
               <AlertTriangle className="w-10 h-10 text-red-500" />
             </div>
-            <h2 className="text-4xl font-bold text-[#272727] mb-6">
+            <h2 className="text-4xl font-bold text-[#101010] mb-6">
               Vermeiden Sie diese Fehler
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -330,7 +330,7 @@ export default function AIChatbotService() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 bg-gradient-to-b from-[#272727] to-[#1a1a1a] relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-[#101010] to-[#1a1a1a] relative overflow-hidden">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

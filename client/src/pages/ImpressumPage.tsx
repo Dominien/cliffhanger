@@ -18,7 +18,6 @@ export default function ImpressumPage() {
               <h2 className="text-xl font-semibold mb-4">Angaben gemäß § 5 TMG</h2>
               <p className="mb-4">
                 Cliffhanger Studios<br />
-                Niruchan Thanabalasingam<br />
                 Gurlittstr. 16<br />
                 40233 Düsseldorf<br />
                 Deutschland
@@ -36,10 +35,6 @@ export default function ImpressumPage() {
                 Website: www.cliffhanger-studio.de
               </p>
 
-              <h3 className="text-lg font-semibold mb-2">Vertretungsberechtigter Geschäftsführer</h3>
-              <p className="mb-4">
-                Niruchan Thanabalasingam
-              </p>
 
               <h2 className="text-xl font-semibold mb-4 mt-8">Streitschlichtung</h2>
               <p className="mb-4">

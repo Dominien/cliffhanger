@@ -6,7 +6,7 @@ export default function CtaSection() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#272727]">
+    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#101010]">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0" 

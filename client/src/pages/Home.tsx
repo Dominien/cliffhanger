@@ -25,7 +25,7 @@ export default function Home() {
         <div className="bg-white">
           <ProcessSection />
         </div>
-        <div className="bg-[#272727]">
+        <div className="bg-[#101010]">
           <CtaSection />
         </div>
         <div className="bg-slate-50">
@@ -37,7 +37,7 @@ export default function Home() {
         <div className="bg-slate-50">
           <FaqSection />
         </div>
-        <div className="bg-[#272727]">
+        <div className="bg-[#101010]">
           <FinalCallSection />
         </div>
       </main>

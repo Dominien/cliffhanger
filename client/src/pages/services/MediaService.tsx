@@ -52,7 +52,7 @@ export default function MediaService() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-24 bg-[#272727] relative overflow-hidden">
+      <section className="py-24 bg-[#101010] relative overflow-hidden">
         <Container>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -87,7 +87,7 @@ export default function MediaService() {
               className="relative aspect-video rounded-xl overflow-hidden"
             >
               {/* Placeholder for hero video/image */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22]/20 to-[#272727]/50 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22]/20 to-[#101010]/50 flex items-center justify-center">
                 <Image className="w-16 h-16 text-white/50" />
                 <span className="absolute mt-20 text-white/50">Showcase Video</span>
               </div>
@@ -105,7 +105,7 @@ export default function MediaService() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#272727] mb-6">
+            <h2 className="text-4xl font-bold text-[#101010] mb-6">
               Ihr persönlicher Medienpartner
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -126,7 +126,7 @@ export default function MediaService() {
                 <div className="w-16 h-16 rounded-xl bg-[#db9e22]/10 flex items-center justify-center mb-6">
                   <feature.icon className="w-8 h-8 text-[#db9e22]" />
                 </div>
-                <h3 className="text-xl font-semibold text-[#272727] mb-4">
+                <h3 className="text-xl font-semibold text-[#101010] mb-4">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600">
@@ -139,7 +139,7 @@ export default function MediaService() {
       </section>
 
       {/* Portfolio Preview Section */}
-      <section className="py-24 bg-[#272727]">
+      <section className="py-24 bg-[#101010]">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -184,7 +184,7 @@ export default function MediaService() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-[#272727] mb-6">
+              <h2 className="text-4xl font-bold text-[#101010] mb-6">
                 Ihr Vorteil mit uns
               </h2>
               <p className="text-xl text-gray-600 mb-8">
@@ -209,7 +209,7 @@ export default function MediaService() {
               className="relative aspect-square rounded-xl overflow-hidden"
             >
               {/* Placeholder for benefit section image */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22]/20 to-[#272727]/50 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22]/20 to-[#101010]/50 flex items-center justify-center">
                 <Image className="w-16 h-16 text-white/50" />
                 <span className="absolute mt-20 text-white/50">Feature Image</span>
               </div>
@@ -219,7 +219,7 @@ export default function MediaService() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#272727]">
+      <section className="py-24 bg-[#101010]">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

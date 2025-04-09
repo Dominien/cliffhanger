@@ -28,7 +28,7 @@ export const Approach = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-[#272727] mb-6">
+          <h2 className="text-4xl font-bold text-[#101010] mb-6">
             So erreichen wir deinen Erfolg – Schritt für Schritt
           </h2>
         </motion.div>
@@ -49,7 +49,7 @@ export const Approach = () => {
                     <CheckCircle className="w-8 h-8 text-[#db9e22]" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-[#272727] mb-4">
+                <h3 className="text-xl font-semibold text-[#101010] mb-4">
                   {step.title}
                 </h3>
                 <p className="text-gray-600">

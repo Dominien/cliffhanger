@@ -29,7 +29,7 @@ export default function WhyCliffhangerSection() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="py-24 bg-[#272727] relative overflow-hidden">
+    <section className="py-24 bg-[#101010] relative overflow-hidden">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <motion.div
@@ -96,7 +96,7 @@ export default function WhyCliffhangerSection() {
                     <div className="w-full h-full rounded-full bg-gradient-to-r from-[#db9e22]/30 via-transparent to-[#db9e22]/30 blur-lg" />
                   </motion.div>
 
-                  <div className="relative z-10 w-16 h-16 rounded-xl bg-[#272727] border border-[#db9e22]/30 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="relative z-10 w-16 h-16 rounded-xl bg-[#101010] border border-[#db9e22]/30 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                     <benefit.icon className="w-8 h-8 text-[#db9e22]" />
                   </div>
                 </div>

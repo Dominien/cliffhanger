@@ -41,7 +41,7 @@ export default function FailureSection() {
     <section className="py-24 bg-[#f6f6f6] relative overflow-hidden">
       <Container>
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#272727] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#101010] mb-4">
             Fatale Marketingfehler
           </h2>
           <p className="text-lg text-gray-600">
@@ -66,7 +66,7 @@ export default function FailureSection() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <h3 className="text-xl font-semibold text-[#272727] group-hover:text-[#db9e22] transition-colors">
+                  <h3 className="text-xl font-semibold text-[#101010] group-hover:text-[#db9e22] transition-colors">
                     {failure.title}
                   </h3>
                 </motion.div>
@@ -96,7 +96,7 @@ export default function FailureSection() {
 
                 {/* Secondary Stat with Highlight */}
                 <motion.div
-                  className="bg-gradient-to-r from-[#272727]/5 to-transparent p-4 rounded-lg mb-4"
+                  className="bg-gradient-to-r from-[#101010]/5 to-transparent p-4 rounded-lg mb-4"
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
@@ -124,7 +124,7 @@ export default function FailureSection() {
         </div>
 
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-[#272727] text-lg font-medium mb-4">
+          <p className="text-[#101010] text-lg font-medium mb-4">
             Werden diese Fehler nicht behoben, verliert Ihr Business täglich
             Potenzial.
           </p>

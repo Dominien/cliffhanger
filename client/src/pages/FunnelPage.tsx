@@ -192,7 +192,7 @@ export default function FunnelPage() {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-[#272727] pt-16 md:pt-24 pb-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-[100dvh] bg-[#101010] pt-16 md:pt-24 pb-8 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div 

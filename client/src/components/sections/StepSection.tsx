@@ -36,7 +36,7 @@ export default function StepSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-[#272727] mb-4">
+          <h2 className="text-4xl font-bold text-[#101010] mb-4">
             So erreichen wir deinen Erfolg – Schritt für Schritt
           </h2>
         </motion.div>
@@ -61,7 +61,7 @@ export default function StepSection() {
                     <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-3xl">{step.emoji}</span>
-                        <h3 className="text-2xl font-semibold text-[#272727]">
+                        <h3 className="text-2xl font-semibold text-[#101010]">
                           {step.title}
                         </h3>
                       </div>

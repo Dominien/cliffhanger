@@ -6,7 +6,7 @@ export default function FinalCallSection() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="relative py-16 bg-[#272727] overflow-hidden">
+    <section className="relative py-16 bg-[#101010] overflow-hidden">
       {/* Content Container */}
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Subtle Background Pattern */}

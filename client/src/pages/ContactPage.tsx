@@ -72,7 +72,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-[#272727] pt-32 pb-16 relative overflow-hidden">
+    <div className="bg-[#101010] pt-32 pb-16 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div 

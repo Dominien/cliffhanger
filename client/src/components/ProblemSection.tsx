@@ -30,7 +30,7 @@ export default function ProblemSection() {
         <div
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-[#272727] mb-6">
+          <h2 className="text-4xl font-bold text-[#101010] mb-6">
             Warum performen viele Landing Pages nicht?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
@@ -51,7 +51,7 @@ export default function ProblemSection() {
               </div>
 
               <div className="mt-8">
-                <h3 className="text-xl font-semibold text-[#272727] mb-3 group-hover:text-[#db9e22] transition-colors">
+                <h3 className="text-xl font-semibold text-[#101010] mb-3 group-hover:text-[#db9e22] transition-colors">
                   {problem.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">

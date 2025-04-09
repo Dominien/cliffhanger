@@ -21,7 +21,7 @@ export const Guide = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#272727] relative overflow-hidden">
+    <section className="py-24 bg-[#101010] relative overflow-hidden">
       <Container>
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-4">
