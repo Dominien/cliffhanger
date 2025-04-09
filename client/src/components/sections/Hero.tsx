@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
+import { Rocket, Lightbulb, LaptopIcon, MapPin } from "lucide-react";
 
 export default function Hero() {
   const [, setLocation] = useLocation();
@@ -48,27 +49,54 @@ export default function Hero() {
             className="relative"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white">
-              Dein digitaler Erfolg – 
+              Professionelle Webseiten – 
               <br className="md:block hidden" />
-              <span className="text-[#db9e22] inline-block mt-1 md:mt-2">Wir bringen dein Business online voran</span>
+              <span className="text-[#db9e22] inline-block mt-1 md:mt-2">In nur 7 Tagen online!</span>
             </h1>
             <div className="absolute -inset-10 -z-10 bg-[#db9e22]/5 blur-3xl rounded-full opacity-30" />
+          </motion.div>
+
+          {/* Feature Icons */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-6 md:gap-10 my-4 md:my-6"
+          >
+            <div className="flex items-center gap-2">
+              <div className="bg-[#db9e22]/20 p-2 rounded-full">
+                <Rocket className="w-5 h-5 text-[#db9e22]" />
+              </div>
+              <span className="text-base md:text-lg font-medium text-white">Schnell</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="bg-[#db9e22]/20 p-2 rounded-full">
+                <Lightbulb className="w-5 h-5 text-[#db9e22]" />
+              </div>
+              <span className="text-base md:text-lg font-medium text-white">Individuell</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="bg-[#db9e22]/20 p-2 rounded-full">
+                <LaptopIcon className="w-5 h-5 text-[#db9e22]" />
+              </div>
+              <span className="text-base md:text-lg font-medium text-white">100% zuverlässig</span>
+            </div>
           </motion.div>
 
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex items-center justify-center gap-2 text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-medium"
           >
-            Cliffhanger Studio entwickelt individuelle, leistungsstarke Online-Lösungen, 
-            die deine Marke stärken und deinen Umsatz steigern.
+            <MapPin className="w-5 h-5 text-[#db9e22] shrink-0" /> 
+            <span>Perfekt für Unternehmen, die sofort durchstarten wollen!</span>
           </motion.p>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
             className="relative mx-auto flex justify-center"
           >
             <Button 
@@ -76,7 +104,7 @@ export default function Hero() {
               className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 md:py-7 px-8 md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-xl"
               onClick={() => setLocation("/funnel")}
             >
-              Jetzt kostenlosen Call buchen
+              Kostenloses Angebot anfordern
             </Button>
             <div className="absolute -inset-5 -z-10 bg-[#db9e22]/20 blur-2xl rounded-full opacity-50" />
           </motion.div>
@@ -88,7 +116,7 @@ export default function Hero() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 1 }}
             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-6 hover:bg-white/10 transition-colors duration-300"
           >
             <div className="flex items-center justify-between gap-4 md:gap-8">
@@ -108,7 +136,7 @@ export default function Hero() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-6 hover:bg-white/10 transition-colors duration-300"
           >
             <div className="flex items-center justify-between gap-4 md:gap-8">
