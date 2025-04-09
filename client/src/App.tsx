@@ -3,7 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
-import Home from "@/pages/Home";
+import IndexPage from "@/pages/index";
 import ContactPage from "@/pages/ContactPage";
 import LandingPageService from "@/pages/services/LandingPageService";
 import AIChatbotService from "@/pages/services/AIChatbotService";
@@ -20,7 +20,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={IndexPage} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/services/landing-page" component={LandingPageService} />
       <Route path="/services/ai-chatbot" component={AIChatbotService} />
