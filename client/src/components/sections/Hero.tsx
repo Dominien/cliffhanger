@@ -3,10 +3,6 @@ import { Container } from "@/components/ui/container";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
-import { Suspense, lazy } from "react";
-
-// Lazy load the 3D component to improve initial page load
-const MacBookScene = lazy(() => import("@/components/MacBookScene"));
 
 export default function Hero() {
   const [, setLocation] = useLocation();
@@ -74,20 +70,21 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column - 3D MacBook Model */}
+          {/* Right Column - Hero Image */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="w-full h-[500px] sm:h-[450px] md:h-[500px] relative bg-gradient-radial from-[#101010]/0 to-[#101010]/80 rounded-2xl overflow-hidden"
+            className="w-full h-auto relative rounded-2xl overflow-hidden"
           >
-            <Suspense fallback={
-              <div className="flex items-center justify-center h-full">
-                <div className="w-10 h-10 border-4 border-[#db9e22] border-t-transparent rounded-full animate-spin" />
-              </div>
-            }>
-              <MacBookScene />
-            </Suspense>
+            <div className="relative w-full h-full aspect-[4/3] flex items-center justify-center">
+              <img 
+                src="/replicate-prediction-f3ef5nv659rm80cn35mvntmpcg.png" 
+                alt="Tropical leaves decoration" 
+                className="w-full h-auto object-contain transform scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-radial from-transparent to-[#101010]/80 pointer-events-none" />
+            </div>
           </motion.div>
         </div>
 
