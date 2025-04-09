@@ -76,10 +76,10 @@ export default function Hero() {
 
           {/* Right Column - 3D MacBook Model */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full h-[500px] relative bg-gradient-radial from-[#101010]/0 to-[#101010]/80 rounded-2xl overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="w-full h-[600px] relative bg-gradient-radial from-[#101010]/0 to-[#101010]/80 rounded-2xl overflow-hidden"
           >
             <Suspense fallback={
               <div className="flex items-center justify-center h-full">

@@ -5,11 +5,12 @@ import MacBookModel from './MacBookModel';
 
 export default function MacBookScene() {
   return (
-    <div className="w-full h-full min-h-[400px]">
+    <div className="w-full h-full absolute inset-0">
       <Canvas
         shadows
         camera={{ position: [0, 0, 4], fov: 50 }}
         gl={{ preserveDrawingBuffer: true }}
+        style={{ width: '100%', height: '100%' }}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
@@ -20,7 +21,7 @@ export default function MacBookScene() {
             position={[10, 10, 10]}
             castShadow
           />
-          <MacBookModel position={[0, -0.5, 0]} scale={1.5} rotation={[0, -0.2, 0]} />
+          <MacBookModel position={[0, -0.5, 0]} scale={1.6} />
           <Environment preset="city" />
           <ContactShadows
             rotation-x={Math.PI / 2}
@@ -34,6 +35,7 @@ export default function MacBookScene() {
           <OrbitControls
             enableZoom={false}
             enablePan={false}
+            enableRotate={false}
             minPolarAngle={Math.PI / 2 - 0.5}
             maxPolarAngle={Math.PI / 2 + 0.5}
           />
