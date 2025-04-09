@@ -26,7 +26,7 @@ export default function DemoPage() {
       companyName: "",
       website: "",
       currentChatbot: false,
-      privacyAccepted: false
+      privacyAccepted: true
     }
   });
 

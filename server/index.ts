@@ -67,7 +67,7 @@ app.get("/api/health", (_req, res) => {
   }
 
   // Get port from environment or use default
-  const PORT = process.env.PORT || 5000;
+  const PORT = process.env.PORT ? parseInt(process.env.PORT) : 5000;
   server.listen(PORT, "0.0.0.0", () => {
     log(`Server running on port ${PORT} in ${process.env.NODE_ENV || "development"} mode`);
   });

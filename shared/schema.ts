@@ -55,5 +55,14 @@ export const insertFunnelResponseSchema = z.object({
   })
 });
 
+// Contact form schema
+export const insertContactSchema = z.object({
+  name: z.string().min(2, "Please enter your name"),
+  email: z.string().email("Please enter a valid email address"),
+  website: z.string().url("Please enter a valid website URL").optional(),
+  goal: z.string().min(5, "Please describe your goal briefly")
+});
+
 export type InsertLeadResponse = z.infer<typeof insertLeadResponseSchema>;
 export type InsertFunnelResponse = z.infer<typeof insertFunnelResponseSchema>;
+export type InsertContactResponse = z.infer<typeof insertContactSchema>;

@@ -5,7 +5,7 @@ import GuideSection from "@/components/sections/Guide";
 import ProcessSection from "@/components/sections/Process";
 import CtaSection from "@/components/CtaSection";
 import FailureSection from "@/components/FailureSection";
-import SuccessSection from "@/components/SuccessSection";
+import SuccessSection from "@/components/sections/Success";
 import FaqSection from "@/components/FAQSection";
 import FinalCallSection from "@/components/FinalCallSection";
 import Footer from "@/components/Footer";

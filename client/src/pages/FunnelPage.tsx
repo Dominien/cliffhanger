@@ -163,7 +163,7 @@ export default function FunnelPage() {
       companyName: "",
       website: "",
       message: "",
-      privacyAccepted: false
+      privacyAccepted: true
     }
   });
 
