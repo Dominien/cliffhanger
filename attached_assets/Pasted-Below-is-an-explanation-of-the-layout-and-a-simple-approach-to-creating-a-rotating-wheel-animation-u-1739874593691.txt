@@ -1,0 +1,87 @@
+Below is an explanation of the layout and a simple approach to creating a rotating wheel animation using React. Feel free to adapt it to your own design or framework preferences.
+
+Section Layout Explanation
+Left Column (Text Content)
+
+Displays each step (e.g., "Tag 1", "Tag 2", etc.).
+Provides a heading and description of what happens on each day/step.
+Uses bullet points or short paragraphs for clarity.
+Right Column (Rotating Wheel)
+
+Shows a circular, segmented wheel where each segment corresponds to a step.
+As the user progresses or after a set interval, the wheel rotates to highlight the current step.
+Visually connects the steps on the left with the wheel on the right.
+A basic HTML structure (before adding React) might look like:
+
+html
+Kopieren
+<div class="section-container">
+  <div class="text-column">
+    <!-- Step content here -->
+  </div>
+  <div class="wheel-column">
+    <!-- Rotating wheel here -->
+  </div>
+</div>
+How to Achieve the Wheel Animation in React
+Below is a simplified example using:
+
+React Hooks for state and side effects.
+CSS for styling and positioning segments.
+setInterval for automatic rotation (you can also trigger rotation on button clicks or any other event).
+1. Create the Wheel Component
+jsx
+Kopieren
+import React, { useState, useEffect } from 'react';
+
+const steps = [
+  { id: 1, label: 'Lorem Ipsum 1' },
+  { id: 2, label: 'Lorem Ipsum 2' },
+  { id: 3, label: 'Lorem Ipsum 3' },
+  { id: 4, label: 'Lorem Ipsum 4' },
+  { id: 5, label: 'Lorem Ipsum 5' },
+];
+
+export default function Wheel() {
+  const [currentStep, setCurrentStep] = useState(0);
+  const totalSteps = steps.length;
+
+  useEffect(() => {
+    // Automatically rotate the wheel every 3 seconds
+    const interval = setInterval(() => {
+      setCurrentStep((prevStep) => (prevStep + 1) % totalSteps);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [totalSteps]);
+
+  // Calculate rotation angle based on the current step
+  const rotationAngle = (360 / totalSteps) * currentStep;
+
+  return (
+    <div className="wheel-container">
+      <div
+        className="wheel"
+        style={{
+          transform: `rotate(${rotationAngle}deg)`,
+        }}
+      >
+        {steps.map((step, index) => {
+          // Calculate each segment's default rotation so they form a circle
+          const segmentAngle = (360 / totalSteps) * index;
+          return (
+            <div
+              key={step.id}
+              className="segment"
+              style={{
+                transform: `rotate(${segmentAngle}deg) translate(120px) rotate(-${segmentAngle}deg)`,
+              }}
+            >
+              {step.label}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}

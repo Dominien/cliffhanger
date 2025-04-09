@@ -1,0 +1,74 @@
+. Farbpalette
+Anthrazit (Primärfarbe)
+
+Hex: #272727
+Einsatz: Hintergrund für Header und andere Schlüsselbereiche (z.B. Banner), damit das weiße Logo klar hervorsticht.
+Hellgrau (Sekundärfarbe)
+
+Hex: #f6f6f6
+Einsatz: Großflächige Content-Hintergründe, um Kontraste zu Anthrazit zu schaffen.
+Gelb (CTA-Farbe)
+
+Hex: #db9e22
+Einsatz: Buttons, Call-to-Action-Elemente, wichtige Hervorhebungen.
+Unterstützende Farben
+
+#edd8af und #e4bb68
+Einsatz: Dezente Akzente, Hover-Effekte oder sekundäre Hervorhebungen.
+2. Logo-Verwendung in Weiß
+Weißes Logo auf Anthrazit:
+
+Wirkt modern und kontraststark, ideal für Header oder Footer.
+Stellt sicher, dass das Logo ausreichend Platz (Whitespace) hat, um es hervorzuheben.
+Weißes Logo auf Hellgrau:
+
+Möglich bei großflächigem, hellem Hintergrund (#f6f6f6).
+Achte auf genügend Kontrast (ggf. Schatten/Outline, falls nötig).
+3. Layout & Einsatz der Farben
+Header-Bereich
+
+Hintergrund: Anthrazit (#272727).
+Logo: Weiß (optimaler Kontrast).
+Navigationselemente: Weiß oder Hellgrau (#f6f6f6) für lesbare Menüs.
+Haupt-Content
+
+Hintergrund: Hellgrau (#f6f6f6) oder Weiß.
+Text: Anthrazit (#272727) für gute Lesbarkeit.
+Überschriften: Ebenfalls Anthrazit, können mit unterstützenden Farben (#edd8af, #e4bb68) akzentuiert werden.
+CTA-Elemente
+
+Hintergrund: Gelb (#db9e22).
+CTA-Text: Anthrazit (#272727) oder Weiß (#f6f6f6) – je nach Kontrast und Lesbarkeit.
+Hover-Effekt: Etwas dunkleres Gelb oder eine Outline, um die Interaktion zu verdeutlichen.
+Footer
+
+Hintergrund: Anthrazit (#272727) oder Hellgrau (#f6f6f6).
+Logo (falls wiederholt): Weiß, damit es sich vom dunklen Hintergrund abhebt.
+Links/Icons: Gelb oder Weiß, um Akzente zu setzen.
+4. Typografie
+Headlines:
+Anthrazit (#272727) auf hellen Hintergründen (z.B. #f6f6f6).
+Alternativ Weiß auf dunklen Hintergründen.
+Fließtext:
+In Anthrazit (#272727) für optimale Lesbarkeit auf weißem/hellgrauem Hintergrund.
+CTA-Text:
+Auf gelbem Hintergrund (#db9e22) entweder in Weiß (#f6f6f6) oder Anthrazit (#272727).
+(Die konkrete Schriftwahl bleibt dir überlassen, sollte jedoch eine klare, moderne Schrift sein – gerne serifenlos.)
+
+5. Weitere Hinweise
+Whitespace: Sorge für ausreichend Weißraum um das weiße Logo, damit es nicht mit anderen Elementen kollidiert.
+Konsistente Farbverwendung: Nutze Anthrazit + Weißes Logo konsequent für den Wiedererkennungswert.
+Responsive Design: Prüfe Logo und CTA-Farben in verschiedenen Bildschirmgrößen, damit die Lesbarkeit auf allen Devices stimmt.
+Kontrast: Achte besonders bei der Verwendung von Weiß auf hellen Hintergründen (z.B. #f6f6f6) auf ausreichende Kontrastwerte.
+Mit diesen Richtlinien ist sichergestellt, dass dein weißes Logo optimal im neuen Farbschema (Anthrazit, Hellgrau, Gelb) wirkt und die CTAs deutlich hervorstechen.
+
+
+
+
+
+
+
+
+
+
+Suche

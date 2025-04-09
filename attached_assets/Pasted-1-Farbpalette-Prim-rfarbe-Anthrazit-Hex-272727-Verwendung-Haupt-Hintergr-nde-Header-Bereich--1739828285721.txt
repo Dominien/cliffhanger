@@ -1,0 +1,55 @@
+1. Farbpalette
+Primärfarbe (Anthrazit)
+
+Hex: #272727
+Verwendung: Haupt-Hintergründe, Header-Bereich (ganz oben), ggf. Headlines oder Grafikelemente.
+Sekundärfarbe (Hellgrau)
+
+Hex: #f6f6f6
+Verwendung: Hintergründe für Content-Bereiche, Text-Hintergrund, Kontraste zu Anthrazit.
+Akzentfarbe (Gelb)
+
+Hex: #db9e22
+Verwendung: Haupt-CTA-Farbe (Buttons, Call-to-Action-Elemente, wichtige Hervorhebungen).
+Unterstützende Farben
+
+#edd8af & #e4bb68
+Verwendung: Weitere Akzentbereiche, Icons, Hover-Effekte oder sekundäre Highlights.
+2. Typografie
+Headlines: Dunkle Schrift (z.B. #272727) auf hellem Hintergrund (#f6f6f6 oder #edd8af).
+Fließtext: Möglichst hoher Kontrast (z.B. dunkler Text auf hellgrauem/weißem Hintergrund).
+CTA-Text: Weiß (#f6f6f6) oder Anthrazit (#272727) auf gelbem Button (#db9e22) für klare Lesbarkeit.
+(Die konkrete Auswahl der Schriftart/en hängt vom Corporate-Design und der Lesbarkeit ab, z.B. eine serifenlose Schrift für moderne Klarheit.)
+
+3. Einsatz der Farben
+Header-/Top-Bereich
+
+Hintergrund: Anthrazit (#272727)
+Text/Logo: Hell (z.B. #f6f6f6 oder Weiß) für optimalen Kontrast
+CTA-Buttons
+
+Hintergrund: Gelb (#db9e22)
+Text: Weiß (#f6f6f6) oder Anthrazit (#272727) – je nach Lesbarkeit
+Hintergründe & Sektionen
+
+Großflächige Hintergründe: Anthrazit (#272727) oder Hellgrau (#f6f6f6)
+Hervorhebungen / Boxen: #edd8af oder #e4bb68
+Hover-/Aktiv-Effekte
+
+CTA-Hover: Leicht dunklere Variante des Gelbs (#db9e22) oder subtile Outline
+4. Beispiel-Layout
+Header: #272727 (Anthrazit), Logo/Navigation in Weiß (#f6f6f6).
+Hauptcontent: Weiß oder Hellgrau (#f6f6f6) als Hintergrund, Texte in Anthrazit (#272727).
+CTAs: Gelb (#db9e22) mit dunklem Text (#272727) oder Weiß (#f6f6f6).
+Zwischenüberschriften / Icons: Unterstützende Farben (#edd8af, #e4bb68) für Highlights.
+5. Hinweise zur Konsistenz
+Wiedererkennungswert: Halte Anthrazit + Gelb als Hauptkombination in allen wichtigen Elementen (Header & CTA).
+Lesbarkeit: Achte stets auf ausreichenden Kontrast (insbesondere bei Text über bunten Hintergründen).
+Minimalismus: Nutze die unterstützenden Farben (#edd8af / #e4bb68) sparsam, um Überfrachtung zu vermeiden.
+Mit diesen kurzen CI-Guidelines hast du ein klares Grundgerüst für Layout, Farbverwendung und CTA-Design. So entsteht ein einheitliches, professionelles Erscheinungsbild, das auf den definierten Hauptfarben Anthrazit (#272727) und Gelb (#db9e22) basiert.
+
+
+
+
+
+

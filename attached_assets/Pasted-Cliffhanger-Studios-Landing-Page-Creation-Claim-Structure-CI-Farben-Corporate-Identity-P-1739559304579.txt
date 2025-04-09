@@ -1,0 +1,166 @@
+Cliffhanger Studios – Landing Page Creation (Claim & Structure)
+
+🎨 CI-Farben (Corporate Identity)
+Primärfarbe: Dunkles Blau (#1A1F36) – vermittelt Vertrauen, Seriosität und technische Präzision.
+Sekundärfarbe: Leuchtendes Türkis (#00C2FF) – für CTA-Elemente, bringt Dynamik & Modernität.
+Akzentfarbe: Neutrales Grau (#F4F6FA) – für Hintergrundflächen und Kontraste.
+Schriftfarbe: Tiefes Schwarz (#0D0D0D) – für starke Lesbarkeit und High-Contrast UX.
+⚡ Look & Feel:
+Techy, clean & performance-driven.
+Subtile Animationen für ein modernes, dynamisches Nutzererlebnis.
+
+1. Navigation Bar – Minimalistisch & Direkt
+German Copy
+Logo & Name (Left):
+„Cliffhanger Studios – Sofort einsatzbereite Landing Pages“
+Navigation (Right):
+„Vorteile“
+„Ablauf“
+„Referenzen“
+Call-to-Action (CTA): Button: „Jetzt Termin sichern“
+Design Explanation (English)
+Left Side: Logo und Name klar, minimalistisch und modern – vermittelt sofort, dass wir für Effizienz stehen.
+Right Side: Einfache, gut lesbare Navigation mit klaren Kategorien.
+CTA Button: Türkis mit leichtem Schatten, prominent platziert für maximale Conversion.
+
+2. Hero Section – Techy & Conversion-Focused
+German Copy (Left Column)
+Headline:
+„Deine Landing Page – Sofort einsatzbereit & konversionsstark“
+Subheadline:
+„Buche jetzt deinen kostenlosen Call und erhalte live eine fertige Landing Page – individuell angepasst und startklar.“
+CTA Button:
+„Jetzt Termin sichern“
+Right Column (Visual – Alternative zu Conversion-Chart!)
+🖥 Mockup einer Landing Page – Live-Editor im Call zeigen.
+📊 Heatmap-Analyse – Verdeutlicht, wie wir optimieren.
+🧠 KI-gestützte UX-Verbesserung – Betont den innovativen Ansatz.
+Design Explanation (English)
+Left Column (Text):
+Headline mit techy Schrift, strukturiert & klar.
+Subheadline mit weicherem Kontrast für Lesbarkeit.
+Bullet Points für Social Proof optional.
+Right Column (Image):
+Heatmap- oder Eye-Tracking-Visualisierung, die optimierte User Journeys zeigt.
+Live-Editor Mockup, das veranschaulicht, wie die Landing Page im Call entsteht.
+Dynamischer Effekt auf Hover, um Interaktivität zu betonen.
+
+3. Problem Section – Warum viele Landing Pages scheitern
+German Copy
+Headline:
+„Warum performen viele Landing Pages nicht?“
+Subheadline:
+„Ohne klares Design, Strategie und Optimierung bleibt dein Erfolg auf der Strecke.“
+Card Grid (4 Spalten, Mobile gestapelt):
+Langsame Ladezeiten:
+„Jede Sekunde Verzögerung senkt die Conversion-Rate.“
+Unklare Message:
+„Ohne klare Kommunikation verlierst du potenzielle Kunden.“
+Fehlende Call-to-Actions:
+„Ohne gezielte CTAs wird dein Traffic nicht genutzt.“
+Komplizierte Umsetzung:
+„Technische Hürden machen die Optimierung oft schwierig.“
+Design Explanation (English)
+Grid mit vier Karten:
+Jede Karte hat ein minimalistisches Tech-Icon oben.
+Hintergrund: Hellgrau mit Schatteneffekt für Tiefe.
+Leichte Hover-Animation für moderne UX.
+
+4. Guide Section – Dein Partner für Performance-Landing Pages
+German Copy
+Headline:
+„Wir bauen Landing Pages, die konvertieren – und du siehst dein Konzept vor dem Call.“
+Bullet Points:
+✔ Individuelle Konzept-Vorschau vor dem Call – Sehe bereits vor dem Gespräch, wie deine Landing Page aussehen könnte.
+✔ 100% an dein Business angepasst – Kein Template, sondern maßgeschneidertes Design für deine Marke.
+✔ Keine Verpflichtung – Du entscheidest erst nach dem Call, ob du mit uns arbeiten willst.
+CTA Button:
+„Jetzt Call buchen“
+Design Explanation (English)
+Zwei-Spalten-Layout:
+Links: Bullet Points mit Checkmark-Icons für bessere Scanbarkeit.
+Rechts: Mockup einer Konzept-Vorschau auf einem Laptop oder Tablet, das zeigt, dass der Kunde bereits vor dem Call eine Designidee erhält.
+Subtiles Overlay & leichte Schatten, um Tiefe und Professionalität zu erzeugen.
+
+5. Plan Section – Dein Ablauf in 3 Schritten
+German Copy
+Headline:
+„In nur 3 Schritten zu deiner fertigen Landing Page“
+Step Grid (3 Spalten):
+1️⃣ Konzept-Vorschau erhalten
+„Nach deiner Anfrage erstellen wir ein individuelles Design-Konzept für dich – du siehst schon vor dem Call, wie deine Landing Page aussehen könnte.“
+2️⃣ Strategiegespräch führen
+„Wir analysieren deine Ziele & besprechen gemeinsam, welche Anpassungen nötig sind, um deine Conversion-Rate zu maximieren.“
+3️⃣ Deine Entscheidung treffen
+„Nur wenn du zufrieden bist, starten wir dein Marketing und finalisieren deine Landing Page.“
+CTA Button:
+„Jetzt Termin buchen“
+Design Explanation (English)
+Drei-Spalten-Grid:
+Step 1: Ein Skizzen-/Wireframe-Icon, das die erste Konzeptvorschau symbolisiert.
+Step 2: Ein Sprechblasen-Icon, das das Strategiegespräch repräsentiert.
+Step 3: Ein Checkmark- oder Rocket-Icon, das den finalen Go-live symbolisiert.
+Visuelle Struktur:
+Nummerierte Schritte mit klaren, kurzen Titeln.
+Icons mit Tech-Look, um das moderne Konzept zu unterstreichen.
+Leichte Hover-Interaktion, um Dynamik zu erzeugen.
+
+6. Call-to-Action Section – Deine Chance nutzen
+German Copy
+Headline:
+„Deine Landing Page ist nur einen Call entfernt.“
+Subheadline:
+„Buch jetzt dein kostenloses Strategiegespräch und erhalte deine fertige, conversionstarke Landing Page – live erstellt.“
+CTA Button:
+„Jetzt Termin sichern“
+Design Explanation (English)
+Centered CTA mit techy Design.
+Subtiles Muster oder Grid-Hintergrund für Dynamik.
+
+7. Failure Section – Was du verlierst, wenn du wartest
+German Copy
+Headline:
+„Warte nicht – jeder Tag kostet dich Kunden.“
+Subheadline:
+„Ohne eine optimierte Landing Page verlierst du wertvolle Leads & Umsatz.“
+3-Karten-Grid:
+❌ Verlorene Conversions
+„Jede Sekunde ohne optimierte Seite kostet dich Kunden.“
+❌ Höhere Werbekosten
+„Ohne Performance-Seiten verpufft dein Budget.“
+❌ Wachstumsbremse
+„Während du wartest, gewinnen deine Wettbewerber.“
+CTA Button:
+„Jetzt Termin sichern“
+Design Explanation (English)
+Dunkler Hintergrund für Kontrast & Dringlichkeit.
+Rote oder orange Highlights für negative Punkte.
+
+8. Contact Section – Jetzt starten
+German Copy
+Headline:
+„Buch deinen kostenlosen Call & starte durch!“
+Subheadline:
+„Fülle das Formular aus & erhalte deine fertige Landing Page – ganz ohne Risiko.“
+Form Fields:
+📌 Name
+📌 E-Mail
+📌 Website (optional)
+📌 Dein Ziel (kurz & knapp)
+CTA Button:
+„Jetzt Termin buchen“
+Design Explanation (English)
+Zwei-Spalten-Layout: Links Copy, rechts Formular in Card-Optik.
+Abgerundete Eingabefelder für UX.
+
+9. Footer – Minimalistisch & Klar
+German Copy
+Links:
+Impressum
+Datenschutz
+AGB
+Design Explanation (English)
+Schlanker Footer mit dezenter Trennung.
+Logo links, Links rechts – klare Struktur.
+Neutraler Hintergrund (hellgrau oder dunkel, je nach CI).
+

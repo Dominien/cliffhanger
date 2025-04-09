@@ -1,0 +1,51 @@
+📌 Guide Section – Bento-Style Layout Explanation
+We’ll use a Bento-Style Layout, inspired by Apple’s modular grid system, where each content block (Bento Box) has its own focus but blends seamlessly into the section. The goal is to make the design highly structured yet dynamic, creating a techy and premium feel while keeping the content scannable.
+
+🖥️ Structure Overview:
+✅ Headline (Centered, Bold, Large Font)
+✅ Bento Boxes (Arranged in a Grid-Like Formation Beneath the Headline)
+
+📌 Headline (Centered, Clean, and Powerful)
+„Erhalte eine maßgeschneiderte Landing Page – in wenigen Tagen & ohne Risiko“
+
+💡 Typography & Spacing:
+
+Large and bold font (white or light gray for contrast).
+Subheadline below (smaller, softer contrast):
+Wir liefern dir ein individuelles, strategisches Konzept, das bereits vor dem Call eine klare Vision für deine Landing Page gibt. Kein generisches Template – 100% maßgeschneidert für dein Business.
+🍱 Bento Grid Layout (Below Headline, Multiple Box Sizes & Styles)
+The boxes should be asymmetrically arranged (not just uniform squares) to make it visually engaging.
+
+Box Type	Content	Design Style
+📌 Large Main Box (Top Left – Big Focus Box)	Individuelle Konzept-Vorschau
+Erhalte vor dem Call ein personalisiertes Konzept, das deine Marke & Zielgruppe berücksichtigt.	Wider rectangular box with an image or a modern UI mockup.
+📍 Medium Box (Right – Slightly Smaller Than Main Box)	Strategische Beratung im Call
+Gemeinsam analysieren wir dein Angebot & optimieren deine Landing Page für maximale Conversion.	Clean text with an icon (📊 analytics chart or a meeting concept).
+🧠 Medium Box (Left Below Main Box, AI Emphasis)	KI-gestützte Optimierung
+Unsere KI-Technologie unterstützt uns dabei, deine Landing Page mit datenbasierten Best Practices zu optimieren.	AI-style visuals, gradient overlays, or glowing elements to feel futuristic.
+🔄 Small Box (Right, Below AI Box)	100% Flexibel & Unverbindlich
+Du entscheidest erst nach dem Call, ob du mit uns weiterarbeiten möchtest – ohne Verpflichtung.	Simple yet bold typography with a checkmark ✅ or handshake 🤝 icon for trust.
+🎨 Bento Box Design Breakdown
+1️⃣ Dynamic Grid Formation
+
+Instead of rigid rows, we will create a structured but visually interesting layout:
+1 large box (for the core value proposition).
+2 medium-sized boxes (for supporting content).
+1 small box (for trust-building info).
+2️⃣ Soft Shadows & Layering
+
+Each box will have a subtle glow or elevated shadow effect to make it feel premium & techy.
+Bento boxes should have rounded corners for a clean, futuristic look.
+3️⃣ Interactive Hover Effects
+
+Hovering on a box slightly lifts it & reveals more depth.
+Subtle animations (e.g., a pulse effect on AI content or light scaling on CTA elements).
+4️⃣ Balanced White Space & Borders
+
+Enough white space between the boxes to make the layout breathe, but still compact enough for impact.
+Each box has a thin border or glow effect to define sections clearly.
+5️⃣ CTA Placement (Outside the Grid, Below the Section)
+
+Button Centered Below the Bento Grid
+✅ „Jetzt kostenloses Konzept erhalten →“ (green/turquoise, glowing, with a small arrow).
+This avoids cluttering the grid but keeps conversion focus.
