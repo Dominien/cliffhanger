@@ -79,7 +79,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="w-full h-[500px] relative bg-gradient-radial from-[#101010]/0 to-[#101010]/80 rounded-2xl overflow-hidden"
+            className="w-full h-full aspect-[4/3] relative bg-gradient-radial from-[#101010]/0 to-[#101010]/80 rounded-2xl overflow-hidden"
           >
             <Suspense fallback={
               <div className="flex items-center justify-center h-full">

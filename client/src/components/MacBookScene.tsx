@@ -11,6 +11,7 @@ export default function MacBookScene() {
         camera={{ position: [0, 0, 4], fov: 50 }}
         gl={{ preserveDrawingBuffer: true }}
         style={{ width: '100%', height: '100%' }}
+        resize={{ scroll: true, debounce: { scroll: 50, resize: 0 } }}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
@@ -21,7 +22,7 @@ export default function MacBookScene() {
             position={[10, 10, 10]}
             castShadow
           />
-          <MacBookModel position={[0, -0.2, 0]} scale={1.2} />
+          <MacBookModel position={[0, -0.2, 0]} scale="auto" />
           <Environment preset="city" />
           <ContactShadows
             rotation-x={Math.PI / 2}

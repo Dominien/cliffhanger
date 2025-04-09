@@ -1,23 +1,36 @@
-import React, { useRef, useEffect } from 'react';
-import { useGLTF, useAnimations } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import React, { useRef, useEffect, useState } from 'react';
+import { useGLTF, useAnimations, useAspect } from '@react-three/drei';
+import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
 export function MacBookModel(props) {
   const group = useRef();
   const { scene, animations } = useGLTF('/macbook_cliffhanger.glb');
   const { actions, names } = useAnimations(animations, group);
-
-  // Debug log to see what animations are available
+  const { viewport } = useThree();
+  
+  const [modelScale, setModelScale] = useState(1);
+  
+  // Calculate responsive scale based on viewport
   useEffect(() => {
-    console.log("Available animations:", names);
-    console.log("Animation actions:", actions);
-  }, [names, actions]);
+    const calculateScale = () => {
+      // Base scale on viewport width for responsiveness
+      const baseScale = viewport.width / 5;
+      // Limit the scale to a reasonable range
+      const scale = Math.max(0.8, Math.min(baseScale, 1.5));
+      setModelScale(scale);
+    };
+    
+    calculateScale();
+    
+    // Update scale when viewport changes
+    window.addEventListener('resize', calculateScale);
+    return () => window.removeEventListener('resize', calculateScale);
+  }, [viewport]);
 
   // Start animations if available
   useEffect(() => {
     if (names.length > 0) {
-      console.log(`Starting animation: ${names[0]}`);
       // Play all available animations to ensure they run
       names.forEach(name => {
         if (actions[name]) {
@@ -27,8 +40,6 @@ export function MacBookModel(props) {
           actions[name].play();
         }
       });
-    } else {
-      console.log("No animations found in the model");
     }
   }, [actions, names]);
 
@@ -52,9 +63,12 @@ export function MacBookModel(props) {
     });
   }, [scene]);
 
+  // Use the calculated modelScale or the explicitly provided scale
+  const finalScale = props.scale === "auto" ? modelScale : props.scale || 1;
+
   return (
     <group ref={group} {...props} dispose={null}>
-      <primitive object={scene} scale={props.scale || 1} />
+      <primitive object={scene} scale={finalScale} />
     </group>
   );
 }
