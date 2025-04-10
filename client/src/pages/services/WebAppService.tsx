@@ -15,7 +15,14 @@ import {
   ServerIcon,
   Database,
   Sparkles,
-  Brain
+  Brain,
+  Clock,
+  CreditCard as CreditCardIcon,
+  AlertTriangle as AlertTriangleIcon,
+  TrendingDown,
+  UserMinus,
+  BanknoteIcon,
+  Quote
 } from "lucide-react";
 
 const features = [
@@ -154,12 +161,12 @@ export default function WebAppService() {
               className="relative"
             >
               <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-4 block">
-                Intelligente Lösungen für dein Unternehmen
+                Web-App Entwicklung
               </span>
               
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                Maßgeschneiderte <span className="text-[#db9e22]">Web-Apps</span><br/>
-                für dein Business
+                Geschäftsprobleme lösen mit <span className="text-[#db9e22]">Web-Apps</span>,<br/>
+                die wirklich helfen
               </h1>
               
               <motion.p 
@@ -168,7 +175,7 @@ export default function WebAppService() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto"
               >
-                Unsere KI findet die besten App-Ideen für dein Business, dann baut unser Team diese für dich. Von der ersten Idee bis zur fertigen Web-App.
+                Brauchen Sie eine digitale Lösung für Ihr Unternehmen, wissen aber nicht welche? Unsere KI findet die beste Idee - unser Team baut sie für Sie.
               </motion.p>
               
               <div className="flex flex-col sm:flex-row gap-5 justify-center">
@@ -183,7 +190,7 @@ export default function WebAppService() {
                     className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full sm:w-auto py-5 px-6 md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg"
                     onClick={() => setLocation("/funnel")}
                   >
-                    KI-Bewertung starten
+                    KI-Analyse starten - Kostenlos
                   </Button>
                   <div className="absolute -inset-5 -z-10 bg-[#db9e22]/20 blur-2xl rounded-full opacity-50" />
                 </motion.div>
@@ -198,7 +205,7 @@ export default function WebAppService() {
                     className="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full sm:w-auto py-5 px-6 md:px-10 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg"
                     onClick={() => setLocation("/contact")}
                   >
-                    Bereits App-Idee? Lass uns reden
+                    Beratungsgespräch vereinbaren
                   </Button>
                 </motion.div>
               </div>
@@ -207,199 +214,781 @@ export default function WebAppService() {
         </Container>
       </section>
 
-      {/* Features Grid Section */}
-      <section className="py-24 bg-white">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-[#101010] mb-6">
-              Innovative Ideen, professionell umgesetzt
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              So einfach geht's: Unsere KI findet die besten Web-App Ideen für dein Business. Dann besprechen wir alles mit dir und unser Team baut die App genau nach deinen Wünschen.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="w-16 h-16 rounded-xl bg-[#db9e22]/10 flex items-center justify-center mb-6">
-                  <feature.icon className="w-8 h-8 text-[#db9e22]" />
-                </div>
-                <h3 className="text-xl font-semibold text-[#101010] mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-24 bg-[#fdf6e9]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-[#101010] mb-6">
-              Ihr Geschäftsvorteil durch digitale Transformation
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Web-Apps, die nicht nur technologisch überzeugen, sondern auch echten Mehrwert schaffen
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="w-16 h-16 rounded-xl bg-[#db9e22]/10 flex items-center justify-center mb-6">
-                  <benefit.icon className="w-8 h-8 text-[#db9e22]" />
-                </div>
-                <h3 className="text-xl font-semibold text-[#101010] mb-4">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  {benefit.description}
-                </p>
-                <ul className="space-y-3">
-                  {benefit.points.map((point, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-[#db9e22] flex-shrink-0" />
-                      <span className="text-gray-700">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-24 bg-[#101010]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-4 block">
-              Unser Vorgehen
-            </span>
-            <h2 className="text-4xl font-bold text-white mb-6">
-              KI-Ideen, von uns umgesetzt
-            </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Unsere KI findet die besten App-Ideen, unser Team baut sie für dich. Du bekommst eine fertige Web-App ohne Stress - von der ersten Idee bis zur fertigen Lösung.
-            </p>
-          </motion.div>
-
-          <div className="space-y-12">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="relative"
-              >
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    <div className="w-20 h-20 rounded-xl bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl font-bold text-[#db9e22]">{step.number}</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-4">
-                        {step.title}
-                      </h3>
-                      <p className="text-white/80 mb-6">
-                        {step.description}
-                      </p>
-                      <div className="flex flex-wrap gap-4">
-                        {step.points.map((point, i) => (
-                          <div key={i} className="flex items-center gap-2 flex-shrink-0">
-                            <CheckCircle className="w-5 h-5 flex-shrink-0 text-[#db9e22]" />
-                            <span className="text-white/70">{point}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-24 bg-gradient-to-b from-[#101010] to-[#1a1a1a]">
+      {/* Problem Section */}
+      <section className="py-20 bg-white">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="max-w-3xl mx-auto text-center"
           >
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-white/20 mb-6">
-              <div className="w-2.5 h-2.5 bg-[#db9e22] rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-white/90">
-                Cliffhanger Studios baut deine Web-App
-              </span>
-            </div>
-            
-            <h2 className="text-4xl font-bold text-white mb-6">
-              KI-generierte App-Ideen, von uns entwickelt
+            <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-12">
+              Was bremst Ihr Unternehmen aus?
             </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-              Starte mit einer 5-Minuten KI-Analyse. Dann bauen wir von Cliffhanger Studios deine maßgeschneiderte Web-App genau nach deinen Wünschen und Anforderungen.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row max-w-md mx-auto sm:max-w-none justify-center gap-6">
-              <Button
-                size="lg"
-                onClick={() => setLocation("/funnel")}
-                className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group rounded-lg"
+
+            <div className="space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="flex items-start gap-4 text-left"
               >
-                KI-Bewertung starten
-              </Button>
-              
-              <Button
-                size="lg"
-                onClick={() => setLocation("/contact")}
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-lg py-6 px-8 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg group"
+                <div className="w-10 h-10 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-[#db9e22] font-semibold">1</span>
+                </div>
+                <p className="text-lg text-gray-700">
+                  Zu viel Zeitverschwendung durch manuelle Prozesse und Papierkram
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex items-start gap-4 text-left"
               >
-                Bereits App-Idee? Lass uns reden
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </Button>
+                <div className="w-10 h-10 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-[#db9e22] font-semibold">2</span>
+                </div>
+                <p className="text-lg text-gray-700">
+                  Unsicherheit, welche digitale Lösung wirklich helfen würde
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex items-start gap-4 text-left"
+              >
+                <div className="w-10 h-10 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-[#db9e22] font-semibold">3</span>
+                </div>
+                <p className="text-lg text-gray-700">
+                  Angst vor komplizierten IT-Projekten, die viel kosten und wenig bringen
+                </p>
+              </motion.div>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="mt-12 border-t pt-8 border-gray-200"
+            >
+              <p className="text-xl text-gray-800 font-medium">
+                Ohne die richtige Web-App bleibt Ihr Unternehmen im digitalen Zeitalter zurück.
+              </p>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </section>
+      
+      {/* Guide Section */}
+      <section className="py-24 bg-[#fdf6e9]">
+        <Container>
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-6">
+                So helfen wir Ihnen
+              </h2>
+              <p className="text-xl text-gray-700">
+                Bei Cliffhanger Studios machen wir es einfach:
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-12 mb-16">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[#db9e22]/10 -mr-12 -mt-12 rounded-full"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 flex items-center justify-center bg-[#db9e22]/10 rounded-xl mb-6">
+                    <Brain className="w-8 h-8 text-[#db9e22]" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-[#101010]">
+                    1. KI-Analyse
+                  </h3>
+                  <p className="text-gray-700 text-lg">
+                    Unsere KI analysiert Ihr Unternehmen und findet die besten Web-App Ideen
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-[#db9e22]/10 -mr-12 -mt-12 rounded-full"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 flex items-center justify-center bg-[#db9e22]/10 rounded-xl mb-6">
+                    <Code className="w-8 h-8 text-[#db9e22]" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-[#101010]">
+                    2. Entwicklung
+                  </h3>
+                  <p className="text-gray-700 text-lg">
+                    Dann entwickelt unser Team diese Idee für Sie
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-center bg-[#db9e22]/10 p-8 md:p-12 rounded-2xl border border-[#db9e22]/20"
+            >
+              <p className="text-xl md:text-2xl text-[#101010] font-medium italic">
+                "Wir verbinden moderne KI-Technologie mit echtem Entwickler-Handwerk - für Lösungen, die wirklich funktionieren."
+              </p>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* Plan Section */}
+      <section className="py-24 bg-[#101010]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              In 4 einfachen Schritten zu Ihrer Web-App
+            </h2>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="relative">
+              {/* Connecting Line */}
+              <div className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-1 md:w-0.5 bg-[#db9e22]/30 hidden md:block" style={{ transform: 'translateX(-50%)' }}></div>
+              
+              <div className="space-y-16 md:space-y-0 relative">
+                {/* Step 1 */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="md:grid md:grid-cols-2 md:gap-16 items-center relative"
+                >
+                  <div className="flex md:justify-end relative">
+                    <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 md:max-w-md mb-6 md:mb-0">
+                      <h3 className="text-[#db9e22] font-bold text-xl mb-4">KI-Analyse (5 Minuten)</h3>
+                      <p className="text-white/80">
+                        Unsere KI prüft Ihr Unternehmen und findet die passende Web-App Idee
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute left-0 md:left-1/2 top-6 transform md:-translate-x-1/2 md:translate-y-0 z-10">
+                    <div className="w-10 h-10 rounded-full bg-[#db9e22] flex items-center justify-center border-4 border-[#101010]">
+                      <span className="text-white font-bold">1</span>
+                    </div>
+                  </div>
+
+                  <div className="hidden md:block"></div>
+                </motion.div>
+
+                {/* Step 2 */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="md:grid md:grid-cols-2 md:gap-16 items-center relative"
+                >
+                  <div className="hidden md:block"></div>
+                  
+                  <div className="absolute left-0 md:left-1/2 top-6 transform md:-translate-x-1/2 md:translate-y-0 z-10">
+                    <div className="w-10 h-10 rounded-full bg-[#db9e22] flex items-center justify-center border-4 border-[#101010]">
+                      <span className="text-white font-bold">2</span>
+                    </div>
+                  </div>
+
+                  <div className="flex relative ml-14 md:ml-0">
+                    <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 md:max-w-md">
+                      <h3 className="text-[#db9e22] font-bold text-xl mb-4">Beratungsgespräch</h3>
+                      <p className="text-white/80">
+                        Wir besprechen die KI-Vorschläge und planen Ihre individuelle Lösung
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Step 3 */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="md:grid md:grid-cols-2 md:gap-16 items-center relative"
+                >
+                  <div className="flex md:justify-end relative">
+                    <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 md:max-w-md mb-6 md:mb-0">
+                      <h3 className="text-[#db9e22] font-bold text-xl mb-4">Entwicklung durch unser Team</h3>
+                      <p className="text-white/80">
+                        Unsere Experten bauen Ihre maßgeschneiderte Web-App
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute left-0 md:left-1/2 top-6 transform md:-translate-x-1/2 md:translate-y-0 z-10">
+                    <div className="w-10 h-10 rounded-full bg-[#db9e22] flex items-center justify-center border-4 border-[#101010]">
+                      <span className="text-white font-bold">3</span>
+                    </div>
+                  </div>
+
+                  <div className="hidden md:block"></div>
+                </motion.div>
+
+                {/* Step 4 */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="md:grid md:grid-cols-2 md:gap-16 items-center relative"
+                >
+                  <div className="hidden md:block"></div>
+                  
+                  <div className="absolute left-0 md:left-1/2 top-6 transform md:-translate-x-1/2 md:translate-y-0 z-10">
+                    <div className="w-10 h-10 rounded-full bg-[#db9e22] flex items-center justify-center border-4 border-[#101010]">
+                      <span className="text-white font-bold">4</span>
+                    </div>
+                  </div>
+
+                  <div className="flex relative ml-14 md:ml-0">
+                    <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 md:max-w-md">
+                      <h3 className="text-[#db9e22] font-bold text-xl mb-4">Fertige Lösung</h3>
+                      <p className="text-white/80">
+                        Sie erhalten Ihre Web-App, komplett eingerichtet und sofort einsatzbereit
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* Failure Section */}
+      <section className="py-24 bg-[#101010] relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: '30px 30px',
+            }}
+          />
+        </div>
+        
+        <Container className="relative z-10">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-4 block">
+                Dringender Handlungsbedarf
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Warum jetzt handeln wichtig ist
+              </h2>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto mb-10">
+                Während Sie noch überlegen, nutzen Ihre Wettbewerber bereits moderne Web-Apps,
+                um schneller und günstiger zu arbeiten.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-12 mb-16">
+              {/* Left Side - Falling Behind Visual */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="relative h-full flex flex-col justify-center">
+                  {/* Competitor Moving Forward */}
+                  <div className="absolute -right-4 top-0 md:top-8 w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-sm rounded-2xl p-3 shadow-lg border border-white/20 transform translate-x-4 translate-y-4 rotate-6">
+                    <div className="w-full h-full flex flex-col items-center justify-center">
+                      <Rocket className="w-8 h-8 md:w-12 md:h-12 text-[#db9e22] mb-2" />
+                      <span className="text-white text-xs md:text-sm font-semibold text-center">Ihre Wettbewerber</span>
+                    </div>
+                  </div>
+                  
+                  {/* Money Loss */}
+                  <div className="absolute left-8 top-12 md:top-32 w-20 h-20 md:w-28 md:h-28 bg-white/10 backdrop-blur-sm rounded-2xl p-3 shadow-lg border border-white/20 transform -translate-x-4 -rotate-12">
+                    <div className="w-full h-full flex flex-col items-center justify-center">
+                      <BanknoteIcon className="w-7 h-7 md:w-10 md:h-10 text-red-500 mb-1" />
+                      <span className="text-white text-xs font-semibold text-center">Verlorenes Potenzial</span>
+                    </div>
+                  </div>
+                  
+                  {/* Time Waste */}
+                  <div className="absolute right-4 bottom-12 md:bottom-24 w-20 h-20 md:w-28 md:h-28 bg-white/10 backdrop-blur-sm rounded-2xl p-3 shadow-lg border border-white/20 transform translate-y-4 rotate-12">
+                    <div className="w-full h-full flex flex-col items-center justify-center">
+                      <Clock className="w-7 h-7 md:w-10 md:h-10 text-red-500 mb-1" />
+                      <span className="text-white text-xs font-semibold text-center">Verlorene Zeit</span>
+                    </div>
+                  </div>
+                  
+                  {/* Main Element - You Falling Behind */}
+                  <div className="mx-auto w-36 h-36 md:w-44 md:h-44 bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20 relative z-10">
+                    <div className="w-full h-full flex flex-col items-center justify-center">
+                      <AlertTriangleIcon className="w-12 h-12 md:w-16 md:h-16 text-[#db9e22] mb-3" />
+                      <span className="text-white text-sm md:text-base font-semibold text-center">Sie verlieren den Anschluss</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Right Side - Cost of Delay */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-6"
+              >
+                <p className="text-xl text-white/80 font-medium">
+                  Jeder Tag ohne die richtige digitale Lösung kostet Sie:
+                </p>
+                
+                <div className="space-y-5">
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.3 }}
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
+                      <CreditCardIcon className="w-6 h-6 text-[#db9e22]" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">
+                        Verlorene Einnahmen
+                      </h3>
+                      <p className="text-white/70">
+                        Ineffiziente Prozesse reduzieren Ihre Kapazität für Neugeschäft und gewinnbringende Projekte
+                      </p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.4 }}
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
+                      <Clock className="w-6 h-6 text-[#db9e22]" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">
+                        Vergeudete Arbeitszeit
+                      </h3>
+                      <p className="text-white/70">
+                        Manuelle Prozesse binden Personal, das wertschöpfendere Aufgaben übernehmen könnte
+                      </p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.5 }}
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
+                      <Users className="w-6 h-6 text-[#db9e22]" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">
+                        Wettbewerbsnachteil
+                      </h3>
+                      <p className="text-white/70">
+                        Ihre Konkurrenz verbessert sich täglich durch digitale Optimierung
+                      </p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.6 }}
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
+                      <TrendingDown className="w-6 h-6 text-[#db9e22]" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">
+                        Entgangene Innovationschancen
+                      </h3>
+                      <p className="text-white/70">
+                        Ohne digitale Transformation verpassen Sie Möglichkeiten, Ihr Geschäftsmodell zu erweitern
+                      </p>
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.7 }}
+                    className="flex items-start gap-4 group"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
+                      <UserMinus className="w-6 h-6 text-[#db9e22]" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">
+                        Mitarbeiterfluktuation
+                      </h3>
+                      <p className="text-white/70">
+                        Talentierte Fachkräfte bevorzugen Unternehmen mit modernen digitalen Werkzeugen
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="pt-6"
+                >
+                  <Button 
+                    size="lg"
+                    className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full sm:w-auto py-5 px-6 md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg mt-4"
+                    onClick={() => setLocation("/funnel")}
+                  >
+                    KI-Analyse jetzt starten
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* Case Study Section */}
+      <section className="py-24 bg-white">
+        <Container>
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-4 block">
+                Erfolgsgeschichte
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-6">
+                Wie wir Ordnex zu digitaler Exzellenz verholfen haben
+              </h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                Von der Idee zur führenden KI-Lösung für die Baudokumentation
+              </p>
+            </motion.div>
+
+            {/* Case Study Content */}
+            <div className="grid md:grid-cols-2 gap-12 mb-16 items-center">
+              {/* Left Side - App Image Mockup */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="rounded-2xl overflow-hidden shadow-2xl relative"
+              >
+                <div className="bg-gradient-to-br from-[#101010] to-[#333] p-4 pt-12 relative">
+                  {/* App Status Bar */}
+                  <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-6 py-2 text-white/80 text-xs">
+                    <span>09:41</span>
+                    <div className="flex items-center gap-1">
+                      <span>4G</span>
+                      <div className="h-3 w-4 relative">
+                        <div className="absolute bottom-0 left-0 w-1 h-1 bg-white/80 rounded-sm"></div>
+                        <div className="absolute bottom-0 left-1.5 w-1 h-1.5 bg-white/80 rounded-sm"></div>
+                        <div className="absolute bottom-0 left-3 w-1 h-2 bg-white/80 rounded-sm"></div>
+                      </div>
+                      <div className="h-3 w-6 relative">
+                        <div className="absolute top-0 right-0 w-5 h-2.5 border border-white/80 rounded-sm"></div>
+                        <div className="absolute top-0 right-0 w-3 h-2.5 bg-white/80 rounded-sm"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* App Screenshot Content */}
+                  <div className="bg-white rounded-lg p-4">
+                    <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                      <h4 className="text-lg font-bold mb-2">KI-Analyse</h4>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-gray-700">Mangel-Typ</span>
+                        <span className="font-semibold">98%</span>
+                      </div>
+                      <div className="h-2 w-full bg-gray-200 rounded-full mb-4">
+                        <div className="h-2 bg-[#db9e22] rounded-full" style={{ width: '98%' }}></div>
+                      </div>
+                      <p className="text-gray-800 font-medium">Riss in Putz</p>
+                      
+                      <div className="flex justify-between mt-4 mb-2">
+                        <span className="text-gray-700">Rechtsbasis</span>
+                        <span className="font-semibold">92%</span>
+                      </div>
+                      <div className="h-2 w-full bg-gray-200 rounded-full mb-4">
+                        <div className="h-2 bg-[#db9e22] rounded-full" style={{ width: '92%' }}></div>
+                      </div>
+                      <p className="text-gray-800 font-medium">VOB/B §13</p>
+                      
+                      <div className="flex justify-between mt-4 mb-2">
+                        <span className="text-gray-700">Schweregrad</span>
+                        <span className="font-semibold">87%</span>
+                      </div>
+                      <div className="h-2 w-full bg-gray-200 rounded-full mb-4">
+                        <div className="h-2 bg-[#db9e22] rounded-full" style={{ width: '87%' }}></div>
+                      </div>
+                      <p className="text-gray-800 font-medium">Mittel (3/5)</p>
+                    </div>
+                    
+                    <div className="text-center">
+                      <p className="text-[#db9e22] font-semibold mb-1">Analyse abgeschlossen</p>
+                      <p className="text-sm text-gray-600">In Sekunden klassifiziert!</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Right Side - Challenge & Solution */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-8"
+              >
+                <div>
+                  <h3 className="text-2xl font-bold text-[#101010] mb-4">Die Herausforderung</h3>
+                  <p className="text-gray-700 mb-6">
+                    Ordnex benötigte eine digitale Lösung, um die zeitaufwändige und fehleranfällige Dokumentation von Baumängeln zu revolutionieren. Das Unternehmen suchte nach einer Möglichkeit, diesen Prozess zu digitalisieren und durch KI zu optimieren.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
+                      </div>
+                      <span className="text-gray-700">Bauexperten verbringen zu viel Zeit mit Papierkram</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
+                      </div>
+                      <span className="text-gray-700">Mangelnde Standardisierung bei der Dokumentation</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
+                      </div>
+                      <span className="text-gray-700">Rechtliche Risiken durch unvollständige Nachweise</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold text-[#101010] mb-4">Unsere Lösung</h3>
+                  <p className="text-gray-700 mb-6">
+                    Wir haben für Ordnex eine maßgeschneiderte Web-App mit integrierter KI entwickelt, die Baumängel automatisch analysiert und rechtssichere Dokumentationen erstellt.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
+                      </div>
+                      <span className="text-gray-700">KI-gestützte Analyse von Baumängeln per Foto</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
+                      </div>
+                      <span className="text-gray-700">VOB/BGB-konforme Dokumentationserstellung</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
+                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
+                      </div>
+                      <span className="text-gray-700">Benutzerfreundliche Web-App mit mobiler Optimierung</span>
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+            </div>
+            
+            {/* Results and Testimonial */}
+            <div className="bg-[#f8f9fa] rounded-2xl p-8 md:p-12">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                {/* Left Side - Results */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="space-y-6"
+                >
+                  <h3 className="text-2xl font-bold text-[#101010]">Ergebnisse</h3>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="bg-white rounded-xl p-6 shadow-md">
+                      <h4 className="text-[#db9e22] text-3xl font-bold mb-2">75%</h4>
+                      <p className="text-gray-700">Zeitersparnis bei der Dokumentation</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 shadow-md">
+                      <h4 className="text-[#db9e22] text-3xl font-bold mb-2">98%</h4>
+                      <p className="text-gray-700">Genauigkeit der KI-Analysen</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 shadow-md">
+                      <h4 className="text-[#db9e22] text-3xl font-bold mb-2">3x</h4>
+                      <p className="text-gray-700">Schnellere Projektabwicklung</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 shadow-md">
+                      <h4 className="text-[#db9e22] text-3xl font-bold mb-2">89%</h4>
+                      <p className="text-gray-700">Reduzierte Rechtsstreitigkeiten</p>
+                    </div>
+                  </div>
+                </motion.div>
+                
+                {/* Right Side - Testimonial */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="bg-white rounded-xl p-8 shadow-lg relative"
+                >
+                  <div className="absolute -top-6 -left-6 w-12 h-12 bg-[#db9e22] rounded-full flex items-center justify-center shadow-lg">
+                    <Quote className="w-6 h-6 text-white" />
+                  </div>
+                  <blockquote className="text-gray-700 italic mb-6">
+                    "Cliffhanger Studios hat unsere Vision perfekt umgesetzt. Die Web-App mit KI-Integration hat die Art und Weise, wie wir Baumängel dokumentieren, komplett revolutioniert. Unsere Kunden sparen jetzt täglich wertvolle Zeit und können sich auf das konzentrieren, was wirklich zählt: das Bauen. Die Zusammenarbeit war professionell, schnell und äußerst zielgerichtet - genau das, was wir gesucht haben."
+                  </blockquote>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-[#f0f0f0] flex items-center justify-center text-[#101010] font-bold text-xl">
+                      M
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-[#101010]">Michael Roth</h4>
+                      <p className="text-gray-600 text-sm">Geschäftsführer, Ordnex GmbH</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+      
+      {/* Final Call To Action Section */}
+      <section className="relative py-24 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#db9e22]/10 to-[#db9e22]/30 z-0"></div>
+        <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#db9e22]/20 rounded-full blur-3xl -mr-40 -mt-40 z-0"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#db9e22]/20 rounded-full blur-3xl -ml-40 -mb-40 z-0"></div>
+        
+        <Container className="relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+              Starten Sie jetzt Ihre digitale Transformation
+            </h2>
+            
+            {/* Main CTA Button with Glow Effect */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-8 relative"
+            >
+              <Button 
+                size="lg"
+                className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg md:text-xl py-6 px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg"
+                onClick={() => setLocation("/funnel")}
+              >
+                KI-Analyse starten - Dauert nur 5 Minuten
+              </Button>
+              <div className="absolute inset-0 -z-10 bg-[#db9e22] blur-xl rounded-full opacity-40 scale-110 animate-pulse"></div>
+            </motion.div>
+            
+            {/* Divider with Text */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="h-px bg-white/20 w-8"></div>
+              <p className="text-white/70 font-medium">oder</p>
+              <div className="h-px bg-white/20 w-8"></div>
+            </div>
+            
+            {/* Secondary CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Button 
+                size="lg"
+                className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/20 text-lg md:text-xl py-6 px-10 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg"
+                onClick={() => setLocation("/contact")}
+              >
+                Beratungsgespräch vereinbaren
+              </Button>
+            </motion.div>
           </motion.div>
         </Container>
       </section>
