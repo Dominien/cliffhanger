@@ -13,61 +13,63 @@ import {
   Smartphone,
   Laptop,
   ServerIcon,
-  Database
+  Database,
+  Sparkles,
+  Brain
 } from "lucide-react";
 
 const features = [
   {
-    icon: Code,
-    title: "Moderne Technologien",
-    description: "Entwicklung mit neuesten Frameworks und Technologien für optimale Performance und Skalierbarkeit."
+    icon: Brain,
+    title: "KI-gestützte Potentialanalyse",
+    description: "Unsere KI analysiert dein Geschäftsmodell und identifiziert Bereiche, die durch eine Web-App optimiert werden können."
+  },
+  {
+    icon: Sparkles,
+    title: "Personalisierte App-Vorschläge",
+    description: "Erhalte maßgeschneiderte Web-App Ideen, die genau auf die Anforderungen und Ziele deines Unternehmens abgestimmt sind."
   },
   {
     icon: Rocket,
-    title: "Schnelle Entwicklung",
-    description: "Effiziente Entwicklungsprozesse ermöglichen kurze Entwicklungszeiten ohne Qualitätseinbußen."
-  },
-  {
-    icon: Settings,
-    title: "Maßgeschneiderte Lösungen",
-    description: "Individuell auf Ihre Geschäftsprozesse zugeschnittene Anwendungen, die genau Ihren Anforderungen entsprechen."
+    title: "Schnelle Umsetzung",
+    description: "Nach der KI-Bewertung setzen wir deine ausgewählte Web-App Idee in kürzester Zeit um, damit du schnell durchstarten kannst."
   },
   {
     icon: Database,
-    title: "Datenintegration",
-    description: "Nahtlose Integration mit bestehenden Systemen und Datenbanken für einen reibungslosen Workflow."
+    title: "Nahtlose Integration",
+    description: "Wir sorgen für die problemlose Anbindung an deine bestehenden Systeme und Datenbanken für einen reibungslosen Workflow."
   }
 ];
 
 const benefits = [
   {
-    icon: Zap,
-    title: "Digitalisierung beschleunigen",
-    description: "Transformieren Sie Ihre Geschäftsprozesse und steigern Sie die Effizienz durch digitale Lösungen.",
+    icon: Brain,
+    title: "KI-gesteuerte Geschäftsoptimierung",
+    description: "Lass unsere KI dein Geschäftsmodell analysieren und verborgenes Potential aufdecken.",
     points: [
-      "Automatisierung manueller Prozesse",
-      "Reduzierung von Fehlerquellen",
-      "Beschleunigte Arbeitsabläufe"
+      "Automatische Schwachstellenanalyse",
+      "Datengestützte Optimierungsvorschläge",
+      "Maßgeschneiderte Web-App Empfehlungen"
+    ]
+  },
+  {
+    icon: Zap,
+    title: "Sofortige Effizienzsteigerung",
+    description: "Entdecke, wie eine Web-App deine Prozesse automatisieren und deine Effizienz steigern kann.",
+    points: [
+      "Automatisierung manueller Tätigkeiten",
+      "Reduktion von Fehlerquellen um bis zu 90%",
+      "Beschleunigte Arbeitsabläufe durch Digitalisierung"
     ]
   },
   {
     icon: Users,
-    title: "Kundenorientiertes Design",
-    description: "Benutzerfreundliche Anwendungen, die sowohl Ihre Mitarbeiter als auch Kunden begeistern werden.",
+    title: "Verbesserte Kunden- und Mitarbeitererfahrung",
+    description: "Nutzerfreundliche Web-Apps, die sowohl deine Kunden als auch dein Team begeistern werden.",
     points: [
-      "Intuitive Benutzeroberflächen",
-      "Responsive Design für alle Geräte",
-      "Barrierefreier Zugang"
-    ]
-  },
-  {
-    icon: ServerIcon,
-    title: "Skalierbare Infrastruktur",
-    description: "Zukunftssichere Lösungen, die mit Ihrem Unternehmen mitwachsen können.",
-    points: [
-      "Cloud-basierte Architekturen",
-      "Modulare Komponenten",
-      "Flexible Erweiterungen"
+      "Intuitive, maßgeschneiderte Benutzeroberflächen",
+      "Nahtlose Nutzung auf allen Geräten",
+      "Moderne, ansprechende Designs"
     ]
   }
 ];
@@ -75,32 +77,32 @@ const benefits = [
 const processSteps = [
   {
     number: "01",
-    title: "Konzeption & Planung",
-    description: "Wir analysieren Ihre Anforderungen und entwickeln ein maßgeschneidertes Konzept.",
+    title: "KI-Potentialanalyse",
+    description: "Unsere KI analysiert dein Unternehmen und generiert maßgeschneiderte Web-App Ideen.",
     points: [
-      "Detaillierte Anforderungsanalyse",
-      "Technologie-Auswahl",
-      "Projektplanung und Roadmap"
+      "KI-gestützte Geschäftsmodellanalyse",
+      "Automatische Identifikation von Optimierungspotential",
+      "Konkrete Web-App Vorschläge mit ROI-Berechnung"
     ]
   },
   {
     number: "02",
-    title: "Design & Entwicklung",
-    description: "Unsere Experten setzen Ihre Web-App mit modernsten Technologien schnell um.",
+    title: "Konzept & Design",
+    description: "Gemeinsam verfeinern wir die ausgewählte Idee und erstellen ein detailliertes Konzept.",
     points: [
-      "UI/UX Design",
-      "Agile Entwicklungsmethoden",
-      "Kontinuierliche Qualitätssicherung"
+      "Interaktive Bedarfsanalyse & Feedback",
+      "Erstellung von UI/UX Prototypen",
+      "Festlegung von Features und Funktionen"
     ]
   },
   {
     number: "03",
-    title: "Deployment & Support",
-    description: "Nach dem Launch bieten wir umfassenden Support und Weiterentwicklung.",
+    title: "Schnelle Umsetzung & Launch",
+    description: "Wir setzen deine Web-App in kürzester Zeit um und sorgen für einen reibungslosen Start.",
     points: [
-      "Sicheres Deployment",
-      "Kontinuierliche Integration",
-      "Proaktive Wartung und Updates"
+      "Agile Entwicklung mit regelmäßigen Updates",
+      "Testing und Qualitätssicherung",
+      "Nahtlose Integration in bestehende Systeme"
     ]
   }
 ];
@@ -111,46 +113,184 @@ export default function WebAppService() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-24 bg-[#101010] relative overflow-hidden">
+      <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010]">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0" 
+            style={{
+              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1.5px, transparent 0)`,
+              backgroundSize: '32px 32px',
+              backgroundPosition: '-16px -16px',
+              transform: 'rotate(-2deg) scale(1.2)',
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#101010] via-transparent to-[#101010]" />
+        </div>
+
         <Container>
+          {/* Urgency Indicator - Properly centered */}
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center mb-8 md:mb-10"
+          >
+            <div className="relative flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 md:px-5 md:py-2.5 rounded-full shadow-sm border border-white/20">
+              <div className="relative">
+                <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-[#db9e22] rounded-full" />
+                <div className="absolute top-0 left-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#db9e22] rounded-full animate-ping" />
+              </div>
+              <span className="text-xs md:text-sm font-medium text-white/90">
+                NEU: KI-Bewertung deines Web-App Potentials
+              </span>
+            </div>
+          </motion.div>
+
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
             >
               <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-4 block">
-                Web App Entwicklung
+                Intelligente Lösungen für dein Unternehmen
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Professionelle & schnelle Web-App Entwicklung
+              
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                Web-App Ideen von unserer <span className="text-[#db9e22]">KI generiert</span> für dein Business
               </h1>
-              <p className="text-xl text-white/80 mb-8">
-                Maßgeschneiderte Web-Apps mit modernen Technologien für die Digitalisierung und Automatisierung Ihrer Geschäftsprozesse – schnell, effizient und hochwertig.
-              </p>
-              <Button
-                size="lg"
-                onClick={() => setLocation("/funnel")}
-                className="bg-[#db9e22] hover:bg-[#c78d1a] text-white"
+              
+              {/* Feature Icons */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="flex flex-wrap gap-4 md:gap-10 my-6"
               >
-                Jetzt Beratungsgespräch vereinbaren
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+                <div className="flex items-center gap-2">
+                  <div className="bg-[#db9e22]/20 p-1.5 md:p-2 rounded-full">
+                    <Zap className="w-4 h-4 md:w-5 md:h-5 text-[#db9e22]" />
+                  </div>
+                  <span className="text-sm md:text-base font-medium text-white">Schnelle Umsetzung</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="bg-[#db9e22]/20 p-1.5 md:p-2 rounded-full">
+                    <Laptop className="w-4 h-4 md:w-5 md:h-5 text-[#db9e22]" />
+                  </div>
+                  <span className="text-sm md:text-base font-medium text-white">Maßgeschneiderte Lösungen</span>
+                </div>
+              </motion.div>
+              
+              <p className="text-xl text-white/80 mb-8">
+                Lass unsere KI dein Geschäft analysieren und erhalte maßgeschneiderte Web-App Ideen, die dein Unternehmen digitalisieren und optimieren – ohne technisches Vorwissen.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="relative"
+                >
+                  <Button 
+                    size="lg"
+                    className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full sm:w-auto py-5 px-6 md:px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-xl"
+                    onClick={() => setLocation("/funnel")}
+                  >
+                    <Sparkles className="w-5 h-5 mr-2" />
+                    KI-Bewertung starten
+                  </Button>
+                  <div className="absolute -inset-5 -z-10 bg-[#db9e22]/20 blur-2xl rounded-full opacity-50" />
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="border-white/20 text-white hover:bg-white/10 w-full sm:w-auto py-5 px-6 md:px-8"
+                    onClick={() => setLocation("/contact")}
+                  >
+                    Kostenloses Gespräch vereinbaren
+                  </Button>
+                </motion.div>
+              </div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative rounded-xl overflow-hidden aspect-square md:aspect-video"
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative rounded-2xl overflow-hidden aspect-square md:aspect-video bg-[#1a1a1a] border border-white/10 shadow-2xl"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22]/20 to-[#101010] flex items-center justify-center">
-                <div className="relative">
-                  <Laptop className="w-32 h-32 text-white/30 absolute -top-16 -left-24 transform -rotate-12" />
-                  <Code className="w-40 h-40 text-white/20" />
-                  <Smartphone className="w-24 h-24 text-white/30 absolute -bottom-12 -right-16 transform rotate-12" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22]/10 to-[#101010] flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center p-8">
+                  {/* Animated elements */}
+                  <motion.div 
+                    animate={{ 
+                      rotate: [0, 10, 0, -10, 0],
+                      scale: [1, 1.02, 1, 0.98, 1]
+                    }}
+                    transition={{ 
+                      duration: 8, 
+                      repeat: Infinity,
+                      ease: "easeInOut" 
+                    }}
+                    className="absolute top-4 left-4 opacity-50"
+                  >
+                    <Laptop className="w-20 h-20 text-white/30" />
+                  </motion.div>
+                  
+                  <motion.div 
+                    animate={{ 
+                      rotate: [0, -5, 0, 5, 0],
+                      y: [0, -10, 0, 10, 0]
+                    }}
+                    transition={{ 
+                      duration: 6, 
+                      repeat: Infinity,
+                      ease: "easeInOut" 
+                    }}
+                    className="absolute bottom-8 right-8 opacity-40"
+                  >
+                    <Smartphone className="w-16 h-16 text-white/30" />
+                  </motion.div>
+                  
+                  {/* Central code element with pulsing effect */}
+                  <motion.div 
+                    className="relative z-10 bg-[#101010]/80 backdrop-blur-sm p-6 rounded-xl border border-white/10"
+                    animate={{ 
+                      boxShadow: [
+                        "0 0 20px 0px rgba(219, 158, 34, 0.3)",
+                        "0 0 25px 5px rgba(219, 158, 34, 0.4)",
+                        "0 0 20px 0px rgba(219, 158, 34, 0.3)"
+                      ]
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity,
+                      ease: "easeInOut" 
+                    }}
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-[#db9e22]/20 flex items-center justify-center mr-3">
+                        <Sparkles className="w-5 h-5 text-[#db9e22]" />
+                      </div>
+                      <div className="text-white font-medium">Cliffhanger KI Bewertung</div>
+                    </div>
+                    <div className="text-white/70 text-sm space-y-2">
+                      <p>Analysiere Geschäftsprozesse...</p>
+                      <p>Identifiziere Automatisierungspotential...</p>
+                      <p>Generiere maßgeschneiderte Web-App Ideen...</p>
+                      <div className="flex items-center text-[#db9e22]">
+                        <Code className="w-4 h-4 mr-2" />
+                        <span className="font-medium">Optimierungsvorschläge bereit!</span>
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -168,10 +308,10 @@ export default function WebAppService() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#101010] mb-6">
-              Digitale Lösungen für moderne Unternehmen
+              KI-gestützte Analyse & Web-App Entwicklung
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Wir entwickeln Web-Apps, die Ihr Unternehmen voranbringen – schnell, verlässlich und zukunftssicher.
+              Unsere KI identifiziert das Digitalisierungspotential deines Unternehmens und liefert konkrete Web-App Ideen, die wir schnell und effizient umsetzen.
             </p>
           </motion.div>
 
@@ -319,20 +459,40 @@ export default function WebAppService() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-white/20 mb-6">
+              <div className="w-2.5 h-2.5 bg-[#db9e22] rounded-full animate-pulse" />
+              <span className="text-sm font-medium text-white/90">
+                KI-Bewertung ohne Verpflichtung
+              </span>
+            </div>
+            
             <h2 className="text-4xl font-bold text-white mb-6">
-              Bereit für Ihre maßgeschneiderte Web-App?
+              Entdecke das Web-App Potential deines Unternehmens
             </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
-              Lassen Sie uns gemeinsam Ihre Geschäftsprozesse digitalisieren und optimieren
+            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+              Lass unsere KI in wenigen Minuten analysieren, wie eine maßgeschneiderte Web-App dein Business transformieren kann.
             </p>
-            <Button
-              size="lg"
-              onClick={() => setLocation("/funnel")}
-              className="bg-[#db9e22] hover:bg-[#c78d1a] text-white text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 group"
-            >
-              Jetzt kostenloses Beratungsgespräch vereinbaren
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </Button>
+            
+            <div className="flex flex-col sm:flex-row max-w-md mx-auto sm:max-w-none justify-center gap-6">
+              <Button
+                size="lg"
+                onClick={() => setLocation("/funnel")}
+                className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group rounded-xl"
+              >
+                <Sparkles className="w-5 h-5 mr-3" />
+                KI-Bewertung jetzt starten
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => setLocation("/contact")}
+                className="border-white/20 text-white hover:bg-white/10 text-lg py-6 px-8"
+              >
+                Kostenloses Gespräch vereinbaren
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Button>
+            </div>
           </motion.div>
         </Container>
       </section>
