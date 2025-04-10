@@ -158,7 +158,8 @@ export default function WebAppService() {
               </span>
               
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                Web-App Ideen von unserer <span className="text-[#db9e22] inline-block">KI</span>, gebaut von uns
+                <span className="text-[#db9e22]">Web-App Ideen</span> von unserer KI,<br/> 
+                <span className="text-[#db9e22]">gebaut von uns</span>
               </h1>
               
               <motion.p 
@@ -216,7 +217,7 @@ export default function WebAppService() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#101010] mb-6">
-              KI-Ideen + unser Team = deine perfekte Web-App
+              Innovative Ideen, professionell umgesetzt
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               So einfach geht's: Unsere KI findet die besten Web-App Ideen für dein Business. Dann besprechen wir alles mit dir und unser Team baut die App genau nach deinen Wünschen.
