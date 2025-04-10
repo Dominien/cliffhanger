@@ -39,8 +39,24 @@ const insertFunnelResponseSchema = z.object({
   })
 });
 
-// Initialize Resend with API key - exact same way as in chat.ts
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend with API key - with more logging for debugging
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+console.log('RESEND_API_KEY available:', !!RESEND_API_KEY);
+console.log('RESEND_API_KEY first 4 chars:', RESEND_API_KEY ? RESEND_API_KEY.substring(0, 4) : 'none');
+
+let resend;
+try {
+  if (!RESEND_API_KEY) {
+    console.warn('WARNING: RESEND_API_KEY is not set - email notifications will be logged but not sent');
+    resend = {} as any;
+  } else {
+    console.log('Initializing Resend with API key');
+    resend = new Resend(RESEND_API_KEY);
+  }
+} catch (err) {
+  console.error('Error initializing Resend:', err);
+  resend = {} as any;
+}
 
 export default async function handler(req: Request, res: Response) {
   console.log('Funnel endpoint called with method:', req.method);
@@ -118,8 +134,23 @@ export default async function handler(req: Request, res: Response) {
     // Then try to send the email
     try {
       console.log('Attempting to send email with Resend...');
+      console.log('Resend initialized:', !!resend && !!resend.emails);
       console.log('From:', process.env.EMAIL_FROM || 'noreply@cliffhangerstudios.de');
       console.log('To:', process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de');
+      
+      // Check if Resend is properly initialized with send method
+      if (!resend || !resend.emails || !resend.emails.send) {
+        console.error('ERROR: Resend not properly initialized');
+        throw new Error('Resend not properly initialized');
+      }
+      
+      // Full detailed logging for debugging
+      console.log('Email options:', {
+        from: process.env.EMAIL_FROM || 'noreply@cliffhangerstudios.de',
+        to: process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de',
+        subject: `Neue Formular-Einreichung: ${data.firstName} ${data.lastName}`,
+        htmlLength: emailHtml?.length || 0
+      });
       
       // Use identical Resend call structure as in chat.ts
       const emailResult = await resend.emails.send({
@@ -135,6 +166,9 @@ export default async function handler(req: Request, res: Response) {
       if (emailError instanceof Error) {
         console.error('Error message:', emailError.message);
         console.error('Error name:', emailError.name);
+        console.error('Error stack:', emailError.stack);
+      } else {
+        console.error('Non-Error object thrown:', typeof emailError, emailError);
       }
     }
     
