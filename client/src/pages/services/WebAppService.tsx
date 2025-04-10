@@ -625,14 +625,14 @@ export default function WebAppService() {
                   </div>
                   
                   <div className="pl-16 lg:pl-0 lg:text-center">
-                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 h-48 flex flex-col">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 flex flex-col">
                       <div className="lg:h-16 flex items-center justify-center lg:mb-4">
                         <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
                           <Brain className="w-6 h-6 text-[#db9e22]" />
                         </div>
                       </div>
                       <h3 className="text-xl font-bold text-[#101010] mb-3">KI-Analyse</h3>
-                      <p className="text-gray-600">
+                      <p className="text-gray-600 min-h-[60px] flex items-center">
                         Unsere KI prüft Ihr Unternehmen und findet die passende Web-App Idee
                       </p>
                     </div>
@@ -662,14 +662,14 @@ export default function WebAppService() {
                   </div>
                   
                   <div className="pl-16 lg:pl-0 lg:text-center">
-                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 h-48 flex flex-col">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 flex flex-col">
                       <div className="lg:h-16 flex items-center justify-center lg:mb-4">
                         <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
                           <Users className="w-6 h-6 text-[#db9e22]" />
                         </div>
                       </div>
                       <h3 className="text-xl font-bold text-[#101010] mb-3">Beratungsgespräch</h3>
-                      <p className="text-gray-600">
+                      <p className="text-gray-600 min-h-[60px] flex items-center">
                         Wir besprechen die KI-Vorschläge und planen Ihre individuelle Lösung
                       </p>
                     </div>
@@ -699,14 +699,14 @@ export default function WebAppService() {
                   </div>
                   
                   <div className="pl-16 lg:pl-0 lg:text-center">
-                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 h-48 flex flex-col">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 flex flex-col">
                       <div className="lg:h-16 flex items-center justify-center lg:mb-4">
                         <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
                           <Code className="w-6 h-6 text-[#db9e22]" />
                         </div>
                       </div>
                       <h3 className="text-xl font-bold text-[#101010] mb-3">Entwicklung</h3>
-                      <p className="text-gray-600">
+                      <p className="text-gray-600 min-h-[60px] flex items-center">
                         Unsere Experten bauen Ihre maßgeschneiderte Web-App
                       </p>
                     </div>
@@ -736,14 +736,14 @@ export default function WebAppService() {
                   </div>
                   
                   <div className="pl-16 lg:pl-0 lg:text-center">
-                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 h-48 flex flex-col">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 flex flex-col">
                       <div className="lg:h-16 flex items-center justify-center lg:mb-4">
                         <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
                           <Rocket className="w-6 h-6 text-[#db9e22]" />
                         </div>
                       </div>
                       <h3 className="text-xl font-bold text-[#101010] mb-3">Fertige Lösung</h3>
-                      <p className="text-gray-600">
+                      <p className="text-gray-600 min-h-[60px] flex items-center">
                         Sie erhalten Ihre Web-App, komplett eingerichtet und sofort einsatzbereit
                       </p>
                     </div>
@@ -778,7 +778,7 @@ export default function WebAppService() {
       {/* Failure Section */}
       <section className="py-24 bg-[#101010] relative overflow-hidden">
         {/* Background Elements */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-10">
           <div 
             className="absolute inset-0"
             style={{
@@ -797,9 +797,11 @@ export default function WebAppService() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-4 block">
-                Dringender Handlungsbedarf
-              </span>
+              <div className="inline-block px-4 py-1 bg-[#db9e22]/10 rounded-full mb-6">
+                <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider">
+                  Dringender Handlungsbedarf
+                </span>
+              </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Warum jetzt handeln wichtig ist
               </h2>
@@ -818,36 +820,70 @@ export default function WebAppService() {
                 transition={{ duration: 0.8 }}
                 className="relative"
               >
-                <div className="relative h-full flex flex-col justify-center">
-                  {/* Competitor Moving Forward */}
-                  <div className="absolute -right-4 top-0 md:top-8 w-24 h-24 md:w-32 md:h-32 bg-white/10 backdrop-blur-sm rounded-2xl p-3 shadow-lg border border-white/20 transform translate-x-4 translate-y-4 rotate-6">
-                    <div className="w-full h-full flex flex-col items-center justify-center">
-                      <Rocket className="w-8 h-8 md:w-12 md:h-12 text-[#db9e22] mb-2" />
-                      <span className="text-white text-xs md:text-sm font-semibold text-center">Ihre Wettbewerber</span>
+                <div className="relative flex flex-col justify-center h-[450px] md:h-auto">
+                  {/* Mobile Layout - Stacked cards with fixed positioning */}
+                  <div className="md:hidden flex flex-col space-y-6 items-center justify-center">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/20 w-full max-w-[280px]">
+                      <div className="flex items-center space-x-4">
+                        <Rocket className="w-10 h-10 text-[#db9e22] flex-shrink-0" />
+                        <span className="text-white text-sm font-semibold">Ihre Wettbewerber gewinnen Marktanteile</span>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/20 w-full max-w-[280px]">
+                      <div className="flex items-center space-x-4">
+                        <BanknoteIcon className="w-10 h-10 text-red-500 flex-shrink-0" />
+                        <span className="text-white text-sm font-semibold">Verlorenes Potenzial und Umsatz</span>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-[#151515] backdrop-blur-sm rounded-xl p-6 shadow-xl border border-[#db9e22]/30 w-full max-w-[280px]">
+                      <div className="flex flex-col items-center text-center">
+                        <AlertTriangleIcon className="w-14 h-14 text-[#db9e22] mb-3" />
+                        <span className="text-white text-base font-semibold">Sie verlieren den Anschluss</span>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/20 w-full max-w-[280px]">
+                      <div className="flex items-center space-x-4">
+                        <Clock className="w-10 h-10 text-red-500 flex-shrink-0" />
+                        <span className="text-white text-sm font-semibold">Verlorene Zeit und Effizienz</span>
+                      </div>
                     </div>
                   </div>
                   
-                  {/* Money Loss */}
-                  <div className="absolute left-8 top-12 md:top-32 w-20 h-20 md:w-28 md:h-28 bg-white/10 backdrop-blur-sm rounded-2xl p-3 shadow-lg border border-white/20 transform -translate-x-4 -rotate-12">
-                    <div className="w-full h-full flex flex-col items-center justify-center">
-                      <BanknoteIcon className="w-7 h-7 md:w-10 md:h-10 text-red-500 mb-1" />
-                      <span className="text-white text-xs font-semibold text-center">Verlorenes Potenzial</span>
+                  {/* Desktop Layout - Floating cards */}
+                  <div className="hidden md:block">
+                    {/* Competitor Moving Forward */}
+                    <div className="absolute right-4 top-8 w-32 h-32 bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20 transform rotate-6">
+                      <div className="w-full h-full flex flex-col items-center justify-center">
+                        <Rocket className="w-12 h-12 text-[#db9e22] mb-3" />
+                        <span className="text-white text-sm font-semibold text-center">Ihre Wettbewerber</span>
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Time Waste */}
-                  <div className="absolute right-4 bottom-12 md:bottom-24 w-20 h-20 md:w-28 md:h-28 bg-white/10 backdrop-blur-sm rounded-2xl p-3 shadow-lg border border-white/20 transform translate-y-4 rotate-12">
-                    <div className="w-full h-full flex flex-col items-center justify-center">
-                      <Clock className="w-7 h-7 md:w-10 md:h-10 text-red-500 mb-1" />
-                      <span className="text-white text-xs font-semibold text-center">Verlorene Zeit</span>
+                    
+                    {/* Money Loss */}
+                    <div className="absolute left-12 top-24 w-28 h-28 bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20 transform -rotate-6">
+                      <div className="w-full h-full flex flex-col items-center justify-center">
+                        <BanknoteIcon className="w-10 h-10 text-red-500 mb-2" />
+                        <span className="text-white text-xs font-semibold text-center">Verlorenes Potenzial</span>
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Main Element - You Falling Behind */}
-                  <div className="mx-auto w-36 h-36 md:w-44 md:h-44 bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20 relative z-10">
-                    <div className="w-full h-full flex flex-col items-center justify-center">
-                      <AlertTriangleIcon className="w-12 h-12 md:w-16 md:h-16 text-[#db9e22] mb-3" />
-                      <span className="text-white text-sm md:text-base font-semibold text-center">Sie verlieren den Anschluss</span>
+                    
+                    {/* Time Waste */}
+                    <div className="absolute right-10 bottom-24 w-28 h-28 bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20 transform rotate-6">
+                      <div className="w-full h-full flex flex-col items-center justify-center">
+                        <Clock className="w-10 h-10 text-red-500 mb-2" />
+                        <span className="text-white text-xs font-semibold text-center">Verlorene Zeit</span>
+                      </div>
+                    </div>
+                    
+                    {/* Main Element - You Falling Behind */}
+                    <div className="mx-auto w-44 h-44 bg-[#151515] backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#db9e22]/30 relative z-10">
+                      <div className="w-full h-full flex flex-col items-center justify-center">
+                        <AlertTriangleIcon className="w-16 h-16 text-[#db9e22] mb-4" />
+                        <span className="text-white text-base font-semibold text-center">Sie verlieren den Anschluss</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -861,28 +897,32 @@ export default function WebAppService() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="space-y-6"
               >
-                <p className="text-xl text-white/80 font-medium">
-                  Jeder Tag ohne die richtige digitale Lösung kostet Sie:
-                </p>
+                <div className="bg-[#151515] p-5 rounded-xl mb-8">
+                  <p className="text-xl text-white font-medium">
+                    Jeder Tag ohne die richtige digitale Lösung kostet Sie:
+                  </p>
+                </div>
                 
-                <div className="space-y-5">
+                <div className="space-y-8">
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.3 }}
-                    className="flex items-start gap-4 group"
+                    className="bg-[#1a1a1a] rounded-xl p-5 border border-white/5 hover:border-[#db9e22]/20 transition-all duration-300 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
-                      <CreditCardIcon className="w-6 h-6 text-[#db9e22]" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">
-                        Verlorene Einnahmen
-                      </h3>
-                      <p className="text-white/70">
-                        Ineffiziente Prozesse reduzieren Ihre Kapazität für Neugeschäft und gewinnbringende Projekte
-                      </p>
+                    <div className="flex items-start gap-5">
+                      <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
+                        <CreditCardIcon className="w-6 h-6 text-[#db9e22]" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-white mb-2">
+                          Verlorene Einnahmen
+                        </h3>
+                        <p className="text-white/70">
+                          Ineffiziente Prozesse reduzieren Ihre Kapazität für Neugeschäft und gewinnbringende Projekte
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
                   
@@ -891,18 +931,20 @@ export default function WebAppService() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.4 }}
-                    className="flex items-start gap-4 group"
+                    className="bg-[#1a1a1a] rounded-xl p-5 border border-white/5 hover:border-[#db9e22]/20 transition-all duration-300 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
-                      <Clock className="w-6 h-6 text-[#db9e22]" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">
-                        Vergeudete Arbeitszeit
-                      </h3>
-                      <p className="text-white/70">
-                        Manuelle Prozesse binden Personal, das wertschöpfendere Aufgaben übernehmen könnte
-                      </p>
+                    <div className="flex items-start gap-5">
+                      <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
+                        <Clock className="w-6 h-6 text-[#db9e22]" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-white mb-2">
+                          Vergeudete Arbeitszeit
+                        </h3>
+                        <p className="text-white/70">
+                          Manuelle Prozesse binden Personal, das wertschöpfendere Aufgaben übernehmen könnte
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
                   
@@ -911,58 +953,20 @@ export default function WebAppService() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.5 }}
-                    className="flex items-start gap-4 group"
+                    className="bg-[#1a1a1a] rounded-xl p-5 border border-white/5 hover:border-[#db9e22]/20 transition-all duration-300 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
-                      <Users className="w-6 h-6 text-[#db9e22]" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">
-                        Wettbewerbsnachteil
-                      </h3>
-                      <p className="text-white/70">
-                        Ihre Konkurrenz verbessert sich täglich durch digitale Optimierung
-                      </p>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.6 }}
-                    className="flex items-start gap-4 group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
-                      <TrendingDown className="w-6 h-6 text-[#db9e22]" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">
-                        Entgangene Innovationschancen
-                      </h3>
-                      <p className="text-white/70">
-                        Ohne digitale Transformation verpassen Sie Möglichkeiten, Ihr Geschäftsmodell zu erweitern
-                      </p>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.7 }}
-                    className="flex items-start gap-4 group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
-                      <UserMinus className="w-6 h-6 text-[#db9e22]" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">
-                        Mitarbeiterfluktuation
-                      </h3>
-                      <p className="text-white/70">
-                        Talentierte Fachkräfte bevorzugen Unternehmen mit modernen digitalen Werkzeugen
-                      </p>
+                    <div className="flex items-start gap-5">
+                      <div className="w-12 h-12 rounded-xl bg-[#db9e22]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#db9e22]/30 transition-colors duration-300">
+                        <Users className="w-6 h-6 text-[#db9e22]" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-white mb-2">
+                          Wettbewerbsnachteil
+                        </h3>
+                        <p className="text-white/70">
+                          Ihre Konkurrenz verbessert sich täglich durch digitale Optimierung
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
                 </div>
@@ -972,11 +976,11 @@ export default function WebAppService() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.8 }}
-                  className="pt-6"
+                  className="pt-8"
                 >
                   <Button 
                     size="lg"
-                    className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full sm:w-auto py-5 px-6 md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg mt-4"
+                    className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full py-5 px-6 md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg"
                     onClick={() => setLocation("/funnel")}
                   >
                     KI-Analyse jetzt starten
