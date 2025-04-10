@@ -1,6 +1,14 @@
 import { Request, Response } from 'express';
-import { insertContactSchema } from '../shared/schema';
+import { z } from 'zod';
 import { Resend } from 'resend';
+
+// Contact form schema
+const insertContactSchema = z.object({
+  name: z.string().min(2, "Please enter your name"),
+  email: z.string().email("Please enter a valid email address"),
+  website: z.string().regex(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.*$/, "Bitte geben Sie eine gültige Website-Adresse ein (z.B. www.name.de)").optional().or(z.literal('')),
+  goal: z.string().min(5, "Please describe your goal briefly")
+});
 
 // Initialize Resend with API key - exact same way as in chat.ts
 const resend = new Resend(process.env.RESEND_API_KEY);

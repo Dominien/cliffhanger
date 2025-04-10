@@ -217,37 +217,69 @@ export default function FunnelPage() {
       const response = await fetchWithTimeout(fetchUrl, fetchOptions);
       console.log("FUNNEL SUBMIT: Response received, status:", response.status);
       
-      // Always show success message
-      toast({
-        title: "Vielen Dank!",
-        description: "Wir werden uns in Kürze bei Ihnen melden.",
-      });
-      
-      // Try to read response text
-      try {
-        const responseText = await response.text();
-        console.log("FUNNEL SUBMIT: Response text:", responseText);
+      if (response.ok) {
+        // Show success message
+        toast({
+          title: "Vielen Dank!",
+          description: "Wir werden uns in Kürze bei Ihnen melden.",
+        });
         
-        if (responseText) {
-          try {
-            const jsonData = JSON.parse(responseText);
-            console.log("FUNNEL SUBMIT: Response JSON:", jsonData);
-          } catch (e) {
-            console.log("FUNNEL SUBMIT: Response is not valid JSON");
+        // Try to read response text
+        try {
+          const responseText = await response.text();
+          console.log("FUNNEL SUBMIT: Response text:", responseText);
+          
+          if (responseText) {
+            try {
+              const jsonData = JSON.parse(responseText);
+              console.log("FUNNEL SUBMIT: Response JSON:", jsonData);
+            } catch (e) {
+              console.log("FUNNEL SUBMIT: Response is not valid JSON");
+            }
           }
+        } catch (readError) {
+          console.error("FUNNEL SUBMIT: Error reading response:", readError);
         }
-      } catch (readError) {
-        console.error("FUNNEL SUBMIT: Error reading response:", readError);
+        
+        // Don't redirect - allow user to check network tab
+        console.log("FUNNEL SUBMIT: Success! Form submitted. Check network tab for details.");
+        toast({
+          title: "Erfolg!",
+          description: "Formular wurde erfolgreich gesendet. Die Seite bleibt geöffnet, damit Sie den Network-Tab überprüfen können.",
+          duration: 10000
+        });
+      } else {
+        console.error("FUNNEL SUBMIT: Unsuccessful response:", response.status);
+        
+        // Try to read error response
+        let errorMessage = "Es gab ein Problem bei der Übermittlung.";
+        try {
+          const errorText = await response.text();
+          console.log("FUNNEL SUBMIT: Error response text:", errorText);
+          
+          try {
+            const errorJson = JSON.parse(errorText);
+            if (errorJson.message || errorJson.error) {
+              errorMessage = errorJson.message || errorJson.error;
+            }
+          } catch (e) {
+            // If not JSON, use the raw text
+            if (errorText) {
+              errorMessage = errorText;
+            }
+          }
+        } catch (e) {
+          console.error("FUNNEL SUBMIT: Could not read error response:", e);
+        }
+        
+        // Show error toast
+        toast({
+          variant: "destructive",
+          title: "Fehler",
+          description: errorMessage,
+          duration: 10000
+        });
       }
-      
-      // Don't redirect - allow user to check network tab
-      console.log("FUNNEL SUBMIT: Success! Form submitted. Check network tab for details.");
-      toast({
-        title: "Erfolg!",
-        description: "Formular wurde erfolgreich gesendet. Die Seite bleibt geöffnet, damit Sie den Network-Tab überprüfen können.",
-        duration: 10000
-      });
-      
     } catch (error) {
       console.error("FUNNEL SUBMIT: Submission error:", error);
       

@@ -1,6 +1,38 @@
 import { Request, Response } from 'express';
-import { insertFunnelResponseSchema } from './shared-schema';
+import { z } from 'zod';
 import { Resend } from 'resend';
+
+// Funnel response schema without database integration
+const insertFunnelResponseSchema = z.object({
+  businessType: z.enum(["service", "business"], {
+    errorMap: () => ({ message: "Please select your business type" })
+  }),
+  selectedService: z.enum(["landing_page", "chatbot", "media", "complete"], {
+    errorMap: () => ({ message: "Please select a service" })
+  }),
+  projectTimeline: z.enum(["immediate", "next_quarter", "planning"], {
+    errorMap: () => ({ message: "Please select your project timeline" })
+  }),
+  projectGoals: z.enum([
+    "increase_sales",
+    "improve_support",
+    "automate_faq",
+    "lead_generation",
+    "other"
+  ], {
+    errorMap: () => ({ message: "Please select your project goals" })
+  }),
+  firstName: z.string().min(2, "Please enter your first name"),
+  lastName: z.string().min(2, "Please enter your last name"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().min(5, "Please enter a valid phone number"),
+  website: z.string().regex(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.*$/, "Bitte geben Sie eine gültige Website-Adresse ein (z.B. www.name.de)").optional().or(z.literal('')),
+  companyName: z.string().min(2, "Please enter a valid company name").optional(),
+  message: z.string().optional(),
+  privacyAccepted: z.literal(true, {
+    errorMap: () => ({ message: "Please accept the privacy policy" })
+  })
+});
 
 // Initialize Resend with API key - exact same way as in chat.ts
 const resend = new Resend(process.env.RESEND_API_KEY);
