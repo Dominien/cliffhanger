@@ -33,39 +33,51 @@ const insertLeadResponseSchema = z.object({
   lastName: z.string().min(2, "Please enter your last name"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(5, "Please enter a valid phone number"),
-  website: z.string().url("Please enter a valid website URL").optional(),
+  website: z.string().regex(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.*$/, "Bitte geben Sie eine gültige Website-Adresse ein (z.B. www.name.de)").optional().or(z.literal('')),
   companyName: z.string().min(2, "Please enter a valid company name").optional(),
   currentChatbot: z.boolean().optional(),
-  privacyAccepted: z.literal(true)
+  privacyAccepted: z.literal(true, {
+    errorMap: () => ({ message: "Please accept the privacy policy" })
+  })
 });
 
 // Funnel response schema
 const insertFunnelResponseSchema = z.object({
-  businessType: z.enum(["service", "business"]),
-  selectedService: z.enum(["landing_page", "chatbot", "media", "complete"]),
-  projectTimeline: z.enum(["immediate", "next_quarter", "planning"]),
+  businessType: z.enum(["service", "business"], {
+    errorMap: () => ({ message: "Please select your business type" })
+  }),
+  selectedService: z.enum(["landing_page", "chatbot", "media", "complete"], {
+    errorMap: () => ({ message: "Please select a service" })
+  }),
+  projectTimeline: z.enum(["immediate", "next_quarter", "planning"], {
+    errorMap: () => ({ message: "Please select your project timeline" })
+  }),
   projectGoals: z.enum([
     "increase_sales",
     "improve_support",
     "automate_faq",
     "lead_generation",
     "other"
-  ]),
+  ], {
+    errorMap: () => ({ message: "Please select your project goals" })
+  }),
   firstName: z.string().min(2, "Please enter your first name"),
   lastName: z.string().min(2, "Please enter your last name"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(5, "Please enter a valid phone number"),
-  website: z.string().url("Please enter a valid website URL").optional(),
+  website: z.string().regex(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.*$/, "Bitte geben Sie eine gültige Website-Adresse ein (z.B. www.name.de)").optional().or(z.literal('')),
   companyName: z.string().min(2, "Please enter a valid company name").optional(),
   message: z.string().optional(),
-  privacyAccepted: z.literal(true)
+  privacyAccepted: z.literal(true, {
+    errorMap: () => ({ message: "Please accept the privacy policy" })
+  })
 });
 
 // Contact form schema
 const insertContactSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Please enter a valid email address"),
-  website: z.string().url("Please enter a valid website URL").optional(),
+  website: z.string().regex(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.*$/, "Bitte geben Sie eine gültige Website-Adresse ein (z.B. www.name.de)").optional().or(z.literal('')),
   goal: z.string().min(5, "Please describe your goal briefly")
 });
 
@@ -103,7 +115,14 @@ app.post('/api/lead-responses', async (req, res) => {
     const data = insertLeadResponseSchema.parse(req.body);
     console.log('Received lead response:', JSON.stringify(data));
     
-    // Send email notification
+    // Return success response with a generated ID immediately
+    res.json({ 
+      id: Math.floor(Math.random() * 10000),
+      ...data,
+      createdAt: new Date().toISOString()
+    });
+    
+    // Send email notification after responding to client
     if (process.env.RESEND_API_KEY) {
       try {
         const emailResult = await resend.emails.send({
@@ -132,18 +151,11 @@ app.post('/api/lead-responses', async (req, res) => {
         console.log('Email sent successfully:', emailResult);
       } catch (emailError) {
         console.error('Failed to send email notification:', emailError);
-        // Continue with the response even if email fails
+        // Email failure doesn't affect client response since we've already responded
       }
     } else {
       console.warn('RESEND_API_KEY not set, skipping email notification');
     }
-    
-    // Return success response with a generated ID
-    res.json({ 
-      id: Math.floor(Math.random() * 10000),
-      ...data,
-      createdAt: new Date().toISOString()
-    });
   } catch (error) {
     console.error('Error in /api/lead-responses:', error);
     if (error instanceof Error) {
@@ -167,7 +179,14 @@ app.post('/api/funnel-responses', async (req, res) => {
     const data = insertFunnelResponseSchema.parse(req.body);
     console.log('Received funnel response:', JSON.stringify(data));
     
-    // Send email notification
+    // Return success response immediately - don't wait for email
+    res.json({ 
+      id: Math.floor(Math.random() * 10000),
+      ...data,
+      createdAt: new Date().toISOString()
+    });
+    
+    // Send email notification after responding to client
     if (process.env.RESEND_API_KEY) {
       try {
         const emailResult = await resend.emails.send({
@@ -197,18 +216,11 @@ app.post('/api/funnel-responses', async (req, res) => {
         console.log('Email sent successfully:', emailResult);
       } catch (emailError) {
         console.error('Failed to send email notification:', emailError);
-        // Continue with the response even if email fails
+        // Email failure doesn't affect client response since we've already responded
       }
     } else {
       console.warn('RESEND_API_KEY not set, skipping email notification');
     }
-    
-    // Return success response with a generated ID
-    res.json({ 
-      id: Math.floor(Math.random() * 10000),
-      ...data,
-      createdAt: new Date().toISOString()
-    });
   } catch (error) {
     console.error('Error in /api/funnel-responses:', error);
     if (error instanceof Error) {
@@ -231,7 +243,10 @@ app.post('/api/contact', async (req, res) => {
     const data = insertContactSchema.parse(req.body);
     console.log('Received contact form submission:', JSON.stringify(data));
     
-    // Send email notification
+    // Return success response immediately
+    res.json({ success: true });
+    
+    // Send email notification after responding to client
     if (process.env.RESEND_API_KEY) {
       try {
         const emailResult = await resend.emails.send({
@@ -252,14 +267,11 @@ app.post('/api/contact', async (req, res) => {
         console.log('Email sent successfully:', emailResult);
       } catch (emailError) {
         console.error('Failed to send email notification:', emailError);
-        // Continue with the response even if email fails
+        // Email failure doesn't affect client response since we've already responded
       }
     } else {
       console.warn('RESEND_API_KEY not set, skipping email notification');
     }
-    
-    // Return success response
-    res.json({ success: true });
   } catch (error) {
     console.error('Error in /api/contact:', error);
     res.status(500).json({

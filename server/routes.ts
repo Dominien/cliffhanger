@@ -26,7 +26,10 @@ export async function registerRoutes(app: Express) {
       const data = req.body;
       console.log('Received contact form submission:', JSON.stringify(data));
       
-      // Send email notification
+      // Return success response immediately
+      res.json({ success: true });
+      
+      // Send email notification after responding to client
       if (process.env.RESEND_API_KEY) {
         try {
           const emailResult = await resend.emails.send({
@@ -52,9 +55,6 @@ export async function registerRoutes(app: Express) {
       } else {
         console.warn('RESEND_API_KEY not set, skipping email notification');
       }
-      
-      // Return success response
-      res.json({ success: true });
     } catch (error) {
       console.error('Error in /api/contact:', error);
       res.status(500).json({
@@ -98,7 +98,14 @@ export async function registerRoutes(app: Express) {
       const data = insertLeadResponseSchema.parse(req.body);
       console.log('Received lead response:', JSON.stringify(data));
       
-      // Send email notification
+      // Return success response immediately
+      res.json({ 
+        id: Math.floor(Math.random() * 10000),
+        ...data,
+        createdAt: new Date().toISOString()
+      });
+      
+      // Send email notification after responding to client
       if (process.env.RESEND_API_KEY) {
         try {
           const emailResult = await resend.emails.send({
@@ -127,18 +134,11 @@ export async function registerRoutes(app: Express) {
           console.log('Email sent successfully:', emailResult);
         } catch (emailError) {
           console.error('Failed to send email notification:', emailError);
-          // Continue with the response even if email fails
+          // Email failure doesn't affect client response since we've already responded
         }
       } else {
         console.warn('RESEND_API_KEY not set, skipping email notification');
       }
-      
-      // Return success response with a generated ID
-      res.json({ 
-        id: Math.floor(Math.random() * 10000),
-        ...data,
-        createdAt: new Date().toISOString()
-      });
     } catch (error) {
       console.error('Error in /api/lead-responses:', error);
       if (error instanceof Error) {
@@ -162,7 +162,14 @@ export async function registerRoutes(app: Express) {
       const data = insertFunnelResponseSchema.parse(req.body);
       console.log('Received funnel response:', JSON.stringify(data));
       
-      // Send email notification
+      // Return success response immediately - don't wait for email
+      res.json({ 
+        id: Math.floor(Math.random() * 10000),
+        ...data,
+        createdAt: new Date().toISOString()
+      });
+      
+      // Send email notification after responding to client
       if (process.env.RESEND_API_KEY) {
         try {
           const emailResult = await resend.emails.send({
@@ -192,18 +199,11 @@ export async function registerRoutes(app: Express) {
           console.log('Email sent successfully:', emailResult);
         } catch (emailError) {
           console.error('Failed to send email notification:', emailError);
-          // Continue with the response even if email fails
+          // Email failure doesn't affect client response since we've already responded
         }
       } else {
         console.warn('RESEND_API_KEY not set, skipping email notification');
       }
-      
-      // Return success response with a generated ID
-      res.json({ 
-        id: Math.floor(Math.random() * 10000),
-        ...data,
-        createdAt: new Date().toISOString()
-      });
     } catch (error) {
       console.error('Error in /api/funnel-responses:', error);
       if (error instanceof Error) {

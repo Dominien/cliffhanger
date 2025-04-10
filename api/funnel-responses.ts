@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { insertFunnelResponseSchema } from '../shared/schema';
+import { insertFunnelResponseSchema } from './shared-schema';
 import { Resend } from 'resend';
 
 // Initialize Resend with API key - exact same way as in chat.ts
