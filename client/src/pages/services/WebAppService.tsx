@@ -158,8 +158,8 @@ export default function WebAppService() {
               </span>
               
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                <span className="text-[#db9e22]">Web-App Ideen</span> von unserer KI,<br/> 
-                <span className="text-[#db9e22]">gebaut von uns</span>
+                Maßgeschneiderte <span className="text-[#db9e22]">Web-Apps</span><br/>
+                für dein Business
               </h1>
               
               <motion.p 
