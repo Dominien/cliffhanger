@@ -177,21 +177,40 @@ export default function FunnelPage() {
         description: "Ihre Anfrage wird verarbeitet.",
       });
       
-      // Send data to API endpoint
+      // Send data to the API endpoint that's working for chat
+      console.log(`Sending to API endpoint: /api/funnel-responses`);
       const response = await fetch("/api/funnel-responses", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
         body: JSON.stringify(data)
       });
+      
+      console.log("Response status:", response.status);
+      
+      let responseText = '';
+      try {
+        responseText = await response.text();
+        console.log("Response text:", responseText);
+        
+        // Try to parse JSON
+        if (responseText) {
+          const jsonData = JSON.parse(responseText);
+          console.log("Response parsed:", jsonData);
+        }
+      } catch (parseError) {
+        console.error("Error parsing response:", parseError);
+        console.log("Raw response:", responseText);
+      }
       
       if (!response.ok) {
         throw new Error(`Request failed with status ${response.status}`);
       }
       
-      const responseData = await response.json();
-      console.log("Form submission successful:", responseData);
-      
-      // Show success message
+      // Show success message regardless of email status
+      // The server will handle the email separately
       toast({
         title: "Vielen Dank!",
         description: "Wir werden uns in Kürze bei Ihnen melden.",
