@@ -83,9 +83,25 @@ export default function WhyCliffhangerSection() {
               className="group"
             >
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 h-full border border-white/10 hover:border-[#db9e22]/50 transition-all duration-300">
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-lg bg-[#db9e22]/10 flex items-center justify-center mb-5 group-hover:bg-[#db9e22]/20 transition-colors">
-                  <benefit.icon className="w-7 h-7 text-[#db9e22]" />
+                {/* Icon with animated background effect */}
+                <div className="relative mb-5">
+                  <motion.div
+                    animate={{
+                      rotate: 360,
+                    }}
+                    transition={{
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    className="absolute inset-0"
+                  >
+                    <div className="w-full h-full rounded-full bg-gradient-to-r from-[#db9e22]/30 via-transparent to-[#db9e22]/30 blur-lg" />
+                  </motion.div>
+
+                  <div className="relative z-10 w-14 h-14 rounded-lg bg-[#101010] border border-[#db9e22]/30 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                    <benefit.icon className="w-7 h-7 text-[#db9e22]" />
+                  </div>
                 </div>
 
                 <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-[#db9e22] transition-colors">
@@ -124,11 +140,6 @@ export default function WhyCliffhangerSection() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-colors cursor-pointer mb-8" onClick={() => setLocation("/funnel")}>
-            <span className="text-white font-medium">Kostenlose Beratung buchen</span>
-            <ArrowRight className="w-4 h-4 text-[#db9e22]" />
-          </div>
-          
           <div className="max-w-2xl mx-auto">
             <Button
               size="lg"
