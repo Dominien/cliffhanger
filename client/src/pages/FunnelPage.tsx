@@ -450,13 +450,13 @@ export default function FunnelPage() {
                         name="website"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-white">Website (optional)</FormLabel>
+                            <FormLabel className="text-white">Website (komplett optional)</FormLabel>
                             <FormControl>
                               <Input 
                                 className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#db9e22]" 
                                 {...field} 
-                                type="url" 
-                                placeholder="z.B. www.example.com"
+                                
+                                placeholder="z.B. www.name.de (kann leer bleiben)"
                               />
                             </FormControl>
                             <FormMessage />

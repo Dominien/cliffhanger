@@ -15,7 +15,7 @@ export const insertLeadResponseSchema = z.object({
   lastName: z.string().min(2, "Please enter your last name"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(5, "Please enter a valid phone number"),
-  website: z.string().url("Please enter a valid website URL").optional(),
+  website: z.string().regex(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.*$/, "Bitte geben Sie eine gültige Website-Adresse ein (z.B. www.name.de)").optional().or(z.literal('')),
   companyName: z.string().min(2, "Please enter a valid company name").optional(),
   currentChatbot: z.boolean().optional(),
   privacyAccepted: z.literal(true, {
@@ -47,7 +47,7 @@ export const insertFunnelResponseSchema = z.object({
   lastName: z.string().min(2, "Please enter your last name"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(5, "Please enter a valid phone number"),
-  website: z.string().url("Please enter a valid website URL").optional(),
+  website: z.string().regex(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.*$/, "Bitte geben Sie eine gültige Website-Adresse ein (z.B. www.name.de)").optional().or(z.literal('')),
   companyName: z.string().min(2, "Please enter a valid company name").optional(),
   message: z.string().optional(),
   privacyAccepted: z.literal(true, {
@@ -59,7 +59,7 @@ export const insertFunnelResponseSchema = z.object({
 export const insertContactSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Please enter a valid email address"),
-  website: z.string().url("Please enter a valid website URL").optional(),
+  website: z.string().regex(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.*$/, "Bitte geben Sie eine gültige Website-Adresse ein (z.B. www.name.de)").optional().or(z.literal('')),
   goal: z.string().min(5, "Please describe your goal briefly")
 });
 
