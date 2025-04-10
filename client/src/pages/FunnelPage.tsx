@@ -160,7 +160,7 @@ export default function FunnelPage() {
       lastName: "",
       email: "",
       phone: "",
-      companyName: "",
+      companyName: undefined,
       website: "",
       message: "",
       privacyAccepted: true

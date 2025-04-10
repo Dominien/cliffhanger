@@ -27,7 +27,12 @@ const insertFunnelResponseSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(5, "Please enter a valid phone number"),
   website: z.string().regex(/^(https?:\/\/)?(www\.)?[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+.*$/, "Bitte geben Sie eine gültige Website-Adresse ein (z.B. www.name.de)").optional().or(z.literal('')),
-  companyName: z.string().min(2, "Please enter a valid company name").optional(),
+  companyName: z.union([
+    z.string().min(2, "Please enter a valid company name"),
+    z.string().length(0),
+    z.null(),
+    z.undefined()
+  ]).optional(),
   message: z.string().optional(),
   privacyAccepted: z.literal(true, {
     errorMap: () => ({ message: "Please accept the privacy policy" })
