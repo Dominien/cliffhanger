@@ -330,8 +330,11 @@ export default function ChatBot() {
               className="bg-white rounded-lg shadow-lg p-4 border border-[#db9e22] cursor-pointer"
               onClick={handleChatOpen}
             >
-              <p className="text-sm text-gray-800">
+              <p className="text-sm text-gray-800 md:block hidden">
                 Hey, ich bin deine persönliche KI von Cliffhanger Studios! 👋 Wir erstellen dir eine kostenlose Landing Page!
+              </p>
+              <p className="text-sm text-gray-800 block md:hidden">
+                Klick mich an - Ich berate dich gerne! 💬
               </p>
             </div>
           </motion.div>
