@@ -949,12 +949,12 @@ export default function WebAppService() {
             </p>
             
             <a 
-              href="https://ord-nex.de" 
+              href="https://ordnex.de" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-flex items-center gap-2 text-[#db9e22] hover:text-[#e4bb68] font-medium transition-colors duration-300"
             >
-              <span>ord-nex.de</span>
+              <span>ordnex.de</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -990,56 +990,54 @@ export default function WebAppService() {
                   
                   {/* Large App Screenshot */}
                   <div className="bg-[#f9f9f9] rounded-lg p-3 shadow-inner">
+                    {/* Header with App Navigation */}
                     <div className="flex justify-between items-center mb-4 bg-white p-3 rounded-lg shadow-sm">
                       <div className="flex items-center gap-2">
                         <div className="w-10 h-10 rounded-lg bg-[#db9e22]/20 flex items-center justify-center">
                           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 21H9V12.6C9 12.2686 9.26863 12 9.6 12H14.4C14.7314 12 15 12.2686 15 12.6V21Z" stroke="#db9e22" strokeWidth="2"/>
-                            <path d="M20.4 21H15V16.1C15 15.7686 15.2686 15.5 15.6 15.5H20.4C20.7314 15.5 21 15.7686 21 16.1V20.4C21 20.7314 20.7314 21 20.4 21Z" stroke="#db9e22" strokeWidth="2"/>
-                            <path d="M9 21H3.6C3.26863 21 3 20.7314 3 20.4V16.1C3 15.7686 3.26863 15.5 3.6 15.5H8.4C8.73137 15.5 9 15.7686 9 16.1V21Z" stroke="#db9e22" strokeWidth="2"/>
-                            <path d="M12 3L16.5 7.5M12 3L7.5 7.5M12 3V9" stroke="#db9e22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12 4L4 8L12 12L20 8L12 4Z" stroke="#db9e22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M4 16L12 20L20 16" stroke="#db9e22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M4 12L12 16L20 12" stroke="#db9e22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </div>
-                        <span className="font-semibold text-gray-800">Neuer Mangel erfassen</span>
+                        <span className="font-semibold text-gray-800">Digital Dashboard</span>
                       </div>
-                      <div className="text-xs text-gray-500">Bauprojekt: WHS-23-512</div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
+                        <span className="text-xs text-gray-500">KI-Modus aktiv</span>
+                      </div>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-4 p-4 bg-white rounded-lg shadow-sm">
-                      <div className="space-y-4">
+                    {/* Simplified Content Area */}
+                    <div className="p-4 bg-white rounded-lg shadow-sm">
+                      {/* Abstract data visualization */}
+                      <div className="mb-6 space-y-4">
                         <div>
                           <div className="flex justify-between items-center mb-1">
-                            <span className="text-gray-700 text-sm">Mangel-Analyse</span>
-                            <span className="text-sm font-semibold text-[#db9e22]">98%</span>
+                            <span className="text-gray-700 text-sm">KI-Analyse</span>
+                            <span className="text-sm font-semibold text-[#db9e22]">97%</span>
                           </div>
                           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div className="h-full bg-[#db9e22] rounded-full" style={{width: "98%"}}></div>
+                            <div className="h-full bg-[#db9e22] rounded-full" style={{width: "97%"}}></div>
                           </div>
-                          <div className="mt-1 text-sm font-medium text-gray-800">Riss im Putz (Fassade)</div>
                         </div>
                         
-                        <div>
-                          <div className="flex justify-between items-center mb-1">
-                            <span className="text-gray-700 text-sm">Rechtliche Grundlage</span>
-                            <span className="text-sm font-semibold text-[#db9e22]">95%</span>
-                          </div>
-                          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div className="h-full bg-[#db9e22] rounded-full" style={{width: "95%"}}></div>
-                          </div>
-                          <div className="mt-1 text-sm font-medium text-gray-800">VOB/B §13 Abs. 1</div>
+                        <div className="grid grid-cols-3 gap-2 mt-4">
+                          {[1, 2, 3].map((i) => (
+                            <div key={i} className="h-16 bg-gray-100 rounded-md flex items-center justify-center">
+                              <div className="w-6 h-6 rounded-md bg-[#db9e22]/10 flex items-center justify-center">
+                                <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
+                              </div>
+                            </div>
+                          ))}
                         </div>
                       </div>
                       
-                      <div className="bg-gray-100 rounded-lg p-3 flex flex-col justify-between">
-                        <div>
-                          <div className="text-sm font-medium text-gray-800 mb-2">KI-Empfehlung:</div>
-                          <p className="text-xs text-gray-600">Mangelkategorie Typ C - Mittel</p>
-                          <p className="text-xs text-gray-600">Behebung innerhalb von 14 Tagen erforderlich</p>
-                        </div>
-                        <div className="mt-2 text-center">
-                          <span className="inline-block px-3 py-1 bg-[#db9e22]/10 rounded-full text-xs font-medium text-[#db9e22]">
-                            Automatisch klassifiziert
-                          </span>
+                      {/* Status indicator */}
+                      <div className="flex justify-end">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#db9e22]/10 rounded-full">
+                          <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
+                          <span className="text-xs font-medium text-[#db9e22]">KI-gestützte Lösung</span>
                         </div>
                       </div>
                     </div>
@@ -1153,12 +1151,12 @@ export default function WebAppService() {
                     <div className="mb-4 md:mb-0">
                       <p className="text-white font-semibold">Geschäftsführer, Ordnex</p>
                       <a 
-                        href="https://ord-nex.de" 
+                        href="https://ordnex.de" 
                         target="_blank"
                         rel="noopener noreferrer" 
                         className="text-[#db9e22] hover:text-[#e4bb68] text-sm inline-flex items-center gap-1 mt-1 transition-colors duration-300"
                       >
-                        <span>ord-nex.de</span>
+                        <span>ordnex.de</span>
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
