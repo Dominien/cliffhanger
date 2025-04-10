@@ -161,33 +161,6 @@ export default function WebAppService() {
                 Web-App Ideen von unserer <span className="text-[#db9e22] inline-block">KI generiert</span>
               </h1>
               
-              {/* Feature Icons */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex flex-wrap justify-center gap-6 md:gap-12 my-10"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="bg-[#db9e22]/20 p-2 md:p-3 rounded-full">
-                    <Zap className="w-5 h-5 md:w-6 md:h-6 text-[#db9e22]" />
-                  </div>
-                  <span className="text-base md:text-lg font-medium text-white">Schnelle Umsetzung</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="bg-[#db9e22]/20 p-2 md:p-3 rounded-full">
-                    <Laptop className="w-5 h-5 md:w-6 md:h-6 text-[#db9e22]" />
-                  </div>
-                  <span className="text-base md:text-lg font-medium text-white">Maßgeschneiderte Lösungen</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="bg-[#db9e22]/20 p-2 md:p-3 rounded-full">
-                    <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-[#db9e22]" />
-                  </div>
-                  <span className="text-base md:text-lg font-medium text-white">Intelligente KI-Analyse</span>
-                </div>
-              </motion.div>
-              
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -225,7 +198,7 @@ export default function WebAppService() {
                     className="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full sm:w-auto py-5 px-6 md:px-10 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg"
                     onClick={() => setLocation("/contact")}
                   >
-                    Kostenloses Gespräch vereinbaren
+                    Bereits App-Idee? Lass uns reden
                   </Button>
                 </motion.div>
               </div>
@@ -424,7 +397,7 @@ export default function WebAppService() {
                 onClick={() => setLocation("/contact")}
                 className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-lg py-6 px-8 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg group"
               >
-                Kostenloses Gespräch vereinbaren
+                Bereits App-Idee? Lass uns reden
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>
