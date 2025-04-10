@@ -148,7 +148,7 @@ export default function WebAppService() {
                 <div className="absolute top-0 left-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#db9e22] rounded-full animate-ping" />
               </div>
               <span className="text-xs md:text-sm font-medium text-white/90">
-                NEU: KI-App-Design <span className="inline-block mx-1 bg-white/20 w-1.5 h-1.5 rounded-full"></span> Profi-Entwicklung
+                Nur 5 Beratungsgespräche übrig
               </span>
             </div>
           </motion.div>
@@ -215,19 +215,18 @@ export default function WebAppService() {
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 relative overflow-hidden bg-[#0f172a]">
+      <section className="py-20 relative overflow-hidden bg-white">
         {/* Tech pattern background */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.25' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1.5'/%3E%3Ccircle cx='3' cy='17' r='1.5'/%3E%3Ccircle cx='17' cy='3' r='1.5'/%3E%3Ccircle cx='17' cy='17' r='1.5'/%3E%3Ccircle cx='10' cy='10' r='1.5'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '24px 24px',
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23101010' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M0 0h4v4H0V0zm4 4h4v4H4V4zm4-4h4v4H8V0zm8 0h4v4h-4V0zm-4 4h4v4h-4V4zm0-4h4v4h-4V0zm8 8h4v4h-4V8zm-8 0h4v4h-4V8zm8-8h4v4h-4V0z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '48px 48px',
           }} />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/0 via-[#0f172a]/80 to-[#0f172a]/0"></div>
         
-        {/* Floating elements */}
-        <div className="absolute top-1/4 left-1/6 w-36 h-36 rounded-full bg-[#db9e22]/10 blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/6 w-64 h-64 rounded-full bg-[#db9e22]/5 blur-3xl"></div>
+        {/* Subtle gold gradient accents */}
+        <div className="absolute top-10 left-10 w-64 h-64 bg-[#db9e22]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl"></div>
         
         <Container className="relative z-10">
           <motion.div
@@ -237,15 +236,15 @@ export default function WebAppService() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center justify-center px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+            <div className="inline-flex items-center justify-center px-4 py-1 bg-[#db9e22]/10 rounded-full mb-4">
               <span className="block w-2 h-2 rounded-full bg-[#db9e22]"></span>
               <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mx-2">Digitale Herausforderungen</span>
               <span className="block w-2 h-2 rounded-full bg-[#db9e22]"></span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mt-3 mb-4">
               Was bremst Ihr Unternehmen aus?
             </h2>
-            <p className="text-white/70 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Diese Probleme lösen wir täglich mit maßgeschneiderten Web-Apps
             </p>
           </motion.div>
@@ -258,32 +257,36 @@ export default function WebAppService() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/80 to-[#e4bb68]/80 rounded-2xl blur-md opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
-              <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#db9e22]/30 shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
-                {/* Decorative elements */}
-                <div className="absolute -right-16 -top-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
-                <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/30 to-[#e4bb68]/30 rounded-2xl blur-md opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#db9e22]/30 shadow-lg hover:shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
+                {/* Tech-inspired decorative elements */}
+                <div className="absolute -right-8 -top-8 w-20 h-20 bg-gray-50 rounded-full z-0"></div>
+                <div className="absolute right-12 top-12 w-3 h-3 bg-[#db9e22]/30 rounded-full z-0"></div>
+                <div className="absolute right-20 top-28 w-2 h-2 bg-[#db9e22]/20 rounded-full z-0"></div>
+                <div className="absolute -left-8 bottom-16 w-16 h-16 border border-gray-100 rounded-full z-0"></div>
                 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="p-3 bg-white/5 rounded-xl">
+                    <div className="p-4 bg-[#db9e22]/10 rounded-xl">
                       <Clock className="w-8 h-8 text-[#db9e22]" />
                     </div>
-                    <span className="font-mono text-xl text-white/40 font-bold">01</span>
+                    <div className="w-10 h-10 flex items-center justify-center bg-gray-50 rounded-full">
+                      <span className="font-mono text-xl text-gray-400 font-bold">01</span>
+                    </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-3 text-white">Zeitverschwendung</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#101010]">Zeitverschwendung</h3>
                   
                   <div className="h-0.5 w-12 bg-[#db9e22] mb-4"></div>
                   
-                  <p className="text-white/70">
+                  <p className="text-gray-600">
                     Zu viel verlorene Zeit durch manuelle Prozesse und Papierkram
                   </p>
                   
-                  <div className="mt-6 pt-6 border-t border-white/10">
+                  <div className="mt-6 pt-6 border-t border-gray-100">
                     <div className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-[#db9e22] mr-2 flex-shrink-0" />
-                      <span className="text-white/70 text-sm">Automatisierung spart bis zu 70% Zeit</span>
+                      <span className="text-gray-600 text-sm">Automatisierung spart bis zu 70% Zeit</span>
                     </div>
                   </div>
                 </div>
@@ -297,32 +300,36 @@ export default function WebAppService() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/80 to-[#e4bb68]/80 rounded-2xl blur-md opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
-              <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#db9e22]/30 shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
-                {/* Decorative elements */}
-                <div className="absolute -right-16 -top-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
-                <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/30 to-[#e4bb68]/30 rounded-2xl blur-md opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#db9e22]/30 shadow-lg hover:shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
+                {/* Tech-inspired decorative elements */}
+                <div className="absolute -right-8 -top-8 w-20 h-20 bg-gray-50 rounded-full z-0"></div>
+                <div className="absolute right-12 top-12 w-3 h-3 bg-[#db9e22]/30 rounded-full z-0"></div>
+                <div className="absolute right-20 top-28 w-2 h-2 bg-[#db9e22]/20 rounded-full z-0"></div>
+                <div className="absolute -left-8 bottom-16 w-16 h-16 border border-gray-100 rounded-full z-0"></div>
                 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="p-3 bg-white/5 rounded-xl">
+                    <div className="p-4 bg-[#db9e22]/10 rounded-xl">
                       <Brain className="w-8 h-8 text-[#db9e22]" />
                     </div>
-                    <span className="font-mono text-xl text-white/40 font-bold">02</span>
+                    <div className="w-10 h-10 flex items-center justify-center bg-gray-50 rounded-full">
+                      <span className="font-mono text-xl text-gray-400 font-bold">02</span>
+                    </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-3 text-white">Unsicherheit</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#101010]">Unsicherheit</h3>
                   
                   <div className="h-0.5 w-12 bg-[#db9e22] mb-4"></div>
                   
-                  <p className="text-white/70">
+                  <p className="text-gray-600">
                     Zweifel, welche digitale Lösung wirklich helfen würde
                   </p>
                   
-                  <div className="mt-6 pt-6 border-t border-white/10">
+                  <div className="mt-6 pt-6 border-t border-gray-100">
                     <div className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-[#db9e22] mr-2 flex-shrink-0" />
-                      <span className="text-white/70 text-sm">KI wählt die passende Lösung für Sie</span>
+                      <span className="text-gray-600 text-sm">KI wählt die passende Lösung für Sie</span>
                     </div>
                   </div>
                 </div>
@@ -336,32 +343,36 @@ export default function WebAppService() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/80 to-[#e4bb68]/80 rounded-2xl blur-md opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
-              <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#db9e22]/30 shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
-                {/* Decorative elements */}
-                <div className="absolute -right-16 -top-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
-                <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/30 to-[#e4bb68]/30 rounded-2xl blur-md opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+              <div className="relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#db9e22]/30 shadow-lg hover:shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
+                {/* Tech-inspired decorative elements */}
+                <div className="absolute -right-8 -top-8 w-20 h-20 bg-gray-50 rounded-full z-0"></div>
+                <div className="absolute right-12 top-12 w-3 h-3 bg-[#db9e22]/30 rounded-full z-0"></div>
+                <div className="absolute right-20 top-28 w-2 h-2 bg-[#db9e22]/20 rounded-full z-0"></div>
+                <div className="absolute -left-8 bottom-16 w-16 h-16 border border-gray-100 rounded-full z-0"></div>
                 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="p-3 bg-white/5 rounded-xl">
+                    <div className="p-4 bg-[#db9e22]/10 rounded-xl">
                       <AlertTriangleIcon className="w-8 h-8 text-[#db9e22]" />
                     </div>
-                    <span className="font-mono text-xl text-white/40 font-bold">03</span>
+                    <div className="w-10 h-10 flex items-center justify-center bg-gray-50 rounded-full">
+                      <span className="font-mono text-xl text-gray-400 font-bold">03</span>
+                    </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-3 text-white">Risiko</h3>
+                  <h3 className="text-xl font-bold mb-3 text-[#101010]">Risiko</h3>
                   
                   <div className="h-0.5 w-12 bg-[#db9e22] mb-4"></div>
                   
-                  <p className="text-white/70">
+                  <p className="text-gray-600">
                     Angst vor IT-Projekten, die teuer sind und wenig bringen
                   </p>
                   
-                  <div className="mt-6 pt-6 border-t border-white/10">
+                  <div className="mt-6 pt-6 border-t border-gray-100">
                     <div className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-[#db9e22] mr-2 flex-shrink-0" />
-                      <span className="text-white/70 text-sm">Feste Preise und garantierte Ergebnisse</span>
+                      <span className="text-gray-600 text-sm">Feste Preise und garantierte Ergebnisse</span>
                     </div>
                   </div>
                 </div>
@@ -376,12 +387,18 @@ export default function WebAppService() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-20 max-w-3xl mx-auto"
           >
-            <div className="relative bg-gradient-to-r from-[#101010] to-[#1a1a1a] px-8 py-10 rounded-2xl shadow-2xl border border-white/5 overflow-hidden">
+            <div className="relative bg-[#101010] px-8 py-10 rounded-2xl shadow-2xl overflow-hidden">
+              {/* Decorative circuit-like elements */}
               <div className="absolute left-0 top-0 h-full w-1 bg-[#db9e22]"></div>
-              <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -mr-32 -mb-32 blur-3xl"></div>
+              <div className="absolute top-6 left-12 w-2 h-2 bg-[#db9e22]/70 rounded-full"></div>
+              <div className="absolute top-12 left-10 w-1.5 h-1.5 bg-[#db9e22]/60 rounded-full"></div>
+              <div className="absolute top-16 left-14 w-1 h-1 bg-[#db9e22]/50 rounded-full"></div>
+              <div className="absolute bottom-6 right-12 w-2 h-2 bg-[#db9e22]/30 rounded-full"></div>
+              <div className="absolute bottom-12 right-20 w-1.5 h-1.5 bg-[#db9e22]/20 rounded-full"></div>
+              <div className="absolute bottom-24 right-14 w-1 h-1 bg-[#db9e22]/10 rounded-full"></div>
               
               <div className="relative flex items-center">
-                <div className="mr-6 p-4 bg-[#db9e22]/10 backdrop-blur-sm rounded-xl">
+                <div className="mr-6 p-4 bg-[#db9e22]/10 rounded-xl">
                   <Zap className="w-8 h-8 text-[#db9e22]" />
                 </div>
                 <div>
