@@ -168,8 +168,32 @@ export default function FunnelPage() {
   });
 
   async function onSubmit(data: InsertFunnelResponse) {
+    console.log("Form submitted with data:", data);
+    document.body.classList.add('submitting'); // Visual indicator that submission is in progress
+    
     try {
-      console.log("Submitting form data:", data);
+      // Force validation
+      const isValid = await form.trigger();
+      console.log("Form validation result:", isValid);
+      
+      if (!isValid) {
+        console.log("Form validation failed");
+        toast({
+          variant: "destructive",
+          title: "Formular unvollständig",
+          description: "Bitte füllen Sie alle erforderlichen Felder aus.",
+        });
+        document.body.classList.remove('submitting');
+        return;
+      }
+      
+      // Show immediate feedback
+      toast({
+        title: "Wird gesendet...",
+        description: "Ihre Anfrage wird verarbeitet.",
+      });
+      
+      console.log("Submitting form data to API:", data);
       const response = await apiRequest("POST", "/api/funnel-responses", data);
       const responseData = await response.json();
       console.log("Form submission response:", responseData);
@@ -181,8 +205,9 @@ export default function FunnelPage() {
       
       // Add a slight delay before redirecting
       setTimeout(() => {
+        console.log("Redirecting to home page");
         setLocation("/");
-      }, 1500);
+      }, 2000);
     } catch (error) {
       console.error("Form submission error:", error);
       toast({
@@ -190,6 +215,8 @@ export default function FunnelPage() {
         title: "Fehler",
         description: "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
       });
+    } finally {
+      document.body.classList.remove('submitting');
     }
   }
 
@@ -251,7 +278,12 @@ export default function FunnelPage() {
             </div>
 
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
+              <form 
+                onSubmit={(e) => {
+                  console.log("Form submitted via native submit event");
+                  form.handleSubmit(onSubmit)(e);
+                }} 
+                className="space-y-4 md:space-y-6">
                 {step === 1 && (
                   <div className="grid gap-3 md:grid-cols-2 md:gap-4">
                     {clientTypeOptions.map((option, index) => (
@@ -511,9 +543,18 @@ export default function FunnelPage() {
                   {step === totalSteps && (
                     <Button 
                       type="submit"
-                      className="bg-[#db9e22] hover:bg-[#c78d1a] text-white text-sm md:text-base py-2 px-3 md:py-3 md:px-4"
+                      onClick={(e) => {
+                        console.log("Submit button clicked manually", form.getValues());
+                        // This is a backup in case the form submit event isn't triggered
+                        if (e && e.preventDefault) {
+                          e.preventDefault();
+                          form.handleSubmit(onSubmit)();
+                        }
+                      }}
+                      className="bg-[#db9e22] hover:bg-[#c78d1a] text-white text-sm md:text-base py-2 px-3 md:py-3 md:px-4 relative"
                     >
-                      Absenden
+                      <span className="relative z-10">Absenden</span>
+                      <span className="absolute inset-0 bg-[#db9e22] opacity-0 hover:opacity-20 transition-opacity duration-300 rounded-lg"></span>
                     </Button>
                   )}
                 </div>
