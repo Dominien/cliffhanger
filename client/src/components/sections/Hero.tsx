@@ -7,7 +7,7 @@ export default function Hero() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="relative py-28 md:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
+    <section className="relative pt-28 pb-28 md:pt-36 md:pb-36 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" 
@@ -41,7 +41,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Main Content - Centered Layout with optimized mobile spacing */}
-        <div className="flex flex-col items-center justify-center space-y-6 md:space-y-8">
+        <div className="flex flex-col items-center justify-center space-y-5 md:space-y-7">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

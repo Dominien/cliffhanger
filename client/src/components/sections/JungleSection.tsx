@@ -10,24 +10,21 @@ const problems = [
     title: "Lange Wartezeiten",
     description: "Wochen oder Monate auf deine Webseite zu warten kostet dich Zeit und Kunden.",
     iconColor: "text-red-500",
-    bgColor: "bg-red-100/50",
-    emoji: "🚧"
+    bgColor: "bg-red-100/50"
   },
   {
     icon: DollarSign,
     title: "Hohe Kosten für unnötige Extras",
     description: "Versteckte Kosten und teure Zusatzfunktionen, die du eigentlich nicht brauchst.",
     iconColor: "text-red-500",
-    bgColor: "bg-red-100/50",
-    emoji: "💸"
+    bgColor: "bg-red-100/50"
   },
   {
     icon: MessagesSquare,
     title: "Komplizierte Prozesse ohne klare Kommunikation",
     description: "Unverständliche Fachbegriffe und mangelnde Transparenz im Entwicklungsprozess.",
     iconColor: "text-red-500",
-    bgColor: "bg-red-100/50",
-    emoji: "🤯"
+    bgColor: "bg-red-100/50"
   }
 ];
 
@@ -38,24 +35,21 @@ const solutions = [
     title: "In nur 7 Tagen ist deine Website live!",
     description: "Schnelle Umsetzung ohne lange Wartezeiten – so kannst du sofort durchstarten.",
     iconColor: "text-green-500",
-    bgColor: "bg-green-100/50",
-    emoji: "⏳"
+    bgColor: "bg-green-100/50"
   },
   {
     icon: DollarSign,
     title: "Fixpreis ohne versteckte Kosten",
     description: "Transparente Preisgestaltung ohne Überraschungen – du weißt genau, was du bekommst.",
     iconColor: "text-green-500",
-    bgColor: "bg-green-100/50",
-    emoji: "💰"
+    bgColor: "bg-green-100/50"
   },
   {
     icon: MessagesSquare,
     title: "Persönlicher Ansprechpartner für deine Wünsche",
     description: "Klare Kommunikation auf Augenhöhe – wir sprechen deine Sprache, nicht Fachchinesisch.",
     iconColor: "text-green-500",
-    bgColor: "bg-green-100/50",
-    emoji: "🗣️"
+    bgColor: "bg-green-100/50"
   }
 ];
 
@@ -108,10 +102,7 @@ export default function ProblemSolutionSection() {
                       <problem.icon className={`w-6 h-6 ${problem.iconColor}`} />
                     </div>
                     <div>
-                      <div className="flex items-center mb-1">
-                        <h4 className="font-medium text-gray-900">{problem.title}</h4>
-                        <span className="ml-2 text-xl">{problem.emoji}</span>
-                      </div>
+                      <h4 className="font-medium text-gray-900 mb-1">{problem.title}</h4>
                       <p className="text-gray-600 text-sm">{problem.description}</p>
                     </div>
                   </motion.div>
@@ -150,10 +141,7 @@ export default function ProblemSolutionSection() {
                       <solution.icon className={`w-6 h-6 ${solution.iconColor}`} />
                     </div>
                     <div>
-                      <div className="flex items-center mb-1">
-                        <h4 className="font-medium text-gray-900">{solution.title}</h4>
-                        <span className="ml-2 text-xl">{solution.emoji}</span>
-                      </div>
+                      <h4 className="font-medium text-gray-900 mb-1">{solution.title}</h4>
                       <p className="text-gray-600 text-sm">{solution.description}</p>
                     </div>
                   </motion.div>
@@ -171,12 +159,9 @@ export default function ProblemSolutionSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <div className="flex items-center justify-center mb-4">
-            <span className="text-2xl mr-2">🎯</span>
-            <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
-              Schnell, professionell & stressfrei – so geht Webdesign heute!
-            </h3>
-          </div>
+          <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
+            Schnell, professionell & stressfrei – so geht Webdesign heute!
+          </h3>
         </motion.div>
 
         {/* CTA Button */}
