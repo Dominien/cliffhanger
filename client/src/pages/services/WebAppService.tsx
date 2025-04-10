@@ -386,7 +386,7 @@ export default function WebAppService() {
       
       {/* Guide Section */}
       <section className="py-28 bg-[#101010] relative overflow-hidden">
-        {/* Decorative elements */}
+        {/* Subtle dotted pattern background */}
         <div 
           className="absolute inset-0 opacity-10"
           style={{
@@ -395,13 +395,12 @@ export default function WebAppService() {
           }}
         ></div>
         
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
-        
-        {/* Vertical line */}
-        <div className="absolute left-1/2 top-40 bottom-40 w-px bg-gradient-to-b from-transparent via-[#db9e22]/30 to-transparent hidden lg:block"></div>
+        {/* Subtle gold accent blur */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl"></div>
         
         <Container className="relative z-10">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -409,10 +408,8 @@ export default function WebAppService() {
             transition={{ duration: 0.8 }}
             className="mb-20 text-center"
           >
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <div className="h-px w-10 bg-[#db9e22]/50"></div>
+            <div className="inline-block px-4 py-1 bg-[#db9e22]/10 rounded-full mb-6">
               <span className="text-[#db9e22] font-medium uppercase tracking-wider text-sm">Unser Ansatz</span>
-              <div className="h-px w-10 bg-[#db9e22]/50"></div>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 max-w-2xl mx-auto">
               So helfen wir Ihnen
@@ -422,128 +419,131 @@ export default function WebAppService() {
             </p>
           </motion.div>
 
-          <div className="relative grid lg:grid-cols-2 gap-16 mb-24 mx-auto max-w-5xl">
-            {/* First Step - Left */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="group relative"
-            >
-              <div className="relative z-10">
-                <div className="flex flex-col md:flex-row md:items-start">
-                  <div className="mb-6 md:mb-0 md:mr-6 flex-shrink-0 mx-auto md:mx-0">
-                    <div className="relative">
-                      <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#db9e22]/10 backdrop-blur-sm border border-[#db9e22]/30">
-                        <Brain className="w-8 h-8 text-[#db9e22]" />
-                      </div>
-                      <div className="absolute top-0 right-0 w-4 h-4 rounded-full bg-[#db9e22] -mt-1 -mr-1 ring-4 ring-[#101010] flex items-center justify-center text-[8px] text-white font-bold">1</div>
-                    </div>
+          {/* Card Section - 2 steps */}
+          <div className="max-w-5xl mx-auto mb-20">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Step 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="bg-[#151515] rounded-2xl overflow-hidden border border-white/10 shadow-xl group hover:shadow-2xl transition-all duration-300 relative"
+              >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22]/30 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                
+                <div className="pt-8 px-8 flex items-center justify-between">
+                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[#db9e22]/10 backdrop-blur-sm border border-[#db9e22]/30">
+                    <Brain className="w-7 h-7 text-[#db9e22]" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300 text-center md:text-left">
-                      KI-Analyse
-                    </h3>
-                    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl text-center md:text-left">
-                      <p className="text-white/80 text-lg leading-relaxed">
-                        Unsere KI analysiert Ihr Unternehmen gründlich und identifiziert die wirkungsvollsten Web-App-Konzepte für Ihre geschäftlichen Herausforderungen.
-                      </p>
-                      <div className="mt-6 pt-6 border-t border-white/10">
-                        <div className="flex items-center mb-3">
-                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
-                          <span className="text-white/70">Umfassende Geschäftsanalyse</span>
-                        </div>
-                        <div className="flex items-center mb-3">
-                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
-                          <span className="text-white/70">Datenbasierte App-Vorschläge</span>
-                        </div>
-                        <div className="flex items-center">
-                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
-                          <span className="text-white/70">Konkrete ROI-Prognosen</span>
-                        </div>
-                      </div>
+                  <div className="w-10 h-10 rounded-full bg-[#db9e22]/20 flex items-center justify-center">
+                    <span className="text-[#db9e22] font-bold">1</span>
+                  </div>
+                </div>
+                
+                <div className="p-8 pt-6">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300">
+                    KI-Analyse
+                  </h3>
+                  
+                  <p className="text-white/80 text-lg leading-relaxed mb-6">
+                    Unsere KI analysiert Ihr Unternehmen gründlich und identifiziert die wirkungsvollsten Web-App-Konzepte für Ihre geschäftlichen Herausforderungen.
+                  </p>
+                  
+                  <div className="pt-6 border-t border-white/10 space-y-3">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                      <span className="text-white/70">Umfassende Geschäftsanalyse</span>
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                      <span className="text-white/70">Datenbasierte App-Vorschläge</span>
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                      <span className="text-white/70">Konkrete ROI-Prognosen</span>
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-            
-            {/* Step connector for mobile */}
-            <div className="w-px h-10 bg-gradient-to-b from-[#db9e22]/30 to-transparent mx-auto block lg:hidden"></div>
-            
-            {/* Second Step - Right */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="group relative"
-            >
-              <div className="relative z-10">
-                <div className="flex flex-col md:flex-row md:items-start">
-                  <div className="mb-6 md:mb-0 md:mr-6 flex-shrink-0 mx-auto md:mx-0">
-                    <div className="relative">
-                      <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#db9e22]/10 backdrop-blur-sm border border-[#db9e22]/30">
-                        <Code className="w-8 h-8 text-[#db9e22]" />
-                      </div>
-                      <div className="absolute top-0 right-0 w-4 h-4 rounded-full bg-[#db9e22] -mt-1 -mr-1 ring-4 ring-[#101010] flex items-center justify-center text-[8px] text-white font-bold">2</div>
-                    </div>
+              </motion.div>
+              
+              {/* Step 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="bg-[#151515] rounded-2xl overflow-hidden border border-white/10 shadow-xl group hover:shadow-2xl transition-all duration-300 relative"
+              >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22]/30 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                
+                <div className="pt-8 px-8 flex items-center justify-between">
+                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[#db9e22]/10 backdrop-blur-sm border border-[#db9e22]/30">
+                    <Code className="w-7 h-7 text-[#db9e22]" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300 text-center md:text-left">
-                      Entwicklung
-                    </h3>
-                    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl text-center md:text-left">
-                      <p className="text-white/80 text-lg leading-relaxed">
-                        Unser erfahrenes Entwicklerteam setzt die KI-generierten Konzepte in leistungsstarke, skalierbare und benutzerfreundliche Web-Anwendungen um.
-                      </p>
-                      <div className="mt-6 pt-6 border-t border-white/10">
-                        <div className="flex items-center mb-3">
-                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
-                          <span className="text-white/70">Professionelle Programmierung</span>
-                        </div>
-                        <div className="flex items-center mb-3">
-                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
-                          <span className="text-white/70">Responsive & performant</span>
-                        </div>
-                        <div className="flex items-center">
-                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
-                          <span className="text-white/70">Integration in Ihre Systeme</span>
-                        </div>
-                      </div>
+                  <div className="w-10 h-10 rounded-full bg-[#db9e22]/20 flex items-center justify-center">
+                    <span className="text-[#db9e22] font-bold">2</span>
+                  </div>
+                </div>
+                
+                <div className="p-8 pt-6">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300">
+                    Entwicklung
+                  </h3>
+                  
+                  <p className="text-white/80 text-lg leading-relaxed mb-6">
+                    Unser erfahrenes Entwicklerteam setzt die KI-generierten Konzepte in leistungsstarke, skalierbare und benutzerfreundliche Web-Anwendungen um.
+                  </p>
+                  
+                  <div className="pt-6 border-t border-white/10 space-y-3">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                      <span className="text-white/70">Professionelle Programmierung</span>
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                      <span className="text-white/70">Responsive & performant</span>
+                    </div>
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                      <span className="text-white/70">Integration in Ihre Systeme</span>
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
 
+          {/* Quote Box */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative bg-gradient-to-r from-[#db9e22]/20 to-[#e4bb68]/10 backdrop-blur-md p-10 md:p-12 rounded-2xl border border-[#db9e22]/20 shadow-xl max-w-4xl mx-auto overflow-hidden"
+            className="max-w-4xl mx-auto relative"
           >
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
-            
-            {/* Quote marks */}
-            <div className="absolute top-6 left-6 text-[#db9e22]/20 text-7xl font-serif">"</div>
-            <div className="absolute bottom-0 right-6 text-[#db9e22]/20 text-7xl font-serif">"</div>
-            
-            <div className="relative z-10">
-              <p className="text-xl md:text-2xl text-white font-medium text-center">
+            <div className="bg-[#1a1a1a] border border-[#db9e22]/20 rounded-2xl p-10 relative overflow-hidden shadow-xl">
+              <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[#db9e22]/5 blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#db9e22]/5 blur-3xl"></div>
+              
+              {/* Quote Icon */}
+              <div className="w-14 h-14 rounded-full bg-[#db9e22]/10 flex items-center justify-center mx-auto mb-6 relative z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#db9e22]">
+                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                  <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                </svg>
+              </div>
+              
+              <p className="text-xl md:text-2xl text-white font-medium text-center relative z-10 mb-6">
                 Wir verbinden moderne KI-Technologie mit echtem Entwickler-Handwerk - für Lösungen, die wirklich funktionieren.
               </p>
-              <div className="mt-6 flex items-center justify-center">
-                <div className="h-px w-16 bg-[#db9e22]/30"></div>
-                <div className="mx-4 w-10 h-10 rounded-full bg-[#db9e22]/20 flex items-center justify-center">
+              
+              <div className="flex items-center justify-center relative z-10">
+                <div className="w-10 h-10 rounded-full bg-[#db9e22]/20 flex items-center justify-center">
                   <span className="text-[#db9e22] font-semibold">CS</span>
                 </div>
-                <div className="h-px w-16 bg-[#db9e22]/30"></div>
               </div>
             </div>
           </motion.div>
@@ -625,7 +625,7 @@ export default function WebAppService() {
                   </div>
                   
                   <div className="pl-16 lg:pl-0 lg:text-center">
-                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 h-48 flex flex-col">
                       <div className="lg:h-16 flex items-center justify-center lg:mb-4">
                         <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
                           <Brain className="w-6 h-6 text-[#db9e22]" />
@@ -635,9 +635,6 @@ export default function WebAppService() {
                       <p className="text-gray-600">
                         Unsere KI prüft Ihr Unternehmen und findet die passende Web-App Idee
                       </p>
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <span className="text-[#db9e22] font-medium text-sm">Nur 5 Minuten</span>
-                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -665,7 +662,7 @@ export default function WebAppService() {
                   </div>
                   
                   <div className="pl-16 lg:pl-0 lg:text-center">
-                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 h-48 flex flex-col">
                       <div className="lg:h-16 flex items-center justify-center lg:mb-4">
                         <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
                           <Users className="w-6 h-6 text-[#db9e22]" />
@@ -675,9 +672,6 @@ export default function WebAppService() {
                       <p className="text-gray-600">
                         Wir besprechen die KI-Vorschläge und planen Ihre individuelle Lösung
                       </p>
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <span className="text-[#db9e22] font-medium text-sm">30 Minuten</span>
-                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -705,7 +699,7 @@ export default function WebAppService() {
                   </div>
                   
                   <div className="pl-16 lg:pl-0 lg:text-center">
-                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 h-48 flex flex-col">
                       <div className="lg:h-16 flex items-center justify-center lg:mb-4">
                         <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
                           <Code className="w-6 h-6 text-[#db9e22]" />
@@ -715,9 +709,6 @@ export default function WebAppService() {
                       <p className="text-gray-600">
                         Unsere Experten bauen Ihre maßgeschneiderte Web-App
                       </p>
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <span className="text-[#db9e22] font-medium text-sm">2-4 Wochen</span>
-                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -745,7 +736,7 @@ export default function WebAppService() {
                   </div>
                   
                   <div className="pl-16 lg:pl-0 lg:text-center">
-                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16 h-48 flex flex-col">
                       <div className="lg:h-16 flex items-center justify-center lg:mb-4">
                         <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
                           <Rocket className="w-6 h-6 text-[#db9e22]" />
@@ -755,9 +746,6 @@ export default function WebAppService() {
                       <p className="text-gray-600">
                         Sie erhalten Ihre Web-App, komplett eingerichtet und sofort einsatzbereit
                       </p>
-                      <div className="mt-4 pt-4 border-t border-gray-100">
-                        <span className="text-[#db9e22] font-medium text-sm">Langfristiger Support</span>
-                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -780,7 +768,7 @@ export default function WebAppService() {
                 Jetzt KI-Analyse starten
               </Button>
               <p className="text-gray-500 mt-4 text-sm">
-                Kostenlos und unverbindlich in nur 5 Minuten
+                Kostenlos und unverbindlich
               </p>
             </motion.div>
           </div>
