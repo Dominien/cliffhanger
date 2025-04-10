@@ -1008,11 +1008,11 @@ export default function WebAppService() {
                       </div>
                     </div>
                     
-                    {/* Simplified Content Area */}
-                    <div className="p-4 bg-white rounded-lg shadow-sm">
+                    {/* Full-height white dashboard */}
+                    <div className="bg-white rounded-lg shadow-sm h-[280px] flex flex-col">
                       {/* Abstract data visualization */}
-                      <div className="mb-6 space-y-4">
-                        <div>
+                      <div className="flex-1 p-4">
+                        <div className="mb-6">
                           <div className="flex justify-between items-center mb-1">
                             <span className="text-gray-700 text-sm">KI-Analyse</span>
                             <span className="text-sm font-semibold text-[#db9e22]">97%</span>
@@ -1022,8 +1022,18 @@ export default function WebAppService() {
                           </div>
                         </div>
                         
-                        <div className="grid grid-cols-3 gap-2 mt-4">
+                        <div className="grid grid-cols-3 gap-2 mt-6">
                           {[1, 2, 3].map((i) => (
+                            <div key={i} className="h-20 bg-gray-100 rounded-md flex items-center justify-center">
+                              <div className="w-6 h-6 rounded-md bg-[#db9e22]/10 flex items-center justify-center">
+                                <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        <div className="grid grid-cols-2 gap-2 mt-4">
+                          {[1, 2].map((i) => (
                             <div key={i} className="h-16 bg-gray-100 rounded-md flex items-center justify-center">
                               <div className="w-6 h-6 rounded-md bg-[#db9e22]/10 flex items-center justify-center">
                                 <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
@@ -1033,8 +1043,8 @@ export default function WebAppService() {
                         </div>
                       </div>
                       
-                      {/* Status indicator */}
-                      <div className="flex justify-end">
+                      {/* Status indicator in footer */}
+                      <div className="border-t border-gray-100 p-4 flex justify-end">
                         <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#db9e22]/10 rounded-full">
                           <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
                           <span className="text-xs font-medium text-[#db9e22]">KI-gestützte Lösung</span>
