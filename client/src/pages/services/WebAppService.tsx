@@ -146,18 +146,19 @@ export default function WebAppService() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
+              className="relative"
             >
               <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-4 block">
                 Intelligente Lösungen für dein Unternehmen
               </span>
               
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Web-App Ideen von unserer <span className="text-[#db9e22]">KI generiert</span> für dein Business
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+                Web-App Ideen von unserer <span className="text-[#db9e22] inline-block">KI generiert</span>
               </h1>
               
               {/* Feature Icons */}
@@ -165,27 +166,38 @@ export default function WebAppService() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex flex-wrap gap-4 md:gap-10 my-6"
+                className="flex flex-wrap justify-center gap-6 md:gap-12 my-10"
               >
-                <div className="flex items-center gap-2">
-                  <div className="bg-[#db9e22]/20 p-1.5 md:p-2 rounded-full">
-                    <Zap className="w-4 h-4 md:w-5 md:h-5 text-[#db9e22]" />
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#db9e22]/20 p-2 md:p-3 rounded-full">
+                    <Zap className="w-5 h-5 md:w-6 md:h-6 text-[#db9e22]" />
                   </div>
-                  <span className="text-sm md:text-base font-medium text-white">Schnelle Umsetzung</span>
+                  <span className="text-base md:text-lg font-medium text-white">Schnelle Umsetzung</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="bg-[#db9e22]/20 p-1.5 md:p-2 rounded-full">
-                    <Laptop className="w-4 h-4 md:w-5 md:h-5 text-[#db9e22]" />
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#db9e22]/20 p-2 md:p-3 rounded-full">
+                    <Laptop className="w-5 h-5 md:w-6 md:h-6 text-[#db9e22]" />
                   </div>
-                  <span className="text-sm md:text-base font-medium text-white">Maßgeschneiderte Lösungen</span>
+                  <span className="text-base md:text-lg font-medium text-white">Maßgeschneiderte Lösungen</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-[#db9e22]/20 p-2 md:p-3 rounded-full">
+                    <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-[#db9e22]" />
+                  </div>
+                  <span className="text-base md:text-lg font-medium text-white">Intelligente KI-Analyse</span>
                 </div>
               </motion.div>
               
-              <p className="text-xl text-white/80 mb-8">
-                Lass unsere KI dein Geschäft analysieren und erhalte maßgeschneiderte Web-App Ideen, die dein Unternehmen digitalisieren und optimieren – ohne technisches Vorwissen.
-              </p>
+              <motion.p 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto"
+              >
+                Lass unsere KI dein Geschäft analysieren und erhalte maßgeschneiderte Web-App Ideen, die dein Unternehmen digitalisieren und optimieren.
+              </motion.p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-5 justify-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -194,7 +206,7 @@ export default function WebAppService() {
                 >
                   <Button 
                     size="lg"
-                    className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full sm:w-auto py-5 px-6 md:px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg"
+                    className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full sm:w-auto py-5 px-6 md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg"
                     onClick={() => setLocation("/funnel")}
                   >
                     <Sparkles className="w-5 h-5 mr-2" />
@@ -210,87 +222,12 @@ export default function WebAppService() {
                 >
                   <Button 
                     size="lg"
-                    className="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full sm:w-auto py-5 px-6 md:px-8 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg"
+                    className="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full sm:w-auto py-5 px-6 md:px-10 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg"
                     onClick={() => setLocation("/contact")}
                   >
                     Kostenloses Gespräch vereinbaren
                   </Button>
                 </motion.div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative rounded-2xl overflow-hidden aspect-square md:aspect-video bg-[#1a1a1a] border border-white/10 shadow-2xl"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22]/10 to-[#101010] flex items-center justify-center">
-                <div className="relative w-full h-full flex items-center justify-center p-8">
-                  {/* Animated elements */}
-                  <motion.div 
-                    animate={{ 
-                      rotate: [0, 10, 0, -10, 0],
-                      scale: [1, 1.02, 1, 0.98, 1]
-                    }}
-                    transition={{ 
-                      duration: 8, 
-                      repeat: Infinity,
-                      ease: "easeInOut" 
-                    }}
-                    className="absolute top-4 left-4 opacity-50"
-                  >
-                    <Laptop className="w-20 h-20 text-white/30" />
-                  </motion.div>
-                  
-                  <motion.div 
-                    animate={{ 
-                      rotate: [0, -5, 0, 5, 0],
-                      y: [0, -10, 0, 10, 0]
-                    }}
-                    transition={{ 
-                      duration: 6, 
-                      repeat: Infinity,
-                      ease: "easeInOut" 
-                    }}
-                    className="absolute bottom-8 right-8 opacity-40"
-                  >
-                    <Smartphone className="w-16 h-16 text-white/30" />
-                  </motion.div>
-                  
-                  {/* Central code element with pulsing effect */}
-                  <motion.div 
-                    className="relative z-10 bg-[#101010]/80 backdrop-blur-sm p-6 rounded-xl border border-white/10"
-                    animate={{ 
-                      boxShadow: [
-                        "0 0 20px 0px rgba(219, 158, 34, 0.3)",
-                        "0 0 25px 5px rgba(219, 158, 34, 0.4)",
-                        "0 0 20px 0px rgba(219, 158, 34, 0.3)"
-                      ]
-                    }}
-                    transition={{ 
-                      duration: 3, 
-                      repeat: Infinity,
-                      ease: "easeInOut" 
-                    }}
-                  >
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-[#db9e22]/20 flex items-center justify-center mr-3">
-                        <Sparkles className="w-5 h-5 text-[#db9e22]" />
-                      </div>
-                      <div className="text-white font-medium">Cliffhanger KI Bewertung</div>
-                    </div>
-                    <div className="text-white/70 text-sm space-y-2">
-                      <p>Analysiere Geschäftsprozesse...</p>
-                      <p>Identifiziere Automatisierungspotential...</p>
-                      <p>Generiere maßgeschneiderte Web-App Ideen...</p>
-                      <div className="flex items-center text-[#db9e22]">
-                        <Code className="w-4 h-4 mr-2" />
-                        <span className="font-medium">Optimierungsvorschläge bereit!</span>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
               </div>
             </motion.div>
           </div>
