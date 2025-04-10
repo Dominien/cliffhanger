@@ -182,7 +182,6 @@ export default function WebAppService() {
                     className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full sm:w-auto py-5 px-6 md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg"
                     onClick={() => setLocation("/funnel")}
                   >
-                    <Sparkles className="w-5 h-5 mr-2" />
                     KI-Bewertung starten
                   </Button>
                   <div className="absolute -inset-5 -z-10 bg-[#db9e22]/20 blur-2xl rounded-full opacity-50" />
@@ -388,7 +387,6 @@ export default function WebAppService() {
                 onClick={() => setLocation("/funnel")}
                 className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group rounded-lg"
               >
-                <Sparkles className="w-5 h-5 mr-3" />
                 KI-Bewertung jetzt starten
               </Button>
               
