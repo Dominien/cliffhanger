@@ -9,22 +9,16 @@ const problems = [
     icon: Clock,
     title: "Lange Wartezeiten",
     description: "Wochen oder Monate auf deine Webseite zu warten kostet dich Zeit und Kunden.",
-    iconColor: "text-red-500",
-    bgColor: "bg-red-100/50"
   },
   {
     icon: DollarSign,
     title: "Hohe Kosten für unnötige Extras",
     description: "Versteckte Kosten und teure Zusatzfunktionen, die du eigentlich nicht brauchst.",
-    iconColor: "text-red-500",
-    bgColor: "bg-red-100/50"
   },
   {
     icon: MessagesSquare,
     title: "Komplizierte Prozesse ohne klare Kommunikation",
     description: "Unverständliche Fachbegriffe und mangelnde Transparenz im Entwicklungsprozess.",
-    iconColor: "text-red-500",
-    bgColor: "bg-red-100/50"
   }
 ];
 
@@ -34,22 +28,16 @@ const solutions = [
     icon: Clock,
     title: "In nur 7 Tagen ist deine Website live!",
     description: "Schnelle Umsetzung ohne lange Wartezeiten – so kannst du sofort durchstarten.",
-    iconColor: "text-green-500",
-    bgColor: "bg-green-100/50"
   },
   {
     icon: DollarSign,
     title: "Fixpreis ohne versteckte Kosten",
     description: "Transparente Preisgestaltung ohne Überraschungen – du weißt genau, was du bekommst.",
-    iconColor: "text-green-500",
-    bgColor: "bg-green-100/50"
   },
   {
     icon: MessagesSquare,
     title: "Persönlicher Ansprechpartner für deine Wünsche",
     description: "Klare Kommunikation auf Augenhöhe – wir sprechen deine Sprache, nicht Fachchinesisch.",
-    iconColor: "text-green-500",
-    bgColor: "bg-green-100/50"
   }
 ];
 
@@ -82,8 +70,8 @@ export default function ProblemSolutionSection() {
               className="mb-8"
             >
               <div className="flex items-center mb-6">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 mr-3">
-                  <AlertTriangle className="w-5 h-5 text-red-500" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f8e4c8] mr-3">
+                  <AlertTriangle className="w-5 h-5 text-[#db9e22]" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Das Problem:</h3>
               </div>
@@ -96,10 +84,10 @@ export default function ProblemSolutionSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-start p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow bg-white"
+                    className="flex items-start p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#db9e22]/30 transition-all duration-300 bg-white"
                   >
-                    <div className={`flex-shrink-0 p-3 rounded-lg ${problem.bgColor} mr-4`}>
-                      <problem.icon className={`w-6 h-6 ${problem.iconColor}`} />
+                    <div className="flex-shrink-0 p-3 rounded-lg bg-[#101010] mr-4">
+                      <problem.icon className="w-6 h-6 text-[#db9e22]" />
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-900 mb-1">{problem.title}</h4>
@@ -121,8 +109,8 @@ export default function ProblemSolutionSection() {
               className="mb-8"
             >
               <div className="flex items-center mb-6">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 mr-3">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f8e4c8] mr-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#db9e22]" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Unsere Lösung:</h3>
               </div>
@@ -135,10 +123,10 @@ export default function ProblemSolutionSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
-                    className="flex items-start p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow bg-white"
+                    className="flex items-start p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#db9e22]/30 transition-all duration-300 bg-white"
                   >
-                    <div className={`flex-shrink-0 p-3 rounded-lg ${solution.bgColor} mr-4`}>
-                      <solution.icon className={`w-6 h-6 ${solution.iconColor}`} />
+                    <div className="flex-shrink-0 p-3 rounded-lg bg-[#101010] mr-4">
+                      <solution.icon className="w-6 h-6 text-[#db9e22]" />
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-900 mb-1">{solution.title}</h4>
@@ -159,9 +147,11 @@ export default function ProblemSolutionSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
-            Schnell, professionell & stressfrei – so geht Webdesign heute!
-          </h3>
+          <div className="bg-[#101010] text-white py-6 px-8 rounded-xl inline-block">
+            <h3 className="text-xl md:text-2xl font-semibold">
+              Schnell, professionell & stressfrei – <span className="text-[#db9e22]">so geht Webdesign heute!</span>
+            </h3>
+          </div>
         </motion.div>
 
         {/* CTA Button */}

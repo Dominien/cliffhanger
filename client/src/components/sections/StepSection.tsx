@@ -1,33 +1,34 @@
 import { motion } from "framer-motion";
-import { Search, Lightbulb, Rocket } from "lucide-react";
+import { Send, Code, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 
 const steps = [
   {
-    icon: Search,
-    emoji: "🔍",
-    title: "Analyse & Strategie",
-    description: "Wir starten mit einem kostenlosen Call, um deine aktuelle Situation zu verstehen und gemeinsame Ziele festzulegen.",
-    callNote: "Kurzer, persönlicher Austausch + individuelle Bedarfsanalyse"
+    number: "01",
+    icon: Send,
+    title: "Anfrage senden",
+    description: "Du füllst unser kurzes Formular aus und teilst uns deine Anforderungen mit. Wir melden uns innerhalb von 24 Stunden bei dir zurück.",
   },
   {
-    icon: Lightbulb,
-    emoji: "💡",
-    title: "Konzept & Umsetzung",
-    description: "Mit kreativen Ideen und modernem Design setzen wir dein Konzept um – markenkonform, zielgruppenspezifisch und stets transparent.",
-    callNote: "Erste Entwürfe werden mit dir im Call besprochen und verfeinert"
+    number: "02",
+    icon: Code,
+    title: "Design & Entwicklung",
+    description: "Wir setzen deine Wünsche professionell um und erstellen eine maßgeschneiderte Website, die genau zu deinem Unternehmen passt.",
   },
   {
-    icon: Rocket,
-    emoji: "🚀",
-    title: "Optimierung & Wachstum",
-    description: "Durch laufende Optimierungen und Performance-Monitoring stellen wir sicher, dass dein Online-Auftritt nachhaltig Erfolge erzielt.",
-    callNote: "Regelmäßige Calls, um Fortschritte zu tracken und neue Chancen zu nutzen"
+    number: "03",
+    icon: CheckCircle,
+    title: "In 7 Tagen online",
+    description: "Deine Website ist startklar und bereit für Besucher! Wir kümmern uns um den Launch und stellen sicher, dass alles reibungslos funktioniert.",
   }
 ];
 
 export default function StepSection() {
+  const [, setLocation] = useLocation();
+
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,57 +37,87 @@ export default function StepSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-[#101010] mb-4">
-            So erreichen wir deinen Erfolg – Schritt für Schritt
+          <div className="inline-block px-4 py-1.5 rounded-full bg-[#db9e22]/10 text-[#db9e22] font-medium text-sm mb-4">
+            3 einfache Schritte
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-5">
+            Deine neue Webseite in nur 7 Tagen
           </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Unser effizienter Prozess garantiert schnelle Ergebnisse ohne Kompromisse bei der Qualität.
+          </p>
         </motion.div>
 
-        <div className="relative">
+        {/* Steps */}
+        <div className="relative mb-20">
           {/* Connecting Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#db9e22]/20 hidden md:block" />
+          <div className="absolute left-[22px] md:left-1/2 top-0 bottom-0 w-px bg-[#db9e22]/20 md:transform md:-translate-x-1/2 hidden sm:block z-0" />
 
-          <div className="space-y-16 relative">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="relative"
-              >
-                <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} gap-8`}>
-                  {/* Step Content */}
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                    <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="text-3xl">{step.emoji}</span>
-                        <h3 className="text-2xl font-semibold text-[#101010]">
-                          {step.title}
-                        </h3>
-                      </div>
-                      <p className="text-gray-600 mb-4 leading-relaxed">
-                        {step.description}
-                      </p>
-                      <div className="text-sm text-[#db9e22] font-medium bg-[#db9e22]/5 p-3 rounded-lg">
-                        {step.callNote}
+          <div className="space-y-12 md:space-y-0 relative">
+            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+              {steps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="relative"
+                >
+                  {/* Step Card */}
+                  <div className="relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
+                    {/* Step Number */}
+                    <div className="absolute -top-3 -left-3 w-12 h-12 rounded-full bg-[#101010] text-white flex items-center justify-center font-bold text-lg shadow-md">
+                      {step.number}
+                    </div>
+                    
+                    {/* Icon */}
+                    <div className="h-14 flex items-center mt-6 mb-5">
+                      <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
+                        <step.icon className="w-6 h-6 text-[#db9e22]" />
                       </div>
                     </div>
+                    
+                    {/* Content */}
+                    <h3 className="text-xl font-bold text-[#101010] mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm md:text-base mb-4 flex-grow">
+                      {step.description}
+                    </p>
+                    
+                    {/* Connector Line for Desktop */}
+                    {index < steps.length - 1 && (
+                      <div className="hidden md:block absolute top-10 -right-6 h-px w-12 bg-[#db9e22]/20 z-0" />
+                    )}
                   </div>
-
-                  {/* Center Icon */}
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 rounded-full bg-white shadow-lg border border-[#db9e22]/20 flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#db9e22] to-[#e4bb68] flex items-center justify-center">
-                        <step.icon className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <div className="max-w-xl mx-auto">
+            <p className="text-lg font-medium text-[#101010] mb-6">
+              Schnell, einfach & stressfrei – ohne Kompromisse!
+            </p>
+            <Button
+              size="lg"
+              onClick={() => setLocation("/funnel")}
+              className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg py-5 md:py-6 px-6 md:px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-xl"
+            >
+              Jetzt starten – in 7 Tagen online
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
