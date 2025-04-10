@@ -40,7 +40,7 @@ const VisionSection = () => {
   return (
     <section className="py-24 bg-[#101010] relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" 
           style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, rgba(219, 158, 34, 0.05) 1.5px, transparent 0)`,
@@ -54,7 +54,7 @@ const VisionSection = () => {
       <Container>
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left Side - Static on mobile, animated on desktop */}
-          <div className="md:hidden text-left">
+          <div className="md:hidden text-left relative z-10">
             <h2 className="text-3xl font-bold text-white mb-4">
               Erlebe, wie deine Vision Gestalt annimmt
             </h2>
@@ -78,7 +78,7 @@ const VisionSection = () => {
 
             <Button 
               size="lg"
-              className="w-full md:w-auto bg-[#db9e22] hover:bg-[#c78d1a] text-white transition-all hover:scale-105"
+              className="w-full md:w-auto bg-[#db9e22] hover:bg-[#c78d1a] text-white transition-all hover:scale-105 relative z-10"
               onClick={() => setLocation("/funnel")}
             >
               Jetzt kostenlosen Call buchen
@@ -92,7 +92,7 @@ const VisionSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="hidden md:block text-left"
+            className="hidden md:block text-left relative z-10"
           >
             <h2 className="text-4xl font-bold text-white mb-4">
               Erlebe, wie deine Vision Gestalt annimmt
@@ -117,7 +117,7 @@ const VisionSection = () => {
 
             <Button 
               size="lg"
-              className="w-full md:w-auto bg-[#db9e22] hover:bg-[#c78d1a] text-white transition-all hover:scale-105"
+              className="w-full md:w-auto bg-[#db9e22] hover:bg-[#c78d1a] text-white transition-all hover:scale-105 relative z-10"
               onClick={() => setLocation("/funnel")}
             >
               Jetzt kostenlosen Call buchen
