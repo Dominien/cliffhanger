@@ -7,7 +7,7 @@ export default function Hero() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="relative py-20 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
+    <section className="relative py-28 md:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" 
@@ -90,7 +90,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex items-center justify-center gap-2 text-base md:text-xl text-white/90 max-w-2xl mx-auto font-medium px-2"
           >
-            <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#db9e22] shrink-0" /> 
+            <MapPin className="hidden md:block w-5 h-5 text-[#db9e22] shrink-0" /> 
             <span>Perfekt für Unternehmen, die sofort durchstarten wollen!</span>
           </motion.p>
 
@@ -98,7 +98,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="relative mx-auto flex justify-center mt-4 md:mt-6"
+            className="relative mx-auto flex justify-center"
           >
             <Button 
               size="lg"

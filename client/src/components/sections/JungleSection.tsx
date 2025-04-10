@@ -1,229 +1,198 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Compass, Zap, MessageSquare, Target, AlertTriangle } from "lucide-react";
+import { motion } from "framer-motion";
+import { Clock, DollarSign, MessagesSquare, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
-import { useRef } from "react";
 
-const challenges = [
+// Problems array
+const problems = [
   {
-    icon: Zap,
-    title: "Veraltete Webseiten",
-    description: "Outdated Design und fehlende Funktionalität schrecken potenzielle Kunden ab."
+    icon: Clock,
+    title: "Lange Wartezeiten",
+    description: "Wochen oder Monate auf deine Webseite zu warten kostet dich Zeit und Kunden.",
+    iconColor: "text-red-500",
+    bgColor: "bg-red-100/50",
+    emoji: "🚧"
   },
   {
-    icon: MessageSquare,
-    title: "Unklare Kommunikation",
-    description: "Ineffiziente Kanäle und inkonsistente Botschaften verwirren Ihre Zielgruppe."
+    icon: DollarSign,
+    title: "Hohe Kosten für unnötige Extras",
+    description: "Versteckte Kosten und teure Zusatzfunktionen, die du eigentlich nicht brauchst.",
+    iconColor: "text-red-500",
+    bgColor: "bg-red-100/50",
+    emoji: "💸"
   },
   {
-    icon: Target,
-    title: "Conversion-Verluste",
-    description: "Nicht optimierte Prozesse führen zu verpassten Geschäftschancen."
-  },
-  {
-    icon: AlertTriangle,
-    title: "Fehlende Strategie",
-    description: "Unklare Ziele und mangelnde Planung verhindern nachhaltiges Wachstum."
+    icon: MessagesSquare,
+    title: "Komplizierte Prozesse ohne klare Kommunikation",
+    description: "Unverständliche Fachbegriffe und mangelnde Transparenz im Entwicklungsprozess.",
+    iconColor: "text-red-500",
+    bgColor: "bg-red-100/50",
+    emoji: "🤯"
   }
 ];
 
-export default function JungleSection() {
-  const [, setLocation] = useLocation();
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
+// Solutions array
+const solutions = [
+  {
+    icon: Clock,
+    title: "In nur 7 Tagen ist deine Website live!",
+    description: "Schnelle Umsetzung ohne lange Wartezeiten – so kannst du sofort durchstarten.",
+    iconColor: "text-green-500",
+    bgColor: "bg-green-100/50",
+    emoji: "⏳"
+  },
+  {
+    icon: DollarSign,
+    title: "Fixpreis ohne versteckte Kosten",
+    description: "Transparente Preisgestaltung ohne Überraschungen – du weißt genau, was du bekommst.",
+    iconColor: "text-green-500",
+    bgColor: "bg-green-100/50",
+    emoji: "💰"
+  },
+  {
+    icon: MessagesSquare,
+    title: "Persönlicher Ansprechpartner für deine Wünsche",
+    description: "Klare Kommunikation auf Augenhöhe – wir sprechen deine Sprache, nicht Fachchinesisch.",
+    iconColor: "text-green-500",
+    bgColor: "bg-green-100/50",
+    emoji: "🗣️"
+  }
+];
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+export default function ProblemSolutionSection() {
+  const [, setLocation] = useLocation();
 
   return (
-    <section ref={sectionRef} className="py-32 relative overflow-hidden bg-gradient-to-b from-white via-white to-[#fdf6e9]">
-      {/* Animated Background Elements - Enhanced */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          style={{ y: y1 }}
-          className="absolute top-0 left-0 w-full h-full"
-        >
-          <svg className="absolute top-0 left-0 w-full opacity-[0.07]" viewBox="0 0 400 400">
-            <motion.path 
-              d="M0,0 L400,0 L400,400 L0,400 Z" 
-              fill="none" 
-              stroke="#db9e22" 
-              strokeWidth="0.5"
-              animate={{
-                d: [
-                  "M0,0 L400,0 L400,400 L0,400 Z",
-                  "M50,-50 L450,50 L350,450 L-50,350 Z",
-                  "M0,0 L400,0 L400,400 L0,400 Z"
-                ]
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </svg>
-        </motion.div>
-        <motion.div
-          style={{ y: y2 }}
-          className="absolute top-0 left-0 w-full h-full"
-        >
-          <motion.div 
-            animate={{
-              opacity: [0.03, 0.06, 0.03],
-              scale: [1, 1.1, 1]
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute inset-0 bg-[#db9e22] [mask-image:radial-gradient(100px_at_70%_30%,white,transparent)]" 
-          />
-        </motion.div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header Section with Enhanced Compass Animation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-24"
-        >
-          <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="relative w-32 h-32 mx-auto mb-10"
-          >
-            {/* Enhanced glowing effect */}
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.2, 0.4, 0.2]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute inset-0 bg-gradient-to-r from-[#db9e22] to-[#e4bb68] rounded-full blur-3xl"
-            />
-
-            {/* Rotating ring */}
-            <motion.div
-              animate={{ 
-                rotate: 360,
-                scale: [1, 1.05, 1],
-                opacity: [0.8, 1, 0.8]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              className="absolute inset-0 rounded-full border-2 border-[#db9e22]/20"
-            />
-
-            {/* Pulsating inner circle */}
-            <motion.div
-              animate={{ 
-                scale: [1, 1.1, 1],
-                opacity: [0.9, 1, 0.9]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute inset-4 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-lg"
-            >
-              {/* Pulsating Compass Icon */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.1, 1],
-                  rotate: [0, 5, -5, 0]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <Compass className="w-16 h-16 text-[#db9e22]" />
-              </motion.div>
-            </motion.div>
-          </motion.div>
-
-          <h2 className="text-5xl font-bold text-gray-900 mb-8 leading-tight">
-            Fühlst du dich im digitalen{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 text-[#db9e22]">Dschungel</span>
-              <motion.span
-                initial={{ width: "0%" }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="absolute bottom-1 left-0 h-3 bg-[#db9e22]/10 z-0"
-              />
-            </span>{" "}
-            verloren?
+    <section className="py-24 md:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Dein Business braucht eine Website – 
+            <span className="text-[#db9e22]"> aber keine monatelange Wartezeit!</span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            Viele Unternehmen kämpfen mit veralteten Websites und ineffizienter Kommunikation – 
-            wir führen dich sicher durch den digitalen Wandel.
+          <p className="text-lg text-gray-700">
+            Viele Agenturen brauchen Wochen oder sogar Monate, um eine Webseite zu liefern. 
+            Das kostet dich Zeit, Nerven und potenzielle Kunden.
           </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          {challenges.map((challenge, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="group"
-            >
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                <div className="flex items-start space-x-6">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#db9e22] to-[#e4bb68] rounded-xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity" />
-                    <div className="relative w-16 h-16 rounded-xl bg-gradient-to-br from-[#db9e22] to-[#e4bb68] p-4 transform group-hover:scale-110 transition-transform duration-300">
-                      <challenge.icon className="w-full h-full text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#db9e22] transition-colors">
-                      {challenge.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {challenge.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
         </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 mb-16">
+          {/* Problems Column */}
+          <div>
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-8"
+            >
+              <div className="flex items-center mb-6">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 mr-3">
+                  <AlertTriangle className="w-5 h-5 text-red-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Das Problem:</h3>
+              </div>
+              
+              <div className="space-y-6">
+                {problems.map((problem, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex items-start p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow bg-white"
+                  >
+                    <div className={`flex-shrink-0 p-3 rounded-lg ${problem.bgColor} mr-4`}>
+                      <problem.icon className={`w-6 h-6 ${problem.iconColor}`} />
+                    </div>
+                    <div>
+                      <div className="flex items-center mb-1">
+                        <h4 className="font-medium text-gray-900">{problem.title}</h4>
+                        <span className="ml-2 text-xl">{problem.emoji}</span>
+                      </div>
+                      <p className="text-gray-600 text-sm">{problem.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Solutions Column */}
+          <div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-8"
+            >
+              <div className="flex items-center mb-6">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 mr-3">
+                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Unsere Lösung:</h3>
+              </div>
+
+              <div className="space-y-6">
+                {solutions.map((solution, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                    className="flex items-start p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow bg-white"
+                  >
+                    <div className={`flex-shrink-0 p-3 rounded-lg ${solution.bgColor} mr-4`}>
+                      <solution.icon className={`w-6 h-6 ${solution.iconColor}`} />
+                    </div>
+                    <div>
+                      <div className="flex items-center mb-1">
+                        <h4 className="font-medium text-gray-900">{solution.title}</h4>
+                        <span className="ml-2 text-xl">{solution.emoji}</span>
+                      </div>
+                      <p className="text-gray-600 text-sm">{solution.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Target Emphasis */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto mb-12"
+        >
+          <div className="flex items-center justify-center mb-4">
+            <span className="text-2xl mr-2">🎯</span>
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
+              Schnell, professionell & stressfrei – so geht Webdesign heute!
+            </h3>
+          </div>
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
           className="text-center"
         >
           <Button
             size="lg"
             onClick={() => setLocation("/funnel")}
-            className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg px-12 py-7 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+            className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
-            Lass uns deinen Weg finden
+            Jetzt in 1 Woche online gehen
           </Button>
         </motion.div>
       </div>
