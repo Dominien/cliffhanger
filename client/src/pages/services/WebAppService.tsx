@@ -21,23 +21,23 @@ import {
 const features = [
   {
     icon: Brain,
-    title: "KI-gestützte Potentialanalyse",
-    description: "Unsere KI analysiert dein Geschäftsmodell und identifiziert Bereiche, die durch eine Web-App optimiert werden können."
+    title: "Schritt 1: KI findet App-Ideen",
+    description: "Unsere KI analysiert dein Geschäft und findet die besten Web-App Ideen, die deinem Business wirklich helfen."
   },
   {
     icon: Sparkles,
-    title: "Personalisierte App-Vorschläge",
-    description: "Erhalte maßgeschneiderte Web-App Ideen, die genau auf die Anforderungen und Ziele deines Unternehmens abgestimmt sind."
+    title: "Schritt 2: Wir besprechen alles",
+    description: "Gemeinsam gehen wir die KI-Vorschläge durch und entscheiden, welche Web-App wir für dich entwickeln sollen."
   },
   {
     icon: Rocket,
-    title: "Schnelle Umsetzung",
-    description: "Nach der KI-Bewertung setzen wir deine ausgewählte Web-App Idee in kürzester Zeit um, damit du schnell durchstarten kannst."
+    title: "Schritt 3: Unser Team baut",
+    description: "Unsere Entwickler bauen deine Web-App schnell und professionell. Du bekommst regelmäßige Updates zum Fortschritt."
   },
   {
     icon: Database,
-    title: "Nahtlose Integration",
-    description: "Wir sorgen für die problemlose Anbindung an deine bestehenden Systeme und Datenbanken für einen reibungslosen Workflow."
+    title: "Schritt 4: Fertige App für dich",
+    description: "Wir liefern deine fertige Web-App, verbinden sie mit deinen bestehenden Systemen und sorgen für einen perfekten Start."
   }
 ];
 
@@ -78,31 +78,31 @@ const processSteps = [
   {
     number: "01",
     title: "KI-Potentialanalyse",
-    description: "Unsere KI analysiert dein Unternehmen und generiert maßgeschneiderte Web-App Ideen.",
+    description: "In nur 5 Minuten zeigt unsere KI, welche Web-App-Lösungen dein Business wirklich voranbringen würden.",
     points: [
-      "KI-gestützte Geschäftsmodellanalyse",
-      "Automatische Identifikation von Optimierungspotential",
-      "Konkrete Web-App Vorschläge mit ROI-Berechnung"
+      "KI-gesteuerte Analyse deines Geschäftsmodells",
+      "Identifikation der besten App-Möglichkeiten",
+      "Konkrete Vorschläge mit Nutzen für dein Business"
     ]
   },
   {
     number: "02",
     title: "Konzept & Design",
-    description: "Gemeinsam verfeinern wir die ausgewählte Idee und erstellen ein detailliertes Konzept.",
+    description: "Basierend auf den KI-Vorschlägen erstellen wir gemeinsam das perfekte Konzept für deine Web-App.",
     points: [
-      "Interaktive Bedarfsanalyse & Feedback",
-      "Erstellung von UI/UX Prototypen",
-      "Festlegung von Features und Funktionen"
+      "Besprechung der KI-Vorschläge mit dir",
+      "Professionelles Design deiner App",
+      "Festlegung aller wichtigen Funktionen"
     ]
   },
   {
     number: "03",
-    title: "Schnelle Umsetzung & Launch",
-    description: "Wir setzen deine Web-App in kürzester Zeit um und sorgen für einen reibungslosen Start.",
+    title: "Entwicklung & Launch",
+    description: "Unser Team baut deine Web-App komplett für dich und sorgt für einen reibungslosen Start.",
     points: [
-      "Agile Entwicklung mit regelmäßigen Updates",
-      "Testing und Qualitätssicherung",
-      "Nahtlose Integration in bestehende Systeme"
+      "Professionelle Entwicklung durch unser Team",
+      "Regelmäßige Updates zum Fortschritt",
+      "Nahtlose Einbindung in dein Geschäft"
     ]
   }
 ];
@@ -141,7 +141,7 @@ export default function WebAppService() {
                 <div className="absolute top-0 left-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#db9e22] rounded-full animate-ping" />
               </div>
               <span className="text-xs md:text-sm font-medium text-white/90">
-                NEU: KI-Bewertung deines Web-App Potentials
+                NEU: KI-generierte Web-App Ideen, professionell umgesetzt
               </span>
             </div>
           </motion.div>
@@ -158,7 +158,7 @@ export default function WebAppService() {
               </span>
               
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                Web-App Ideen von unserer <span className="text-[#db9e22] inline-block">KI generiert</span>
+                Web-App Ideen von unserer <span className="text-[#db9e22] inline-block">KI</span>, gebaut von uns
               </h1>
               
               <motion.p 
@@ -167,7 +167,7 @@ export default function WebAppService() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto"
               >
-                Lass unsere KI dein Geschäft analysieren und erhalte maßgeschneiderte Web-App Ideen, die dein Unternehmen digitalisieren und optimieren.
+                Unsere KI findet die besten App-Ideen für dein Business, dann baut unser Team diese für dich. Von der ersten Idee bis zur fertigen Web-App.
               </motion.p>
               
               <div className="flex flex-col sm:flex-row gap-5 justify-center">
@@ -216,10 +216,10 @@ export default function WebAppService() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-[#101010] mb-6">
-              KI-gestützte Analyse & Web-App Entwicklung
+              KI-Ideen + unser Team = deine perfekte Web-App
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Unsere KI identifiziert das Digitalisierungspotential deines Unternehmens und liefert konkrete Web-App Ideen, die wir schnell und effizient umsetzen.
+              So einfach geht's: Unsere KI findet die besten Web-App Ideen für dein Business. Dann besprechen wir alles mit dir und unser Team baut die App genau nach deinen Wünschen.
             </p>
           </motion.div>
 
@@ -311,10 +311,10 @@ export default function WebAppService() {
               Unser Vorgehen
             </span>
             <h2 className="text-4xl font-bold text-white mb-6">
-              Von der Idee zur fertigen Web-App
+              KI-Ideen, von uns umgesetzt
             </h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              Ein strukturierter und effizienter Prozess für schnelle Ergebnisse ohne Qualitätsverlust
+              Unsere KI findet die besten App-Ideen, unser Team baut sie für dich. Du bekommst eine fertige Web-App ohne Stress - von der ersten Idee bis zur fertigen Lösung.
             </p>
           </motion.div>
 
@@ -370,15 +370,15 @@ export default function WebAppService() {
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-white/20 mb-6">
               <div className="w-2.5 h-2.5 bg-[#db9e22] rounded-full animate-pulse" />
               <span className="text-sm font-medium text-white/90">
-                KI-Bewertung ohne Verpflichtung
+                Cliffhanger Studios baut deine Web-App
               </span>
             </div>
             
             <h2 className="text-4xl font-bold text-white mb-6">
-              Entdecke das Web-App Potential deines Unternehmens
+              KI-generierte App-Ideen, von uns entwickelt
             </h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-              Lass unsere KI in wenigen Minuten analysieren, wie eine maßgeschneiderte Web-App dein Business transformieren kann.
+              Starte mit einer 5-Minuten KI-Analyse. Dann bauen wir von Cliffhanger Studios deine maßgeschneiderte Web-App genau nach deinen Wünschen und Anforderungen.
             </p>
             
             <div className="flex flex-col sm:flex-row max-w-md mx-auto sm:max-w-none justify-center gap-6">
@@ -387,7 +387,7 @@ export default function WebAppService() {
                 onClick={() => setLocation("/funnel")}
                 className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group rounded-lg"
               >
-                KI-Bewertung jetzt starten
+                KI-Bewertung starten
               </Button>
               
               <Button
