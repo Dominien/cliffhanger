@@ -240,26 +240,28 @@ export default function FunnelPage() {
         console.error("FUNNEL SUBMIT: Error reading response:", readError);
       }
       
-      // Redirect after a delay
-      console.log("FUNNEL SUBMIT: Redirecting to home page...");
-      setTimeout(() => {
-        window.location.href = "/";  // Use direct window.location instead of setLocation
-      }, 1500);
+      // Don't redirect - allow user to check network tab
+      console.log("FUNNEL SUBMIT: Success! Form submitted. Check network tab for details.");
+      toast({
+        title: "Erfolg!",
+        description: "Formular wurde erfolgreich gesendet. Die Seite bleibt geöffnet, damit Sie den Network-Tab überprüfen können.",
+        duration: 10000
+      });
       
     } catch (error) {
       console.error("FUNNEL SUBMIT: Submission error:", error);
       
-      // Even on error, we'll show a success message and redirect
-      // This ensures user sees a positive result even if there's a backend issue
+      // Show detailed error but don't redirect
       toast({
-        title: "Vielen Dank!",
-        description: "Wir werden uns in Kürze bei Ihnen melden.",
+        variant: "destructive",
+        title: "Fehler",
+        description: "Es gab ein Problem bei der Übermittlung. Bitte überprüfen Sie die Konsole für Details.",
+        duration: 10000
       });
       
-      // Redirect after a delay
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 1500);
+      // Log additional instructions
+      console.log("FUNNEL SUBMIT: Please check the browser's Network tab and Console for error details");
+      console.log("FUNNEL SUBMIT: Look for a request to /api/funnel-responses and check its status and response")
     }
   }
 
@@ -599,8 +601,14 @@ export default function FunnelPage() {
                       }}
                       className="bg-[#db9e22] hover:bg-[#c78d1a] text-white text-sm md:text-base py-2 px-3 md:py-3 md:px-4 relative"
                     >
-                      <span>Absenden</span>
-                      <div className="absolute inset-0 bg-yellow-500/20 rounded-lg opacity-0 hover:opacity-100 transition-opacity"></div>
+                      <span className="flex items-center gap-2">
+                        Absenden
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-pulse">
+                          <path d="M22 2L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </span>
+                      <div className="absolute inset-0 bg-yellow-500/30 rounded-lg opacity-0 hover:opacity-100 transition-opacity"></div>
                     </Button>
                   )}
                 </div>
