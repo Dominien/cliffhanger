@@ -148,7 +148,7 @@ export default function WebAppService() {
                 <div className="absolute top-0 left-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#db9e22] rounded-full animate-ping" />
               </div>
               <span className="text-xs md:text-sm font-medium text-white/90">
-                NEU: KI-App-Design + Profi-Entwicklung
+                NEU: KI-App-Design <span className="inline-block mx-1 bg-white/20 w-1.5 h-1.5 rounded-full"></span> Profi-Entwicklung
               </span>
             </div>
           </motion.div>
@@ -215,37 +215,79 @@ export default function WebAppService() {
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-[#f7f7f7]">
-        <Container>
+      <section className="py-20 relative overflow-hidden bg-[#0f172a]">
+        {/* Tech pattern background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.25' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1.5'/%3E%3Ccircle cx='3' cy='17' r='1.5'/%3E%3Ccircle cx='17' cy='3' r='1.5'/%3E%3Ccircle cx='17' cy='17' r='1.5'/%3E%3Ccircle cx='10' cy='10' r='1.5'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '24px 24px',
+          }} />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/0 via-[#0f172a]/80 to-[#0f172a]/0"></div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-1/4 left-1/6 w-36 h-36 rounded-full bg-[#db9e22]/10 blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/6 w-64 h-64 rounded-full bg-[#db9e22]/5 blur-3xl"></div>
+        
+        <Container className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-2 inline-block px-4 py-1 bg-[#db9e22]/10 rounded-full">Herausforderungen</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mt-3">
+            <div className="inline-flex items-center justify-center px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full mb-4">
+              <span className="block w-2 h-2 rounded-full bg-[#db9e22]"></span>
+              <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mx-2">Digitale Herausforderungen</span>
+              <span className="block w-2 h-2 rounded-full bg-[#db9e22]"></span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 mb-4">
               Was bremst Ihr Unternehmen aus?
             </h2>
+            <p className="text-white/70 max-w-2xl mx-auto text-lg">
+              Diese Probleme lösen wir täglich mit maßgeschneiderten Web-Apps
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-[#db9e22]"
+              className="relative group"
             >
-              <div className="bg-[#db9e22]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <span className="text-[#db9e22] text-3xl font-bold">1</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/80 to-[#e4bb68]/80 rounded-2xl blur-md opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
+              <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#db9e22]/30 shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
+                {/* Decorative elements */}
+                <div className="absolute -right-16 -top-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
+                <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-white/5 rounded-xl">
+                      <Clock className="w-8 h-8 text-[#db9e22]" />
+                    </div>
+                    <span className="font-mono text-xl text-white/40 font-bold">01</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-3 text-white">Zeitverschwendung</h3>
+                  
+                  <div className="h-0.5 w-12 bg-[#db9e22] mb-4"></div>
+                  
+                  <p className="text-white/70">
+                    Zu viel verlorene Zeit durch manuelle Prozesse und Papierkram
+                  </p>
+                  
+                  <div className="mt-6 pt-6 border-t border-white/10">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22] mr-2 flex-shrink-0" />
+                      <span className="text-white/70 text-sm">Automatisierung spart bis zu 70% Zeit</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-[#101010] text-center">Zeitverschwendung</h3>
-              <p className="text-gray-600 text-center">
-                Zu viel verlorene Zeit durch manuelle Prozesse und Papierkram
-              </p>
-              <div className="w-12 h-1 bg-[#db9e22]/30 mx-auto mt-6"></div>
             </motion.div>
 
             <motion.div
@@ -253,16 +295,38 @@ export default function WebAppService() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-[#db9e22]"
+              className="relative group"
             >
-              <div className="bg-[#db9e22]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <span className="text-[#db9e22] text-3xl font-bold">2</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/80 to-[#e4bb68]/80 rounded-2xl blur-md opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
+              <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#db9e22]/30 shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
+                {/* Decorative elements */}
+                <div className="absolute -right-16 -top-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
+                <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-white/5 rounded-xl">
+                      <Brain className="w-8 h-8 text-[#db9e22]" />
+                    </div>
+                    <span className="font-mono text-xl text-white/40 font-bold">02</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-3 text-white">Unsicherheit</h3>
+                  
+                  <div className="h-0.5 w-12 bg-[#db9e22] mb-4"></div>
+                  
+                  <p className="text-white/70">
+                    Zweifel, welche digitale Lösung wirklich helfen würde
+                  </p>
+                  
+                  <div className="mt-6 pt-6 border-t border-white/10">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22] mr-2 flex-shrink-0" />
+                      <span className="text-white/70 text-sm">KI wählt die passende Lösung für Sie</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-[#101010] text-center">Unsicherheit</h3>
-              <p className="text-gray-600 text-center">
-                Zweifel, welche digitale Lösung wirklich helfen würde
-              </p>
-              <div className="w-12 h-1 bg-[#db9e22]/30 mx-auto mt-6"></div>
             </motion.div>
 
             <motion.div
@@ -270,16 +334,38 @@ export default function WebAppService() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-[#db9e22]"
+              className="relative group"
             >
-              <div className="bg-[#db9e22]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <span className="text-[#db9e22] text-3xl font-bold">3</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/80 to-[#e4bb68]/80 rounded-2xl blur-md opacity-0 group-hover:opacity-50 transition-all duration-500"></div>
+              <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10 hover:border-[#db9e22]/30 shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
+                {/* Decorative elements */}
+                <div className="absolute -right-16 -top-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
+                <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-[#db9e22]/5 rounded-full"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-white/5 rounded-xl">
+                      <AlertTriangleIcon className="w-8 h-8 text-[#db9e22]" />
+                    </div>
+                    <span className="font-mono text-xl text-white/40 font-bold">03</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-3 text-white">Risiko</h3>
+                  
+                  <div className="h-0.5 w-12 bg-[#db9e22] mb-4"></div>
+                  
+                  <p className="text-white/70">
+                    Angst vor IT-Projekten, die teuer sind und wenig bringen
+                  </p>
+                  
+                  <div className="mt-6 pt-6 border-t border-white/10">
+                    <div className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22] mr-2 flex-shrink-0" />
+                      <span className="text-white/70 text-sm">Feste Preise und garantierte Ergebnisse</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-[#101010] text-center">Risiko</h3>
-              <p className="text-gray-600 text-center">
-                Angst vor IT-Projekten, die teuer sind und wenig bringen
-              </p>
-              <div className="w-12 h-1 bg-[#db9e22]/30 mx-auto mt-6"></div>
             </motion.div>
           </div>
 
@@ -288,13 +374,27 @@ export default function WebAppService() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-16 max-w-3xl mx-auto bg-[#101010] rounded-2xl p-8 shadow-xl text-center relative overflow-hidden"
+            className="mt-20 max-w-3xl mx-auto"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -mr-32 -mt-32 opacity-50"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -ml-32 -mb-32 opacity-50"></div>
-            <p className="text-xl md:text-2xl text-white font-medium relative z-10">
-              Ohne die richtige Web-App bleibt Ihr Unternehmen im digitalen Zeitalter zurück.
-            </p>
+            <div className="relative bg-gradient-to-r from-[#101010] to-[#1a1a1a] px-8 py-10 rounded-2xl shadow-2xl border border-white/5 overflow-hidden">
+              <div className="absolute left-0 top-0 h-full w-1 bg-[#db9e22]"></div>
+              <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -mr-32 -mb-32 blur-3xl"></div>
+              
+              <div className="relative flex items-center">
+                <div className="mr-6 p-4 bg-[#db9e22]/10 backdrop-blur-sm rounded-xl">
+                  <Zap className="w-8 h-8 text-[#db9e22]" />
+                </div>
+                <div>
+                  <p className="text-xl md:text-2xl text-white font-medium">
+                    Ohne die richtige Web-App bleibt Ihr Unternehmen im digitalen Zeitalter zurück.
+                  </p>
+                  <div className="mt-2 flex items-center">
+                    <div className="h-px w-8 bg-[#db9e22]/50"></div>
+                    <span className="text-[#db9e22] text-sm ml-2">Jetzt handeln</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </Container>
       </section>
