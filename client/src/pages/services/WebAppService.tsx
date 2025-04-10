@@ -194,7 +194,7 @@ export default function WebAppService() {
                 >
                   <Button 
                     size="lg"
-                    className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full sm:w-auto py-5 px-6 md:px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-xl"
+                    className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-base md:text-lg w-full sm:w-auto py-5 px-6 md:px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg"
                     onClick={() => setLocation("/funnel")}
                   >
                     <Sparkles className="w-5 h-5 mr-2" />
@@ -209,9 +209,8 @@ export default function WebAppService() {
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
                   <Button 
-                    variant="outline"
                     size="lg"
-                    className="border-white/20 text-white hover:bg-white/10 w-full sm:w-auto py-5 px-6 md:px-8"
+                    className="bg-white/10 hover:bg-white/20 text-white border border-white/20 w-full sm:w-auto py-5 px-6 md:px-8 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg"
                     onClick={() => setLocation("/contact")}
                   >
                     Kostenloses Gespräch vereinbaren
@@ -477,17 +476,16 @@ export default function WebAppService() {
               <Button
                 size="lg"
                 onClick={() => setLocation("/funnel")}
-                className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group rounded-xl"
+                className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group rounded-lg"
               >
                 <Sparkles className="w-5 h-5 mr-3" />
                 KI-Bewertung jetzt starten
               </Button>
               
               <Button
-                variant="outline"
                 size="lg"
                 onClick={() => setLocation("/contact")}
-                className="border-white/20 text-white hover:bg-white/10 text-lg py-6 px-8"
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-lg py-6 px-8 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg group"
               >
                 Kostenloses Gespräch vereinbaren
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
