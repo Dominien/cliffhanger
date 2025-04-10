@@ -216,14 +216,6 @@ export default function WebAppService() {
 
       {/* Problem Section */}
       <section className="py-20 relative overflow-hidden bg-white">
-        {/* Tech pattern background */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23101010' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M0 0h4v4H0V0zm4 4h4v4H4V4zm4-4h4v4H8V0zm8 0h4v4h-4V0zm-4 4h4v4h-4V4zm0-4h4v4h-4V0zm8 8h4v4h-4V8zm-8 0h4v4h-4V8zm8-8h4v4h-4V0z'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '48px 48px',
-          }} />
-        </div>
-        
         {/* Subtle gold gradient accents */}
         <div className="absolute top-10 left-10 w-64 h-64 bg-[#db9e22]/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl"></div>
@@ -266,12 +258,9 @@ export default function WebAppService() {
                 <div className="absolute -left-8 bottom-16 w-16 h-16 border border-gray-100 rounded-full z-0"></div>
                 
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="p-4 bg-[#db9e22]/10 rounded-xl">
+                  <div className="mb-6">
+                    <div className="p-4 bg-[#db9e22]/10 rounded-xl inline-flex">
                       <Clock className="w-8 h-8 text-[#db9e22]" />
-                    </div>
-                    <div className="w-10 h-10 flex items-center justify-center bg-gray-50 rounded-full">
-                      <span className="font-mono text-xl text-gray-400 font-bold">01</span>
                     </div>
                   </div>
                   
@@ -309,12 +298,9 @@ export default function WebAppService() {
                 <div className="absolute -left-8 bottom-16 w-16 h-16 border border-gray-100 rounded-full z-0"></div>
                 
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="p-4 bg-[#db9e22]/10 rounded-xl">
+                  <div className="mb-6">
+                    <div className="p-4 bg-[#db9e22]/10 rounded-xl inline-flex">
                       <Brain className="w-8 h-8 text-[#db9e22]" />
-                    </div>
-                    <div className="w-10 h-10 flex items-center justify-center bg-gray-50 rounded-full">
-                      <span className="font-mono text-xl text-gray-400 font-bold">02</span>
                     </div>
                   </div>
                   
@@ -352,12 +338,9 @@ export default function WebAppService() {
                 <div className="absolute -left-8 bottom-16 w-16 h-16 border border-gray-100 rounded-full z-0"></div>
                 
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="p-4 bg-[#db9e22]/10 rounded-xl">
+                  <div className="mb-6">
+                    <div className="p-4 bg-[#db9e22]/10 rounded-xl inline-flex">
                       <AlertTriangleIcon className="w-8 h-8 text-[#db9e22]" />
-                    </div>
-                    <div className="w-10 h-10 flex items-center justify-center bg-gray-50 rounded-full">
-                      <span className="font-mono text-xl text-gray-400 font-bold">03</span>
                     </div>
                   </div>
                   
@@ -417,80 +400,168 @@ export default function WebAppService() {
       </section>
       
       {/* Guide Section */}
-      <section className="py-24 bg-[#fdf6e9]">
-        <Container>
-          <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-6">
-                So helfen wir Ihnen
-              </h2>
-              <p className="text-xl text-gray-700">
-                Bei Cliffhanger Studios machen wir es einfach:
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-[#db9e22]/10 -mr-12 -mt-12 rounded-full"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 flex items-center justify-center bg-[#db9e22]/10 rounded-xl mb-6">
-                    <Brain className="w-8 h-8 text-[#db9e22]" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-[#101010]">
-                    1. KI-Analyse
-                  </h3>
-                  <p className="text-gray-700 text-lg">
-                    Unsere KI analysiert Ihr Unternehmen und findet die besten Web-App Ideen
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-[#db9e22]/10 -mr-12 -mt-12 rounded-full"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 flex items-center justify-center bg-[#db9e22]/10 rounded-xl mb-6">
-                    <Code className="w-8 h-8 text-[#db9e22]" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-[#101010]">
-                    2. Entwicklung
-                  </h3>
-                  <p className="text-gray-700 text-lg">
-                    Dann entwickelt unser Team diese Idee für Sie
-                  </p>
-                </div>
-              </motion.div>
+      <section className="py-28 bg-[#101010] relative overflow-hidden">
+        {/* Decorative elements */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `radial-gradient(rgba(219, 158, 34, 0.3) 2px, transparent 2px)`,
+            backgroundSize: '40px 40px',
+          }}
+        ></div>
+        
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
+        
+        {/* Vertical line */}
+        <div className="absolute left-1/2 top-40 bottom-40 w-px bg-gradient-to-b from-transparent via-[#db9e22]/30 to-transparent hidden lg:block"></div>
+        
+        <Container className="relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-20 text-center"
+          >
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-10 bg-[#db9e22]/50"></div>
+              <span className="text-[#db9e22] font-medium uppercase tracking-wider text-sm">Unser Ansatz</span>
+              <div className="h-px w-10 bg-[#db9e22]/50"></div>
             </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 max-w-2xl mx-auto">
+              So helfen wir Ihnen
+            </h2>
+            <p className="text-white/70 text-lg md:text-xl max-w-xl mx-auto">
+              Bei Cliffhanger Studios verbinden wir KI und Entwicklung für maximalen Erfolg
+            </p>
+          </motion.div>
 
+          <div className="relative grid lg:grid-cols-2 gap-16 mb-24">
+            {/* First Step - Left */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-center bg-[#db9e22]/10 p-8 md:p-12 rounded-2xl border border-[#db9e22]/20"
+              transition={{ duration: 0.7 }}
+              className="group relative"
             >
-              <p className="text-xl md:text-2xl text-[#101010] font-medium italic">
-                "Wir verbinden moderne KI-Technologie mit echtem Entwickler-Handwerk - für Lösungen, die wirklich funktionieren."
-              </p>
+              <div className="relative z-10">
+                <div className="flex items-start">
+                  <div className="mr-6 flex-shrink-0">
+                    <div className="relative">
+                      <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#db9e22]/10 backdrop-blur-sm border border-[#db9e22]/30">
+                        <Brain className="w-8 h-8 text-[#db9e22]" />
+                      </div>
+                      <div className="absolute top-0 right-0 w-4 h-4 rounded-full bg-[#db9e22] -mt-1 -mr-1 ring-4 ring-[#101010] flex items-center justify-center text-[8px] text-white font-bold">1</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300">
+                      KI-Analyse
+                    </h3>
+                    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl">
+                      <p className="text-white/80 text-lg leading-relaxed">
+                        Unsere KI analysiert Ihr Unternehmen gründlich und identifiziert die wirkungsvollsten Web-App-Konzepte für Ihre geschäftlichen Herausforderungen.
+                      </p>
+                      <div className="mt-6 pt-6 border-t border-white/10">
+                        <div className="flex items-center mb-3">
+                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                          <span className="text-white/70">Umfassende Geschäftsanalyse</span>
+                        </div>
+                        <div className="flex items-center mb-3">
+                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                          <span className="text-white/70">Datenbasierte App-Vorschläge</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                          <span className="text-white/70">Konkrete ROI-Prognosen</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Step connector for mobile */}
+            <div className="w-px h-10 bg-gradient-to-b from-[#db9e22]/30 to-transparent mx-auto block lg:hidden"></div>
+            
+            {/* Second Step - Right */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="group relative"
+            >
+              <div className="relative z-10">
+                <div className="flex items-start">
+                  <div className="mr-6 flex-shrink-0">
+                    <div className="relative">
+                      <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#db9e22]/10 backdrop-blur-sm border border-[#db9e22]/30">
+                        <Code className="w-8 h-8 text-[#db9e22]" />
+                      </div>
+                      <div className="absolute top-0 right-0 w-4 h-4 rounded-full bg-[#db9e22] -mt-1 -mr-1 ring-4 ring-[#101010] flex items-center justify-center text-[8px] text-white font-bold">2</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300">
+                      Entwicklung
+                    </h3>
+                    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl">
+                      <p className="text-white/80 text-lg leading-relaxed">
+                        Unser erfahrenes Entwicklerteam setzt die KI-generierten Konzepte in leistungsstarke, skalierbare und benutzerfreundliche Web-Anwendungen um.
+                      </p>
+                      <div className="mt-6 pt-6 border-t border-white/10">
+                        <div className="flex items-center mb-3">
+                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                          <span className="text-white/70">Professionelle Programmierung</span>
+                        </div>
+                        <div className="flex items-center mb-3">
+                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                          <span className="text-white/70">Responsive & performant</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="w-5 h-5 text-[#db9e22] mr-3 flex-shrink-0" />
+                          <span className="text-white/70">Integration in Ihre Systeme</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative bg-gradient-to-r from-[#db9e22]/20 to-[#e4bb68]/10 backdrop-blur-md p-10 md:p-12 rounded-2xl border border-[#db9e22]/20 shadow-xl max-w-4xl mx-auto overflow-hidden"
+          >
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>
+            
+            {/* Quote marks */}
+            <div className="absolute top-6 left-6 text-[#db9e22]/20 text-7xl font-serif">"</div>
+            <div className="absolute bottom-0 right-6 text-[#db9e22]/20 text-7xl font-serif">"</div>
+            
+            <div className="relative z-10">
+              <p className="text-xl md:text-2xl text-white font-medium text-center">
+                Wir verbinden moderne KI-Technologie mit echtem Entwickler-Handwerk - für Lösungen, die wirklich funktionieren.
+              </p>
+              <div className="mt-6 flex items-center justify-center">
+                <div className="h-px w-16 bg-[#db9e22]/30"></div>
+                <div className="mx-4 w-10 h-10 rounded-full bg-[#db9e22]/20 flex items-center justify-center">
+                  <span className="text-[#db9e22] font-semibold">CS</span>
+                </div>
+                <div className="h-px w-16 bg-[#db9e22]/30"></div>
+              </div>
+            </div>
+          </motion.div>
         </Container>
       </section>
       
