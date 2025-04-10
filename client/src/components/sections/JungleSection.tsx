@@ -73,7 +73,7 @@ export default function ProblemSolutionSection() {
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 mr-3">
                   <AlertTriangle className="w-5 h-5 text-red-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Das Problem traditioneller deutscher Agenturen:</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Problem deutscher Agenturen:</h3>
               </div>
               
               <div className="space-y-6">

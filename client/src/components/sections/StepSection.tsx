@@ -86,22 +86,7 @@ export default function StepSection() {
                     </p>
                   </div>
                   
-                  {/* Step connection indicators */}
-                  {index < steps.length - 1 && (
-                    <div className="absolute -right-5 top-1/2 transform -translate-y-1/2 hidden md:flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-[#db9e22]/30"></div>
-                    </div>
-                  )}
                 </div>
-                
-                {/* Arrow indicators between cards (only on desktop) */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute -right-6 top-1/2 transform -translate-y-1/2 text-[#db9e22]">
-                    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 1L10 10L1 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </div>
-                )}
               </motion.div>
             ))}
           </div>
