@@ -67,9 +67,9 @@ export default function HeroSection() {
                 ease: "easeInOut"
               }}
             >
-              Deine Landing Page 
+              Professionelle Webseiten
               <br />
-              Live im Call präsentiert!
+              In nur 7 Tagen online!
             </motion.h1>
           </motion.div>
 
@@ -79,7 +79,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl text-white/80 mb-12 max-w-2xl mx-auto"
           >
-            Keine verlorene Zeit – im Call siehst du direkt deine maßgeschneiderte Landing Page in Aktion.
+            Keine lange Wartezeit – in nur 7 Tagen ist deine professionelle Website online und bereit für deine Kunden.
           </motion.p>
 
           <motion.div 
@@ -97,7 +97,7 @@ export default function HeroSection() {
                 className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
                 onClick={() => setLocation("/funnel")}
               >
-                Jetzt kostenlosen Call buchen
+                In 7 Tagen online gehen
               </Button>
             </motion.div>
             <motion.div 

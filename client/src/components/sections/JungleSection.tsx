@@ -165,7 +165,7 @@ export default function ProblemSolutionSection() {
             onClick={() => setLocation("/funnel")}
             className="bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
           >
-            Jetzt in 1 Woche online gehen
+            Jetzt in 7 Tagen online gehen
           </Button>
         </motion.div>
       </div>

@@ -36,7 +36,7 @@ export default function FinalCallSection() {
             className="inline-flex items-center gap-2 bg-[#db9e22]/10 px-4 py-2 rounded-full mb-8"
           >
             <Clock className="w-4 h-4 text-[#db9e22]" />
-            <span className="text-sm font-medium text-[#db9e22]">Limitierte Plätze verfügbar</span>
+            <span className="text-sm font-medium text-[#db9e22]">In nur 7 Tagen online</span>
           </motion.div>
 
           <motion.h2
@@ -46,7 +46,7 @@ export default function FinalCallSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight"
           >
-            Dein Erfolg wartet nicht – handle jetzt!
+            Bereit für deine Website in 7 Tagen?
           </motion.h2>
 
           <motion.p
@@ -56,7 +56,7 @@ export default function FinalCallSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Sichere dir deinen kostenlosen, unverbindlichen Call und erhalte live deine maßgeschneiderte Landing Page. Keine Zeit verlieren – starte sofort durch!
+            Während andere Monate brauchen, liefern wir in nur 7 Tagen. Kein langes Warten mehr – sichere dir jetzt deine professionelle Website und starte sofort durch!
           </motion.p>
 
           <motion.div
@@ -85,7 +85,7 @@ export default function FinalCallSection() {
               onClick={() => setLocation("/funnel")}
               className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white px-6 py-3 rounded-lg text-base font-medium inline-flex items-center gap-2 transition-all duration-300 hover:translate-y-[-1px] hover:shadow-lg hover:shadow-[#db9e22]/20"
             >
-              <span>Jetzt Call buchen</span>
+              <span>In 7 Tagen online gehen</span>
               <motion.div
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
