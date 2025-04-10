@@ -50,50 +50,60 @@ export default function StepSection() {
 
         {/* Steps */}
         <div className="relative mb-20">
-          {/* Connecting Line */}
-          <div className="absolute left-[22px] md:left-1/2 top-0 bottom-0 w-px bg-[#db9e22]/20 md:transform md:-translate-x-1/2 hidden sm:block z-0" />
-
-          <div className="space-y-12 md:space-y-0 relative">
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-              {steps.map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative"
-                >
-                  {/* Step Card */}
-                  <div className="relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
-                    {/* Step Number */}
-                    <div className="absolute -top-3 -left-3 w-12 h-12 rounded-full bg-[#101010] text-white flex items-center justify-center font-bold text-lg shadow-md">
-                      {step.number}
+          <div className="grid md:grid-cols-3 gap-6 md:gap-10">
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group"
+                whileHover={{ y: -5 }}
+              >
+                {/* Step Card */}
+                <div className="relative bg-white rounded-xl p-7 shadow-md border border-gray-100 hover:shadow-xl hover:border-[#db9e22]/30 transition-all duration-300 h-full flex flex-col">
+                  {/* Step Number Badge */}
+                  <div className="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-[#db9e22] text-white flex items-center justify-center font-bold text-lg shadow-md">
+                    {step.number}
+                  </div>
+                  
+                  {/* Icon with glow effect */}
+                  <div className="relative h-16 flex items-center mb-6">
+                    <div className="absolute w-14 h-14 bg-[#db9e22]/10 rounded-full blur-xl opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative w-14 h-14 rounded-lg bg-[#101010] border border-[#db9e22]/20 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-300">
+                      <step.icon className="w-7 h-7 text-[#db9e22]" />
                     </div>
-                    
-                    {/* Icon */}
-                    <div className="h-14 flex items-center mt-6 mb-5">
-                      <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
-                        <step.icon className="w-6 h-6 text-[#db9e22]" />
-                      </div>
-                    </div>
-                    
-                    {/* Content */}
-                    <h3 className="text-xl font-bold text-[#101010] mb-3">
+                  </div>
+                  
+                  {/* Content */}
+                  <div>
+                    <h3 className="text-xl font-bold text-[#101010] mb-3 group-hover:text-[#db9e22] transition-colors">
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 text-sm md:text-base mb-4 flex-grow">
+                    <p className="text-gray-600 text-sm md:text-base">
                       {step.description}
                     </p>
-                    
-                    {/* Connector Line for Desktop */}
-                    {index < steps.length - 1 && (
-                      <div className="hidden md:block absolute top-10 -right-6 h-px w-12 bg-[#db9e22]/20 z-0" />
-                    )}
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  
+                  {/* Step connection indicators */}
+                  {index < steps.length - 1 && (
+                    <div className="absolute -right-5 top-1/2 transform -translate-y-1/2 hidden md:flex items-center justify-center">
+                      <div className="w-3 h-3 rounded-full bg-[#db9e22]/30"></div>
+                    </div>
+                  )}
+                </div>
+                
+                {/* Arrow indicators between cards (only on desktop) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute -right-6 top-1/2 transform -translate-y-1/2 text-[#db9e22]">
+                    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L10 10L1 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
 

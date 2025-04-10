@@ -51,7 +51,7 @@ export default function ProblemSolutionSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Dein Business braucht eine Website – 
-            <span className="text-[#db9e22]"> aber keine monatelange Wartezeit!</span>
+            <span className="text-[#db9e22]"> aber nicht die typisch deutsche Wartezeit!</span>
           </h2>
           <p className="text-lg text-gray-700">
             Viele Agenturen brauchen Wochen oder sogar Monate, um eine Webseite zu liefern. 
@@ -70,10 +70,10 @@ export default function ProblemSolutionSection() {
               className="mb-8"
             >
               <div className="flex items-center mb-6">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f8e4c8] mr-3">
-                  <AlertTriangle className="w-5 h-5 text-[#db9e22]" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 mr-3">
+                  <AlertTriangle className="w-5 h-5 text-red-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Das Problem:</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Das Problem traditioneller deutscher Agenturen:</h3>
               </div>
               
               <div className="space-y-6">
@@ -109,10 +109,10 @@ export default function ProblemSolutionSection() {
               className="mb-8"
             >
               <div className="flex items-center mb-6">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f8e4c8] mr-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#db9e22]" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 mr-3">
+                  <CheckCircle2 className="w-5 h-5 text-green-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Unsere Lösung:</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Die Cliffhanger Studio Lösung:</h3>
               </div>
 
               <div className="space-y-6">
@@ -147,11 +147,9 @@ export default function ProblemSolutionSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <div className="bg-[#101010] text-white py-6 px-8 rounded-xl inline-block">
-            <h3 className="text-xl md:text-2xl font-semibold">
-              Schnell, professionell & stressfrei – <span className="text-[#db9e22]">so geht Webdesign heute!</span>
-            </h3>
-          </div>
+          <h3 className="text-xl md:text-2xl font-semibold text-gray-900">
+            Schnell, professionell & stressfrei – <span className="text-[#db9e22]">so geht Webdesign heute!</span>
+          </h3>
         </motion.div>
 
         {/* CTA Button */}

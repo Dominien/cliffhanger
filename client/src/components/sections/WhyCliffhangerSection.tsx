@@ -9,7 +9,7 @@ const benefits = [
     icon: Clock,
     title: "Schnelle Umsetzung",
     description: "Deine Website ist in nur 7 Tagen einsatzbereit – ohne Kompromisse bei der Qualität.",
-    highlights: ["Schneller Marktstart", "Keine langen Wartezeiten", "Zeitnahe Anpassungen"]
+    highlights: ["Schneller Marktstart", "Sofort Marketing testen", "Schnelle Iteration statt Perfektionismus"]
   },
   {
     icon: Lightbulb,
@@ -65,8 +65,8 @@ export default function WhyCliffhangerSection() {
             Warum mit uns arbeiten?
           </h2>
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-            Professionelle Webseiten schnell, individuell und zuverlässig – 
-            mit Cliffhanger Studio hast du den richtigen Partner für deinen Online-Erfolg.
+            Zeit ist im Marketing entscheidend. Während traditionelle Agenturen <span className="text-white">Monate für eine Website brauchen</span>, 
+            liefern wir in <span className="text-[#db9e22] font-medium">nur 7 Tagen</span> – damit du schnell testen und optimieren kannst.
           </p>
         </motion.div>
 
