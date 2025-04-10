@@ -923,284 +923,374 @@ export default function WebAppService() {
       </section>
       
       {/* Case Study Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-gradient-to-b from-white to-[#f8f9fa]">
         <Container>
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+          {/* Case Study Header with Visually Distinct Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center bg-[#f0f0f0] rounded-full px-5 py-2 border border-gray-200 mb-6 shadow-sm">
+              <div className="w-6 h-6 bg-[#db9e22] rounded-full flex items-center justify-center mr-2">
+                <span className="text-white font-bold text-xs">✓</span>
+              </div>
+              <span className="font-semibold text-gray-800">CASE STUDY</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-4">
+              Ordnex KI-Baudokumentations-App
+            </h2>
+            
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-2">
+              Von manueller Dokumentation zu KI-gestützter Effizienz
+            </p>
+            
+            <a 
+              href="https://ord-nex.de" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-2 text-[#db9e22] hover:text-[#e4bb68] font-medium transition-colors duration-300"
             >
-              <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-4 block">
-                Erfolgsgeschichte
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-6">
-                Wie wir Ordnex zu digitaler Exzellenz verholfen haben
-              </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                Von der Idee zur führenden KI-Lösung für die Baudokumentation
-              </p>
-            </motion.div>
+              <span>ord-nex.de</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </motion.div>
 
-            {/* Case Study Content */}
-            <div className="grid md:grid-cols-2 gap-12 mb-16 items-center">
-              {/* Left Side - App Image Mockup */}
+          {/* Visual Overview - Image Grid */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <div className="grid md:grid-cols-12 gap-6">
+              {/* Main App Preview - Large */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="rounded-2xl overflow-hidden shadow-2xl relative"
+                transition={{ duration: 0.5 }}
+                className="md:col-span-7 bg-[#101010] rounded-2xl overflow-hidden shadow-xl relative"
               >
-                <div className="bg-gradient-to-br from-[#101010] to-[#333] p-4 pt-12 relative">
+                <div className="p-4 pt-10 relative">
                   {/* App Status Bar */}
-                  <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-6 py-2 text-white/80 text-xs">
-                    <span>09:41</span>
+                  <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-5 py-2 bg-[#101010] text-white/80 text-xs">
+                    <div className="flex items-center">
+                      <span className="mr-2">Ordnex</span>
+                      <div className="w-1.5 h-1.5 bg-[#db9e22] rounded-full"></div>
+                    </div>
                     <div className="flex items-center gap-1">
-                      <span>4G</span>
-                      <div className="h-3 w-4 relative">
-                        <div className="absolute bottom-0 left-0 w-1 h-1 bg-white/80 rounded-sm"></div>
-                        <div className="absolute bottom-0 left-1.5 w-1 h-1.5 bg-white/80 rounded-sm"></div>
-                        <div className="absolute bottom-0 left-3 w-1 h-2 bg-white/80 rounded-sm"></div>
-                      </div>
-                      <div className="h-3 w-6 relative">
-                        <div className="absolute top-0 right-0 w-5 h-2.5 border border-white/80 rounded-sm"></div>
-                        <div className="absolute top-0 right-0 w-3 h-2.5 bg-white/80 rounded-sm"></div>
-                      </div>
+                      <span className="block w-1.5 h-1.5 bg-white/80 rounded-full"></span>
+                      <span className="block w-1.5 h-1.5 bg-white/80 rounded-full"></span>
+                      <span className="block w-1.5 h-1.5 bg-white/80 rounded-full"></span>
                     </div>
                   </div>
-
-                  {/* App Screenshot Content */}
-                  <div className="bg-white rounded-lg p-4">
-                    <div className="bg-gray-100 rounded-lg p-4 mb-4">
-                      <h4 className="text-lg font-bold mb-2">KI-Analyse</h4>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-gray-700">Mangel-Typ</span>
-                        <span className="font-semibold">98%</span>
+                  
+                  {/* Large App Screenshot */}
+                  <div className="bg-[#f9f9f9] rounded-lg p-3 shadow-inner">
+                    <div className="flex justify-between items-center mb-4 bg-white p-3 rounded-lg shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <div className="w-10 h-10 rounded-lg bg-[#db9e22]/20 flex items-center justify-center">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 21H9V12.6C9 12.2686 9.26863 12 9.6 12H14.4C14.7314 12 15 12.2686 15 12.6V21Z" stroke="#db9e22" strokeWidth="2"/>
+                            <path d="M20.4 21H15V16.1C15 15.7686 15.2686 15.5 15.6 15.5H20.4C20.7314 15.5 21 15.7686 21 16.1V20.4C21 20.7314 20.7314 21 20.4 21Z" stroke="#db9e22" strokeWidth="2"/>
+                            <path d="M9 21H3.6C3.26863 21 3 20.7314 3 20.4V16.1C3 15.7686 3.26863 15.5 3.6 15.5H8.4C8.73137 15.5 9 15.7686 9 16.1V21Z" stroke="#db9e22" strokeWidth="2"/>
+                            <path d="M12 3L16.5 7.5M12 3L7.5 7.5M12 3V9" stroke="#db9e22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <span className="font-semibold text-gray-800">Neuer Mangel erfassen</span>
                       </div>
-                      <div className="h-2 w-full bg-gray-200 rounded-full mb-4">
-                        <div className="h-2 bg-[#db9e22] rounded-full" style={{ width: '98%' }}></div>
-                      </div>
-                      <p className="text-gray-800 font-medium">Riss in Putz</p>
-                      
-                      <div className="flex justify-between mt-4 mb-2">
-                        <span className="text-gray-700">Rechtsbasis</span>
-                        <span className="font-semibold">92%</span>
-                      </div>
-                      <div className="h-2 w-full bg-gray-200 rounded-full mb-4">
-                        <div className="h-2 bg-[#db9e22] rounded-full" style={{ width: '92%' }}></div>
-                      </div>
-                      <p className="text-gray-800 font-medium">VOB/B §13</p>
-                      
-                      <div className="flex justify-between mt-4 mb-2">
-                        <span className="text-gray-700">Schweregrad</span>
-                        <span className="font-semibold">87%</span>
-                      </div>
-                      <div className="h-2 w-full bg-gray-200 rounded-full mb-4">
-                        <div className="h-2 bg-[#db9e22] rounded-full" style={{ width: '87%' }}></div>
-                      </div>
-                      <p className="text-gray-800 font-medium">Mittel (3/5)</p>
+                      <div className="text-xs text-gray-500">Bauprojekt: WHS-23-512</div>
                     </div>
                     
-                    <div className="text-center">
-                      <p className="text-[#db9e22] font-semibold mb-1">Analyse abgeschlossen</p>
-                      <p className="text-sm text-gray-600">In Sekunden klassifiziert!</p>
+                    <div className="grid grid-cols-2 gap-4 p-4 bg-white rounded-lg shadow-sm">
+                      <div className="space-y-4">
+                        <div>
+                          <div className="flex justify-between items-center mb-1">
+                            <span className="text-gray-700 text-sm">Mangel-Analyse</span>
+                            <span className="text-sm font-semibold text-[#db9e22]">98%</span>
+                          </div>
+                          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div className="h-full bg-[#db9e22] rounded-full" style={{width: "98%"}}></div>
+                          </div>
+                          <div className="mt-1 text-sm font-medium text-gray-800">Riss im Putz (Fassade)</div>
+                        </div>
+                        
+                        <div>
+                          <div className="flex justify-between items-center mb-1">
+                            <span className="text-gray-700 text-sm">Rechtliche Grundlage</span>
+                            <span className="text-sm font-semibold text-[#db9e22]">95%</span>
+                          </div>
+                          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div className="h-full bg-[#db9e22] rounded-full" style={{width: "95%"}}></div>
+                          </div>
+                          <div className="mt-1 text-sm font-medium text-gray-800">VOB/B §13 Abs. 1</div>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-gray-100 rounded-lg p-3 flex flex-col justify-between">
+                        <div>
+                          <div className="text-sm font-medium text-gray-800 mb-2">KI-Empfehlung:</div>
+                          <p className="text-xs text-gray-600">Mangelkategorie Typ C - Mittel</p>
+                          <p className="text-xs text-gray-600">Behebung innerhalb von 14 Tagen erforderlich</p>
+                        </div>
+                        <div className="mt-2 text-center">
+                          <span className="inline-block px-3 py-1 bg-[#db9e22]/10 rounded-full text-xs font-medium text-[#db9e22]">
+                            Automatisch klassifiziert
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </motion.div>
               
-              {/* Right Side - Challenge & Solution */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="space-y-8"
-              >
-                <div>
-                  <h3 className="text-2xl font-bold text-[#101010] mb-4">Die Herausforderung</h3>
-                  <p className="text-gray-700 mb-6">
-                    Ordnex benötigte eine digitale Lösung, um die zeitaufwändige und fehleranfällige Dokumentation von Baumängeln zu revolutionieren. Das Unternehmen suchte nach einer Möglichkeit, diesen Prozess zu digitalisieren und durch KI zu optimieren.
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
-                      </div>
-                      <span className="text-gray-700">Bauexperten verbringen zu viel Zeit mit Papierkram</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
-                      </div>
-                      <span className="text-gray-700">Mangelnde Standardisierung bei der Dokumentation</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
-                      </div>
-                      <span className="text-gray-700">Rechtliche Risiken durch unvollständige Nachweise</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h3 className="text-2xl font-bold text-[#101010] mb-4">Unsere Lösung</h3>
-                  <p className="text-gray-700 mb-6">
-                    Wir haben für Ordnex eine maßgeschneiderte Web-App mit integrierter KI entwickelt, die Baumängel automatisch analysiert und rechtssichere Dokumentationen erstellt.
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
-                      </div>
-                      <span className="text-gray-700">KI-gestützte Analyse von Baumängeln per Foto</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
-                      </div>
-                      <span className="text-gray-700">VOB/BGB-konforme Dokumentationserstellung</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-[#db9e22]" />
-                      </div>
-                      <span className="text-gray-700">Benutzerfreundliche Web-App mit mobiler Optimierung</span>
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-            </div>
-            
-            {/* Results and Testimonial */}
-            <div className="bg-[#f8f9fa] rounded-2xl p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                {/* Left Side - Results */}
+              {/* Side Panels - Challenge, Solution */}
+              <div className="md:col-span-5 flex flex-col gap-6">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="space-y-6"
+                  transition={{ duration: 0.4 }}
+                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 flex-1"
                 >
-                  <h3 className="text-2xl font-bold text-[#101010]">Ergebnisse</h3>
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="bg-white rounded-xl p-6 shadow-md">
-                      <h4 className="text-[#db9e22] text-3xl font-bold mb-2">75%</h4>
-                      <p className="text-gray-700">Zeitersparnis bei der Dokumentation</p>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0">
+                      <AlertTriangleIcon className="w-5 h-5 text-[#db9e22]" />
                     </div>
-                    <div className="bg-white rounded-xl p-6 shadow-md">
-                      <h4 className="text-[#db9e22] text-3xl font-bold mb-2">98%</h4>
-                      <p className="text-gray-700">Genauigkeit der KI-Analysen</p>
+                    <h3 className="text-lg font-bold text-[#101010]">Die Herausforderung</h3>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <div className="w-5 h-5 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-3 h-3 text-[#db9e22]" />
+                      </div>
+                      <p className="text-sm text-gray-700">Zeitintensive manuelle Dokumentation von Baumängeln</p>
                     </div>
-                    <div className="bg-white rounded-xl p-6 shadow-md">
-                      <h4 className="text-[#db9e22] text-3xl font-bold mb-2">3x</h4>
-                      <p className="text-gray-700">Schnellere Projektabwicklung</p>
+                    <div className="flex items-start gap-2">
+                      <div className="w-5 h-5 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-3 h-3 text-[#db9e22]" />
+                      </div>
+                      <p className="text-sm text-gray-700">Fehlende Standardisierung führt zu Rechtsstreitigkeiten</p>
                     </div>
-                    <div className="bg-white rounded-xl p-6 shadow-md">
-                      <h4 className="text-[#db9e22] text-3xl font-bold mb-2">89%</h4>
-                      <p className="text-gray-700">Reduzierte Rechtsstreitigkeiten</p>
+                    <div className="flex items-start gap-2">
+                      <div className="w-5 h-5 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-3 h-3 text-[#db9e22]" />
+                      </div>
+                      <p className="text-sm text-gray-700">Fachkräftemangel erhöht Druck auf Effizienz</p>
                     </div>
                   </div>
                 </motion.div>
                 
-                {/* Right Side - Testimonial */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-white rounded-xl p-8 shadow-lg relative"
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 flex-1"
                 >
-                  <div className="absolute -top-6 -left-6 w-12 h-12 bg-[#db9e22] rounded-full flex items-center justify-center shadow-lg">
-                    <Quote className="w-6 h-6 text-white" />
-                  </div>
-                  <blockquote className="text-gray-700 italic mb-6">
-                    "Cliffhanger Studios hat unsere Vision perfekt umgesetzt. Die Web-App mit KI-Integration hat die Art und Weise, wie wir Baumängel dokumentieren, komplett revolutioniert. Unsere Kunden sparen jetzt täglich wertvolle Zeit und können sich auf das konzentrieren, was wirklich zählt: das Bauen. Die Zusammenarbeit war professionell, schnell und äußerst zielgerichtet - genau das, was wir gesucht haben."
-                  </blockquote>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-[#f0f0f0] flex items-center justify-center text-[#101010] font-bold text-xl">
-                      M
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-5 h-5 text-[#db9e22]" />
                     </div>
-                    <div>
-                      <h4 className="font-bold text-[#101010]">Michael Roth</h4>
-                      <p className="text-gray-600 text-sm">Geschäftsführer, Ordnex GmbH</p>
+                    <h3 className="text-lg font-bold text-[#101010]">Unsere Lösung</h3>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <div className="w-5 h-5 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-3 h-3 text-[#db9e22]" />
+                      </div>
+                      <p className="text-sm text-gray-700">KI-gestützte Analyse von Baumängeln per Fotouploads</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <div className="w-5 h-5 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-3 h-3 text-[#db9e22]" />
+                      </div>
+                      <p className="text-sm text-gray-700">Automatische Erstellung VOB/BGB-konformer Dokumentation</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <div className="w-5 h-5 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="w-3 h-3 text-[#db9e22]" />
+                      </div>
+                      <p className="text-sm text-gray-700">Zeiteinsparung von 75% bei der Baudokumentation</p>
                     </div>
                   </div>
                 </motion.div>
               </div>
             </div>
           </div>
-        </Container>
-      </section>
-      
-      {/* Final Call To Action Section */}
-      <section className="relative py-24 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#db9e22]/10 to-[#db9e22]/30 z-0"></div>
-        <div className="absolute inset-0 backdrop-blur-sm z-0"></div>
-        
-        {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#db9e22]/20 rounded-full blur-3xl -mr-40 -mt-40 z-0"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#db9e22]/20 rounded-full blur-3xl -ml-40 -mb-40 z-0"></div>
-        
-        <Container className="relative z-10">
+          
+          {/* Testimonial Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center"
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
-              Starten Sie jetzt Ihre digitale Transformation
-            </h2>
-            
-            {/* Main CTA Button with Glow Effect */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mb-8 relative"
-            >
-              <Button 
-                size="lg"
-                className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg md:text-xl py-6 px-10 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-lg"
-                onClick={() => setLocation("/funnel")}
-              >
-                KI-Analyse starten - Dauert nur 5 Minuten
-              </Button>
-              <div className="absolute inset-0 -z-10 bg-[#db9e22] blur-xl rounded-full opacity-40 scale-110 animate-pulse"></div>
-            </motion.div>
-            
-            {/* Divider with Text */}
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-white/20 w-8"></div>
-              <p className="text-white/70 font-medium">oder</p>
-              <div className="h-px bg-white/20 w-8"></div>
+            <div className="bg-[#101010] rounded-2xl p-8 md:p-10 relative overflow-hidden shadow-xl">
+              {/* Decorative elements */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -mr-32 -mt-32 blur-2xl"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#db9e22]/10 rounded-full -ml-24 -mb-24 blur-2xl"></div>
+              
+              <div className="relative flex flex-col md:flex-row items-center gap-8">
+                <div className="flex-shrink-0 w-full md:w-auto flex justify-center">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20">
+                    <Quote className="w-8 h-8 md:w-10 md:h-10 text-[#db9e22]" />
+                  </div>
+                </div>
+                
+                <div>
+                  <blockquote className="text-white/90 text-lg md:text-xl mb-6 italic">
+                    "Die KI-App hat unsere Baudokumentation revolutioniert. Wir sparen täglich wertvolle Zeit und können uns auf das Bauen konzentrieren. Eine Investition, die sich sofort ausgezahlt hat."
+                  </blockquote>
+                  
+                  <div className="flex flex-col md:flex-row md:items-center justify-between">
+                    <div className="mb-4 md:mb-0">
+                      <p className="text-white font-semibold">Geschäftsführer, Ordnex</p>
+                      <a 
+                        href="https://ord-nex.de" 
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        className="text-[#db9e22] hover:text-[#e4bb68] text-sm inline-flex items-center gap-1 mt-1 transition-colors duration-300"
+                      >
+                        <span>ord-nex.de</span>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M15 3H21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M10 14L21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </a>
+                    </div>
+                    
+                    <div className="flex items-center gap-1">
+                      {Array(5).fill(0).map((_, i) => (
+                        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#db9e22" stroke="#db9e22" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            {/* Secondary CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <Button 
-                size="lg"
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/20 text-lg md:text-xl py-6 px-10 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg"
-                onClick={() => setLocation("/contact")}
-              >
-                Beratungsgespräch vereinbaren
-              </Button>
-            </motion.div>
           </motion.div>
+        </Container>
+      </section>
+      
+      {/* Final Call To Action Section */}
+      <section className="py-28 overflow-hidden relative">
+        {/* Modern, dark background with subtle pattern */}
+        <div className="absolute inset-0 bg-[#101010] z-0"></div>
+        <div 
+          className="absolute inset-0 opacity-5 z-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M0 0h2v2H0V0zm4 4h2v2H4V4zm-4 0h2v2H0V4zm8 0h2v2H8V4zm-4 0h2v2H4V4zm8 8h2v2h-2v-2zm0-4h2v2h-2V8zm0-4h2v2h-2V4zm4 4h2v2h-2V8zm4 4h2v2h-2v-2zm-4 0h2v2h-2v-2zm-8 0h2v2H8v-2zm4 0h2v2h-2v-2zm-8 0h2v2H4v-2zm0 4h2v2H4v-2z'/%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        ></div>
+        
+        {/* Golden accent lighting effects */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#db9e22]/10 rounded-full blur-[120px] z-0 opacity-60"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#db9e22]/10 rounded-full blur-[120px] z-0 opacity-60"></div>
+        
+        <Container className="relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+              {/* Left side - Content */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                  Starten Sie jetzt Ihre <span className="text-[#db9e22]">digitale Transformation</span>
+                </h2>
+                
+                <p className="text-white/80 text-lg mb-8 max-w-lg">
+                  Mit unserer KI-Analyse finden wir die perfekte Web-App-Lösung für Ihr Unternehmen. Schnell, präzise und maßgeschneidert.
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22]" />
+                    </div>
+                    <span className="text-white">Unverbindliche KI-Analyse in 5 Minuten</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22]" />
+                    </div>
+                    <span className="text-white">Maßgeschneiderte Lösungsvorschläge</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-[#db9e22]" />
+                    </div>
+                    <span className="text-white">Professionelle Umsetzung durch Experten</span>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Right side - Cards with CTA buttons */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="space-y-6"
+              >
+                {/* CTA Card 1 - Primary */}
+                <div className="bg-gradient-to-br from-[#db9e22] to-[#e4bb68] rounded-2xl p-1 shadow-lg group transform transition-transform duration-300 hover:scale-[1.02]">
+                  <div className="bg-[#151515] rounded-xl p-6 h-full">
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-xl font-bold text-white">KI-Analyse starten</h3>
+                      <div className="w-10 h-10 rounded-full bg-[#db9e22]/20 flex items-center justify-center">
+                        <Brain className="w-5 h-5 text-[#db9e22]" />
+                      </div>
+                    </div>
+                    <p className="text-white/70 mb-6">
+                      In nur 5 Minuten erhalten Sie eine maßgeschneiderte KI-Analyse für Ihr Unternehmen
+                    </p>
+                    <Button 
+                      size="lg"
+                      className="w-full bg-[#db9e22] hover:bg-[#e4bb68] text-[#101010] font-bold text-base py-5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                      onClick={() => setLocation("/funnel")}
+                    >
+                      Jetzt starten
+                    </Button>
+                  </div>
+                </div>
+                
+                {/* CTA Card 2 - Secondary */}
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-lg group transform transition-transform duration-300 hover:scale-[1.02]">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold text-white">Beratungsgespräch</h3>
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <Users className="w-5 h-5 text-[#db9e22]" />
+                    </div>
+                  </div>
+                  <p className="text-white/70 mb-6">
+                    Lieber persönlich besprechen? Vereinbaren Sie ein unverbindliches Beratungsgespräch
+                  </p>
+                  <Button 
+                    size="lg"
+                    className="w-full bg-white/10 hover:bg-white/20 text-white font-medium text-base py-5 rounded-lg border border-white/20 transition-all duration-300"
+                    onClick={() => setLocation("/contact")}
+                  >
+                    Termin vereinbaren
+                  </Button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </Container>
       </section>
     </>
