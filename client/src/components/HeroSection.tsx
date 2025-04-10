@@ -58,19 +58,11 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative inline-block mb-8"
           >
-            <motion.h1 
-              className="text-5xl sm:text-6xl font-bold leading-tight text-white"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ 
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              Professionelle Webseiten
+            <h1 className="text-5xl sm:text-6xl font-bold leading-tight text-white">
+              Deine Landing Page
               <br />
-              In nur 7 Tagen online!
-            </motion.h1>
+              Live im Call präsentiert!
+            </h1>
           </motion.div>
 
           <motion.p 
@@ -79,7 +71,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl text-white/80 mb-12 max-w-2xl mx-auto"
           >
-            Keine lange Wartezeit – in nur 7 Tagen ist deine professionelle Website online und bereit für deine Kunden.
+            Keine verlorene Zeit – im Call siehst du direkt deine maßgeschneiderte Landing Page in Aktion.
           </motion.p>
 
           <motion.div 
@@ -97,7 +89,7 @@ export default function HeroSection() {
                 className="relative bg-[#db9e22] hover:bg-[#e4bb68] text-white text-lg py-6 px-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
                 onClick={() => setLocation("/funnel")}
               >
-                In 7 Tagen online gehen
+                Jetzt kostenlosen Call buchen
               </Button>
             </motion.div>
             <motion.div 
