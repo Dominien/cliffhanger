@@ -1008,52 +1008,71 @@ export default function WebAppService() {
                       </div>
                     </div>
                     
-                    {/* Full-height white dashboard */}
-                    <div className="bg-white rounded-lg shadow-sm h-[280px] flex flex-col">
-                      {/* Abstract data visualization */}
-                      <div className="flex-1 p-4">
-                        <div className="mb-6">
-                          <div className="flex justify-between items-center mb-1">
-                            <span className="text-gray-700 text-sm">KI-Analyse</span>
-                            <span className="text-sm font-semibold text-[#db9e22]">97%</span>
+                    {/* Clean, minimal white dashboard */}
+                    <div className="bg-white rounded-lg shadow-sm h-[280px] overflow-hidden">
+                      {/* Dashboard content */}
+                      <div className="p-5">
+                        {/* Header with metrics */}
+                        <div className="flex items-center justify-between mb-6">
+                          <div className="flex items-center gap-2">
+                            <div className="w-3 h-3 rounded-full bg-[#db9e22]"></div>
+                            <span className="text-gray-700 text-sm font-medium">Dashboard</span>
                           </div>
-                          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div className="h-full bg-[#db9e22] rounded-full" style={{width: "97%"}}></div>
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                              <div className="w-4 h-4 rounded-full bg-[#db9e22]/20"></div>
+                            </div>
+                            <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                              <div className="w-4 h-4 rounded-full bg-[#db9e22]/20"></div>
+                            </div>
                           </div>
                         </div>
                         
-                        <div className="grid grid-cols-3 gap-2 mt-6">
-                          {[1, 2, 3].map((i) => (
-                            <div key={i} className="h-20 bg-gray-100 rounded-md flex items-center justify-center">
-                              <div className="w-6 h-6 rounded-md bg-[#db9e22]/10 flex items-center justify-center">
-                                <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
+                        {/* Main visualization - cleaner boxes */}
+                        <div className="space-y-5">
+                          {/* First row */}
+                          <div className="h-36 bg-gray-50 rounded-lg p-4 border border-gray-100">
+                            <div className="flex justify-between items-center mb-3">
+                              <span className="text-sm text-gray-600">Analyse</span>
+                              <span className="text-xs font-medium text-[#db9e22]">Aktiv</span>
+                            </div>
+                            
+                            <div className="grid grid-cols-4 gap-3 h-16">
+                              {[1, 2, 3, 4].map((i) => (
+                                <div key={i} className="bg-white rounded border border-gray-100 h-full"></div>
+                              ))}
+                            </div>
+                            
+                            <div className="mt-3 flex justify-between items-center">
+                              <div className="h-2 w-32 bg-gray-200 rounded-full overflow-hidden">
+                                <div className="h-full bg-[#db9e22]/50 rounded-full" style={{width: "75%"}}></div>
+                              </div>
+                              <div className="text-xs text-gray-400">75%</div>
+                            </div>
+                          </div>
+                          
+                          {/* Second row */}
+                          <div className="h-20 grid grid-cols-2 gap-3">
+                            <div className="bg-gray-50 rounded-lg flex items-center p-3 border border-gray-100">
+                              <div className="w-8 h-8 rounded bg-white mr-3 flex items-center justify-center border border-gray-100">
+                                <div className="w-4 h-4 rounded-full bg-[#db9e22]/20"></div>
+                              </div>
+                              <div className="h-2 flex-1 bg-gray-200 rounded-full overflow-hidden">
+                                <div className="h-full bg-[#db9e22]/50 rounded-full" style={{width: "60%"}}></div>
                               </div>
                             </div>
-                          ))}
-                        </div>
-                        
-                        <div className="grid grid-cols-2 gap-2 mt-4">
-                          {[1, 2].map((i) => (
-                            <div key={i} className="h-16 bg-gray-100 rounded-md flex items-center justify-center">
-                              <div className="w-6 h-6 rounded-md bg-[#db9e22]/10 flex items-center justify-center">
-                                <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
+                            <div className="bg-gray-50 rounded-lg flex items-center p-3 border border-gray-100">
+                              <div className="w-8 h-8 rounded bg-white mr-3 flex items-center justify-center border border-gray-100">
+                                <div className="w-4 h-4 rounded-full bg-[#db9e22]/20"></div>
+                              </div>
+                              <div className="h-2 flex-1 bg-gray-200 rounded-full overflow-hidden">
+                                <div className="h-full bg-[#db9e22]/50 rounded-full" style={{width: "85%"}}></div>
                               </div>
                             </div>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      {/* Simple footer with subtle branding */}
-                      <div className="border-t border-gray-100 p-4 flex justify-between items-center">
-                        <div className="w-8 h-8 rounded-md bg-[#db9e22]/10 flex items-center justify-center">
-                          <div className="w-4 h-4 rounded-full bg-[#db9e22]/20 flex items-center justify-center">
-                            <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
                           </div>
                         </div>
-                        <div className="h-1 w-24 bg-gray-100 rounded-full overflow-hidden">
-                          <div className="h-full bg-[#db9e22]/20 rounded-full w-3/4"></div>
-                        </div>
                       </div>
+                    </div>
                     </div>
                   </div>
                 </div>
