@@ -251,11 +251,6 @@ export default function WebAppService() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/30 to-[#e4bb68]/30 rounded-2xl blur-md opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
               <div className="relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#db9e22]/30 shadow-lg hover:shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
-                {/* Tech-inspired decorative elements */}
-                <div className="absolute -right-8 -top-8 w-20 h-20 bg-gray-50 rounded-full z-0"></div>
-                <div className="absolute right-12 top-12 w-3 h-3 bg-[#db9e22]/30 rounded-full z-0"></div>
-                <div className="absolute right-20 top-28 w-2 h-2 bg-[#db9e22]/20 rounded-full z-0"></div>
-                <div className="absolute -left-8 bottom-16 w-16 h-16 border border-gray-100 rounded-full z-0"></div>
                 
                 <div className="relative z-10">
                   <div className="mb-6">
@@ -291,11 +286,6 @@ export default function WebAppService() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/30 to-[#e4bb68]/30 rounded-2xl blur-md opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
               <div className="relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#db9e22]/30 shadow-lg hover:shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
-                {/* Tech-inspired decorative elements */}
-                <div className="absolute -right-8 -top-8 w-20 h-20 bg-gray-50 rounded-full z-0"></div>
-                <div className="absolute right-12 top-12 w-3 h-3 bg-[#db9e22]/30 rounded-full z-0"></div>
-                <div className="absolute right-20 top-28 w-2 h-2 bg-[#db9e22]/20 rounded-full z-0"></div>
-                <div className="absolute -left-8 bottom-16 w-16 h-16 border border-gray-100 rounded-full z-0"></div>
                 
                 <div className="relative z-10">
                   <div className="mb-6">
@@ -331,11 +321,6 @@ export default function WebAppService() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#db9e22]/30 to-[#e4bb68]/30 rounded-2xl blur-md opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
               <div className="relative bg-white rounded-2xl p-8 border border-gray-100 hover:border-[#db9e22]/30 shadow-lg hover:shadow-xl transition-all duration-300 h-full overflow-hidden group-hover:transform group-hover:scale-[1.02]">
-                {/* Tech-inspired decorative elements */}
-                <div className="absolute -right-8 -top-8 w-20 h-20 bg-gray-50 rounded-full z-0"></div>
-                <div className="absolute right-12 top-12 w-3 h-3 bg-[#db9e22]/30 rounded-full z-0"></div>
-                <div className="absolute right-20 top-28 w-2 h-2 bg-[#db9e22]/20 rounded-full z-0"></div>
-                <div className="absolute -left-8 bottom-16 w-16 h-16 border border-gray-100 rounded-full z-0"></div>
                 
                 <div className="relative z-10">
                   <div className="mb-6">
@@ -437,7 +422,7 @@ export default function WebAppService() {
             </p>
           </motion.div>
 
-          <div className="relative grid lg:grid-cols-2 gap-16 mb-24">
+          <div className="relative grid lg:grid-cols-2 gap-16 mb-24 mx-auto max-w-5xl">
             {/* First Step - Left */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -447,8 +432,8 @@ export default function WebAppService() {
               className="group relative"
             >
               <div className="relative z-10">
-                <div className="flex items-start">
-                  <div className="mr-6 flex-shrink-0">
+                <div className="flex flex-col md:flex-row md:items-start">
+                  <div className="mb-6 md:mb-0 md:mr-6 flex-shrink-0 mx-auto md:mx-0">
                     <div className="relative">
                       <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#db9e22]/10 backdrop-blur-sm border border-[#db9e22]/30">
                         <Brain className="w-8 h-8 text-[#db9e22]" />
@@ -457,10 +442,10 @@ export default function WebAppService() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300 text-center md:text-left">
                       KI-Analyse
                     </h3>
-                    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl">
+                    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl text-center md:text-left">
                       <p className="text-white/80 text-lg leading-relaxed">
                         Unsere KI analysiert Ihr Unternehmen gründlich und identifiziert die wirkungsvollsten Web-App-Konzepte für Ihre geschäftlichen Herausforderungen.
                       </p>
@@ -496,8 +481,8 @@ export default function WebAppService() {
               className="group relative"
             >
               <div className="relative z-10">
-                <div className="flex items-start">
-                  <div className="mr-6 flex-shrink-0">
+                <div className="flex flex-col md:flex-row md:items-start">
+                  <div className="mb-6 md:mb-0 md:mr-6 flex-shrink-0 mx-auto md:mx-0">
                     <div className="relative">
                       <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#db9e22]/10 backdrop-blur-sm border border-[#db9e22]/30">
                         <Code className="w-8 h-8 text-[#db9e22]" />
@@ -506,10 +491,10 @@ export default function WebAppService() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#db9e22] transition-colors duration-300 text-center md:text-left">
                       Entwicklung
                     </h3>
-                    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl">
+                    <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl text-center md:text-left">
                       <p className="text-white/80 text-lg leading-relaxed">
                         Unser erfahrenes Entwicklerteam setzt die KI-generierten Konzepte in leistungsstarke, skalierbare und benutzerfreundliche Web-Anwendungen um.
                       </p>
@@ -566,50 +551,95 @@ export default function WebAppService() {
       </section>
       
       {/* Plan Section */}
-      <section className="py-24 bg-[#101010]">
-        <Container>
+      <section className="py-28 bg-white relative overflow-hidden">
+        {/* Subtle decoration */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl -mr-48 -mt-48 opacity-60"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#db9e22]/5 rounded-full blur-3xl -ml-48 -mb-48 opacity-60"></div>
+        
+        <Container className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              In 4 einfachen Schritten zu Ihrer Web-App
+            <div className="inline-flex items-center justify-center gap-2 px-5 py-2 bg-[#db9e22]/10 rounded-full mb-6">
+              <span className="text-[#db9e22] font-medium text-sm">4 EINFACHE SCHRITTE</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-[#101010] mb-6 max-w-3xl mx-auto">
+              Ihr Weg zur maßgeschneiderten Web-App
             </h2>
+            <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+              Von der ersten Idee bis zur fertigen Anwendung in wenigen Wochen
+            </p>
           </motion.div>
 
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="relative">
-              {/* Connecting Line */}
-              <div className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-1 md:w-0.5 bg-[#db9e22]/30 hidden md:block" style={{ transform: 'translateX(-50%)' }}></div>
+              {/* Horizontal timeline for desktop */}
+              <div className="hidden lg:block absolute top-1/2 left-[10%] right-[10%] h-0.5 bg-gray-200"></div>
+              <div className="hidden lg:block absolute top-1/2 left-[10%] right-[10%] h-0.5 bg-[#db9e22]/50 transform -translate-y-px" style={{ width: '0%' }}>
+                <motion.div 
+                  initial={{ width: '0%' }}
+                  whileInView={{ width: '100%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  className="h-full bg-[#db9e22]"
+                ></motion.div>
+              </div>
               
-              <div className="space-y-16 md:space-y-0 relative">
+              {/* Vertical timeline for mobile */}
+              <div className="absolute lg:hidden left-[30px] top-0 bottom-0 w-0.5 bg-gray-200"></div>
+              <div className="absolute lg:hidden left-[30px] top-0 bottom-0 w-0.5 bg-[#db9e22]/50 transform -translate-x-px h-0">
+                <motion.div 
+                  initial={{ height: '0%' }}
+                  whileInView={{ height: '100%' }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  className="w-full bg-[#db9e22]"
+                ></motion.div>
+              </div>
+              
+              <div className="grid lg:grid-cols-4 gap-16 lg:gap-6">
                 {/* Step 1 */}
                 <motion.div 
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="md:grid md:grid-cols-2 md:gap-16 items-center relative"
+                  className="relative"
                 >
-                  <div className="flex md:justify-end relative">
-                    <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 md:max-w-md mb-6 md:mb-0">
-                      <h3 className="text-[#db9e22] font-bold text-xl mb-4">KI-Analyse (5 Minuten)</h3>
-                      <p className="text-white/80">
-                        Unsere KI prüft Ihr Unternehmen und findet die passende Web-App Idee
-                      </p>
+                  {/* Desktop circle */}
+                  <div className="hidden lg:flex absolute left-1/2 top-0 -mt-8 transform -translate-x-1/2 z-20">
+                    <div className="w-16 h-16 rounded-full bg-white shadow-lg border-2 border-[#db9e22] flex items-center justify-center">
+                      <span className="text-[#db9e22] text-2xl font-bold">1</span>
                     </div>
                   </div>
                   
-                  <div className="absolute left-0 md:left-1/2 top-6 transform md:-translate-x-1/2 md:translate-y-0 z-10">
-                    <div className="w-10 h-10 rounded-full bg-[#db9e22] flex items-center justify-center border-4 border-[#101010]">
-                      <span className="text-white font-bold">1</span>
+                  {/* Mobile circle */}
+                  <div className="lg:hidden absolute left-[30px] top-0 transform -translate-x-1/2 z-20">
+                    <div className="w-12 h-12 rounded-full bg-white shadow-lg border-2 border-[#db9e22] flex items-center justify-center">
+                      <span className="text-[#db9e22] font-bold">1</span>
                     </div>
                   </div>
-
-                  <div className="hidden md:block"></div>
+                  
+                  <div className="pl-16 lg:pl-0 lg:text-center">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16">
+                      <div className="lg:h-16 flex items-center justify-center lg:mb-4">
+                        <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
+                          <Brain className="w-6 h-6 text-[#db9e22]" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-[#101010] mb-3">KI-Analyse</h3>
+                      <p className="text-gray-600">
+                        Unsere KI prüft Ihr Unternehmen und findet die passende Web-App Idee
+                      </p>
+                      <div className="mt-4 pt-4 border-t border-gray-100">
+                        <span className="text-[#db9e22] font-medium text-sm">Nur 5 Minuten</span>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
 
                 {/* Step 2 */}
@@ -617,23 +647,37 @@ export default function WebAppService() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="md:grid md:grid-cols-2 md:gap-16 items-center relative"
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="relative"
                 >
-                  <div className="hidden md:block"></div>
-                  
-                  <div className="absolute left-0 md:left-1/2 top-6 transform md:-translate-x-1/2 md:translate-y-0 z-10">
-                    <div className="w-10 h-10 rounded-full bg-[#db9e22] flex items-center justify-center border-4 border-[#101010]">
-                      <span className="text-white font-bold">2</span>
+                  {/* Desktop circle */}
+                  <div className="hidden lg:flex absolute left-1/2 top-0 -mt-8 transform -translate-x-1/2 z-20">
+                    <div className="w-16 h-16 rounded-full bg-white shadow-lg border-2 border-[#db9e22] flex items-center justify-center">
+                      <span className="text-[#db9e22] text-2xl font-bold">2</span>
                     </div>
                   </div>
-
-                  <div className="flex relative ml-14 md:ml-0">
-                    <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 md:max-w-md">
-                      <h3 className="text-[#db9e22] font-bold text-xl mb-4">Beratungsgespräch</h3>
-                      <p className="text-white/80">
+                  
+                  {/* Mobile circle */}
+                  <div className="lg:hidden absolute left-[30px] top-0 transform -translate-x-1/2 z-20">
+                    <div className="w-12 h-12 rounded-full bg-white shadow-lg border-2 border-[#db9e22] flex items-center justify-center">
+                      <span className="text-[#db9e22] font-bold">2</span>
+                    </div>
+                  </div>
+                  
+                  <div className="pl-16 lg:pl-0 lg:text-center">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16">
+                      <div className="lg:h-16 flex items-center justify-center lg:mb-4">
+                        <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
+                          <Users className="w-6 h-6 text-[#db9e22]" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-[#101010] mb-3">Beratungsgespräch</h3>
+                      <p className="text-gray-600">
                         Wir besprechen die KI-Vorschläge und planen Ihre individuelle Lösung
                       </p>
+                      <div className="mt-4 pt-4 border-t border-gray-100">
+                        <span className="text-[#db9e22] font-medium text-sm">30 Minuten</span>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -643,25 +687,39 @@ export default function WebAppService() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="md:grid md:grid-cols-2 md:gap-16 items-center relative"
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="relative"
                 >
-                  <div className="flex md:justify-end relative">
-                    <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 md:max-w-md mb-6 md:mb-0">
-                      <h3 className="text-[#db9e22] font-bold text-xl mb-4">Entwicklung durch unser Team</h3>
-                      <p className="text-white/80">
-                        Unsere Experten bauen Ihre maßgeschneiderte Web-App
-                      </p>
+                  {/* Desktop circle */}
+                  <div className="hidden lg:flex absolute left-1/2 top-0 -mt-8 transform -translate-x-1/2 z-20">
+                    <div className="w-16 h-16 rounded-full bg-white shadow-lg border-2 border-[#db9e22] flex items-center justify-center">
+                      <span className="text-[#db9e22] text-2xl font-bold">3</span>
                     </div>
                   </div>
                   
-                  <div className="absolute left-0 md:left-1/2 top-6 transform md:-translate-x-1/2 md:translate-y-0 z-10">
-                    <div className="w-10 h-10 rounded-full bg-[#db9e22] flex items-center justify-center border-4 border-[#101010]">
-                      <span className="text-white font-bold">3</span>
+                  {/* Mobile circle */}
+                  <div className="lg:hidden absolute left-[30px] top-0 transform -translate-x-1/2 z-20">
+                    <div className="w-12 h-12 rounded-full bg-white shadow-lg border-2 border-[#db9e22] flex items-center justify-center">
+                      <span className="text-[#db9e22] font-bold">3</span>
                     </div>
                   </div>
-
-                  <div className="hidden md:block"></div>
+                  
+                  <div className="pl-16 lg:pl-0 lg:text-center">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16">
+                      <div className="lg:h-16 flex items-center justify-center lg:mb-4">
+                        <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
+                          <Code className="w-6 h-6 text-[#db9e22]" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-[#101010] mb-3">Entwicklung</h3>
+                      <p className="text-gray-600">
+                        Unsere Experten bauen Ihre maßgeschneiderte Web-App
+                      </p>
+                      <div className="mt-4 pt-4 border-t border-gray-100">
+                        <span className="text-[#db9e22] font-medium text-sm">2-4 Wochen</span>
+                      </div>
+                    </div>
+                  </div>
                 </motion.div>
 
                 {/* Step 4 */}
@@ -669,28 +727,62 @@ export default function WebAppService() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="md:grid md:grid-cols-2 md:gap-16 items-center relative"
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="relative"
                 >
-                  <div className="hidden md:block"></div>
-                  
-                  <div className="absolute left-0 md:left-1/2 top-6 transform md:-translate-x-1/2 md:translate-y-0 z-10">
-                    <div className="w-10 h-10 rounded-full bg-[#db9e22] flex items-center justify-center border-4 border-[#101010]">
-                      <span className="text-white font-bold">4</span>
+                  {/* Desktop circle */}
+                  <div className="hidden lg:flex absolute left-1/2 top-0 -mt-8 transform -translate-x-1/2 z-20">
+                    <div className="w-16 h-16 rounded-full bg-white shadow-lg border-2 border-[#db9e22] flex items-center justify-center">
+                      <span className="text-[#db9e22] text-2xl font-bold">4</span>
                     </div>
                   </div>
-
-                  <div className="flex relative ml-14 md:ml-0">
-                    <div className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 md:max-w-md">
-                      <h3 className="text-[#db9e22] font-bold text-xl mb-4">Fertige Lösung</h3>
-                      <p className="text-white/80">
+                  
+                  {/* Mobile circle */}
+                  <div className="lg:hidden absolute left-[30px] top-0 transform -translate-x-1/2 z-20">
+                    <div className="w-12 h-12 rounded-full bg-white shadow-lg border-2 border-[#db9e22] flex items-center justify-center">
+                      <span className="text-[#db9e22] font-bold">4</span>
+                    </div>
+                  </div>
+                  
+                  <div className="pl-16 lg:pl-0 lg:text-center">
+                    <div className="bg-white shadow-lg rounded-xl p-6 border border-gray-100 hover:border-[#db9e22]/30 transition-all duration-300 hover:shadow-xl lg:mt-16">
+                      <div className="lg:h-16 flex items-center justify-center lg:mb-4">
+                        <div className="w-12 h-12 rounded-lg bg-[#db9e22]/10 flex items-center justify-center">
+                          <Rocket className="w-6 h-6 text-[#db9e22]" />
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-[#101010] mb-3">Fertige Lösung</h3>
+                      <p className="text-gray-600">
                         Sie erhalten Ihre Web-App, komplett eingerichtet und sofort einsatzbereit
                       </p>
+                      <div className="mt-4 pt-4 border-t border-gray-100">
+                        <span className="text-[#db9e22] font-medium text-sm">Langfristiger Support</span>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
               </div>
             </div>
+            
+            {/* Call to action */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="max-w-md mx-auto text-center mt-20"
+            >
+              <Button
+                size="lg"
+                className="bg-[#db9e22] hover:bg-[#e4bb68] text-white font-medium py-6 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                onClick={() => setLocation("/funnel")}
+              >
+                Jetzt KI-Analyse starten
+              </Button>
+              <p className="text-gray-500 mt-4 text-sm">
+                Kostenlos und unverbindlich in nur 5 Minuten
+              </p>
+            </motion.div>
           </div>
         </Container>
       </section>
