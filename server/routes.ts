@@ -69,12 +69,19 @@ export async function registerRoutes(app: Express) {
   // Chat endpoint
   app.post('/api/chat', async (req, res) => {
     try {
-      const { message } = req.body;
+      const { message, context, conversationState } = req.body;
       if (!message) {
         return res.status(400).json({ error: 'Message is required' });
       }
 
+      // Log the request for debugging
+      console.log('Chat request received:', { message, context, conversationState });
+
       const botResponse = await generateChatResponse(message);
+      
+      // Log the response
+      console.log('Chat response sent:', { response: botResponse });
+      
       res.json({ response: botResponse });
     } catch (error) {
       console.error('Error in chat endpoint:', error);

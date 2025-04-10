@@ -125,17 +125,38 @@ export default function ChatBot() {
       };
       setConversationState(newState);
 
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: input,
-          context: context,
-          conversationState: newState
-        }),
-      });
+      // Try both API paths to ensure compatibility with different deployments
+      let response;
+      try {
+        response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: input,
+            context: context,
+            conversationState: newState
+          }),
+        });
+        
+        if (!response.ok) {
+          throw new Error('Primary endpoint failed');
+        }
+      } catch (error) {
+        console.log('Trying fallback endpoint...');
+        response = await fetch('/api/routes/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: input,
+            context: context,
+            conversationState: newState
+          }),
+        });
+      }
 
       if (!response.ok) throw new Error('Network response was not ok');
 
@@ -203,17 +224,38 @@ export default function ChatBot() {
       };
       setConversationState(newState);
 
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: question,
-          context: context,
-          conversationState: newState
-        }),
-      });
+      // Try both API paths to ensure compatibility with different deployments
+      let response;
+      try {
+        response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: question,
+            context: context,
+            conversationState: newState
+          }),
+        });
+        
+        if (!response.ok) {
+          throw new Error('Primary endpoint failed');
+        }
+      } catch (error) {
+        console.log('Trying fallback endpoint...');
+        response = await fetch('/api/routes/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: question,
+            context: context,
+            conversationState: newState
+          }),
+        });
+      }
 
       if (!response.ok) throw new Error('Network response was not ok');
 
