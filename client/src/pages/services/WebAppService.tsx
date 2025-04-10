@@ -1043,11 +1043,15 @@ export default function WebAppService() {
                         </div>
                       </div>
                       
-                      {/* Status indicator in footer */}
-                      <div className="border-t border-gray-100 p-4 flex justify-end">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#db9e22]/10 rounded-full">
-                          <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
-                          <span className="text-xs font-medium text-[#db9e22]">KI-gestützte Lösung</span>
+                      {/* Simple footer with subtle branding */}
+                      <div className="border-t border-gray-100 p-4 flex justify-between items-center">
+                        <div className="w-8 h-8 rounded-md bg-[#db9e22]/10 flex items-center justify-center">
+                          <div className="w-4 h-4 rounded-full bg-[#db9e22]/20 flex items-center justify-center">
+                            <div className="w-2 h-2 rounded-full bg-[#db9e22]"></div>
+                          </div>
+                        </div>
+                        <div className="h-1 w-24 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-[#db9e22]/20 rounded-full w-3/4"></div>
                         </div>
                       </div>
                     </div>
