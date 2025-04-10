@@ -937,7 +937,7 @@ export default function WebAppService() {
               <div className="w-6 h-6 bg-[#db9e22] rounded-full flex items-center justify-center mr-2">
                 <span className="text-white font-bold text-xs">✓</span>
               </div>
-              <span className="font-semibold text-gray-800">CASE STUDY</span>
+              <span className="font-semibold text-gray-800">ERFOLGSGESCHICHTE</span>
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-4">
