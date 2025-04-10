@@ -5,7 +5,8 @@ import {
   MessageSquare,
   FileText,
   Shield,
-  BookOpen
+  BookOpen,
+  Code
 } from "lucide-react";
 
 export default function Footer() {
@@ -57,6 +58,14 @@ export default function Footer() {
                   <a className="group flex items-center text-gray-600 hover:text-[#db9e22] transition-colors">
                     <MessageSquare className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110" />
                     KI-Chatbot Service
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/web-app">
+                  <a className="group flex items-center text-gray-600 hover:text-[#db9e22] transition-colors">
+                    <Code className="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110" />
+                    Web App Entwicklung
                   </a>
                 </Link>
               </li>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Menu, X, ChevronDown, Layout, MessageSquare, Home, Mail } from "lucide-react";
+import { Menu, X, ChevronDown, Layout, MessageSquare, Home, Mail, Code } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "wouter";
 
@@ -73,6 +73,16 @@ export default function NavBar() {
                       <span className="text-xs text-gray-500">24/7 Kundenservice</span>
                     </div>
                   </button>
+                  <button
+                    onClick={() => handleNavigation("/services/web-app")}
+                    className="flex items-center gap-3 w-full p-3 text-sm text-[#101010] hover:bg-gray-50 rounded-lg transition-colors"
+                  >
+                    <Code className="w-5 h-5 text-[#db9e22] flex-shrink-0" />
+                    <div className="flex flex-col items-start">
+                      <span className="font-medium">Web App Entwicklung</span>
+                      <span className="text-xs text-gray-500">Digitale Geschäftslösungen</span>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -133,6 +143,13 @@ export default function NavBar() {
                 >
                   <MessageSquare className="w-5 h-5 text-[#db9e22]" />
                   <span className="font-medium">KI-Chatbot</span>
+                </button>
+                <button
+                  onClick={() => handleNavigation("/services/web-app")}
+                  className="flex items-center gap-3 w-full p-3 text-[#101010] hover:bg-gray-50 rounded-lg transition-colors"
+                >
+                  <Code className="w-5 h-5 text-[#db9e22]" />
+                  <span className="font-medium">Web App Entwicklung</span>
                 </button>
               </div>
 

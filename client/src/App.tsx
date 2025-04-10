@@ -8,6 +8,7 @@ import ContactPage from "@/pages/ContactPage";
 import LandingPageService from "@/pages/services/LandingPageService";
 import AIChatbotService from "@/pages/services/AIChatbotService";
 import MediaService from "@/pages/services/MediaService";
+import WebAppService from "@/pages/services/WebAppService";
 import ImpressumPage from "@/pages/ImpressumPage";
 import AGBPage from "@/pages/AGBPage";
 import DatenschutzPage from "@/pages/DatenschutzPage";
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/services/landing-page" component={LandingPageService} />
       <Route path="/services/ai-chatbot" component={AIChatbotService} />
       <Route path="/services/media" component={MediaService} />
+      <Route path="/services/web-app" component={WebAppService} />
       <Route path="/impressum" component={ImpressumPage} />
       <Route path="/agb" component={AGBPage} />
       <Route path="/datenschutz" component={DatenschutzPage} />
