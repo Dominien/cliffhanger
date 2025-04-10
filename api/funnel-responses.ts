@@ -52,36 +52,49 @@ export default async function handler(req: Request, res: Response) {
     };
 
     // Send an email notification using Resend
+    console.log('Attempting to send email via Resend');
+    console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
+    console.log('EMAIL_FROM:', process.env.EMAIL_FROM || 'noreply@cliffhangerstudios.de');
+    console.log('NOTIFICATION_EMAIL:', process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de');
+    
     try {
+      // Prepare email content
+      const emailHtml = `
+        <h1>Neue Funnel-Einreichung</h1>
+        <p>Eine neue Formular-Einreichung wurde über die Website empfangen.</p>
+        
+        <h2>Service-Informationen</h2>
+        <p><strong>Geschäftstyp:</strong> ${businessTypeMap[data.businessType] || data.businessType}</p>
+        <p><strong>Gewünschte Leistung:</strong> ${serviceMap[data.selectedService] || data.selectedService}</p>
+        <p><strong>Projektzeitrahmen:</strong> ${timelineMap[data.projectTimeline] || data.projectTimeline}</p>
+        <p><strong>Projektziele:</strong> ${goalsMap[data.projectGoals] || data.projectGoals}</p>
+        
+        <h2>Kontaktinformationen</h2>
+        <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
+        <p><strong>E-Mail:</strong> ${data.email}</p>
+        <p><strong>Telefon:</strong> ${data.phone}</p>
+        ${companyDisplay}
+        ${websiteDisplay}
+        ${messageDisplay}
+        
+        <p><strong>Einreichungszeit:</strong> ${new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' })}</p>
+      `;
+      
+      // Log the email content (for debugging)
+      console.log('Email HTML content prepared');
+      
+      // Send the email
       const emailResult = await resend.emails.send({
         from: process.env.EMAIL_FROM || 'noreply@cliffhangerstudios.de',
         to: process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de',
         subject: `Neue Formular-Einreichung: ${data.firstName} ${data.lastName}`,
-        html: `
-          <h1>Neue Funnel-Einreichung</h1>
-          <p>Eine neue Formular-Einreichung wurde über die Website empfangen.</p>
-          
-          <h2>Service-Informationen</h2>
-          <p><strong>Geschäftstyp:</strong> ${businessTypeMap[data.businessType] || data.businessType}</p>
-          <p><strong>Gewünschte Leistung:</strong> ${serviceMap[data.selectedService] || data.selectedService}</p>
-          <p><strong>Projektzeitrahmen:</strong> ${timelineMap[data.projectTimeline] || data.projectTimeline}</p>
-          <p><strong>Projektziele:</strong> ${goalsMap[data.projectGoals] || data.projectGoals}</p>
-          
-          <h2>Kontaktinformationen</h2>
-          <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
-          <p><strong>E-Mail:</strong> ${data.email}</p>
-          <p><strong>Telefon:</strong> ${data.phone}</p>
-          ${companyDisplay}
-          ${websiteDisplay}
-          ${messageDisplay}
-          
-          <p><strong>Einreichungszeit:</strong> ${new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' })}</p>
-        `
+        html: emailHtml
       });
 
       console.log('Email sent successfully:', emailResult);
     } catch (emailError) {
       console.error('Error sending email:', emailError);
+      console.error('Email error details:', JSON.stringify(emailError));
       // Continue with the response even if email fails
     }
 
