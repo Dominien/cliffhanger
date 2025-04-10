@@ -16,7 +16,7 @@ const services = [
   {
     icon: Code,
     title: "Web App Entwicklung",
-    description: "Maßgeschneiderte Webanwendungen mit modernen Technologien, die dein Business digitalisieren und Prozesse automatisieren.",
+    description: "Maßgeschneiderte Web-Apps mit modernen Technologien für die Digitalisierung und Automatisierung deiner Geschäftsprozesse.",
   },
   {
     icon: Palette,
