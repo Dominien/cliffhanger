@@ -1,107 +1,81 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-import OpenAI from 'openai';
+import { Request, Response } from 'express';
+import { Resend } from 'resend';
 
-// Initialize OpenAI client
-let openai: OpenAI;
-try {
-  if (!process.env.OPENAI_API_KEY) {
-    console.warn('OPENAI_API_KEY is not set - chatbot will return default responses only');
-    // Create a dummy instance that won't be used for actual API calls
-    openai = {} as OpenAI;
-  } else {
-    openai = new OpenAI({ 
-      apiKey: process.env.OPENAI_API_KEY
-    });
-  }
-} catch (error) {
-  console.error('Failed to initialize OpenAI client:', error);
-  // Create a dummy instance that won't be used
-  openai = {} as OpenAI;
-}
+// Initialize Resend (optional - can be used to forward chat messages)
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-async function generateChatResponse(message: string): Promise<string> {
-  try {
-    // Return a default response if API key is missing
-    if (!process.env.OPENAI_API_KEY) {
-      console.warn('OPENAI_API_KEY not set, returning default chatbot response');
-      return "Unser Chatbot ist derzeit in Wartung. Bitte versuchen Sie es später erneut oder buchen Sie einen kostenlosen Beratungstermin! [CTA_BUTTON]";
-    }
-    
-    const response = await openai.chat.completions.create({
-      model: "gpt-4o",
-      messages: [
-        {
-          role: "system",
-          content: "Du bist ein hilfreicher digitaler Assistent für Cliffhanger, ein Unternehmen für digitale Transformation.\n\n" +
-          "Persönlichkeit:\n" +
-          "- Professionell und lösungsorientiert\n" +
-          "- Fokus auf Kundenverständnis\n\n" +
-          "Kommunikationsregeln:\n" +
-          "- Halte Antworten sehr kurz (1-2 Sätze)\n" +
-          "- Frage nach konkreten Bedürfnissen\n" +
-          "- Antworte auf Deutsch\n" +
-          "- Erwähne den kostenlosen Beratungscall bei Interesse\n" +
-          "- Nutze [CTA_BUTTON] für Call-to-Action\n\n" +
-          "Beispiel-CTAs:\n" +
-          "- 'Lassen Sie uns Ihre Ziele im kostenlosen Call besprechen! [CTA_BUTTON]'\n" +
-          "- 'Ich zeige Ihnen gerne konkrete Lösungen! [CTA_BUTTON]'"
-        },
-        {
-          role: "user",
-          content: message
-        }
-      ],
-      max_tokens: 150
-    });
+// Simple examples for quick responses
+const SIMPLE_RESPONSES: Record<string, string> = {
+  "hallo": "Hallo! Wie kann ich Ihnen heute helfen?",
+  "hi": "Hallo! Wie kann ich Ihnen heute helfen?",
+  "kontakt": "Sie können uns gerne über unser Kontaktformular erreichen oder direkt an info@cliffhangerstudios.de schreiben.",
+  "website": "Wir erstellen professionelle Websites und Landing Pages für Ihr Unternehmen.",
+  "preis": "Unsere Preise variieren je nach Anforderungen. Bitte kontaktieren Sie uns für ein individuelles Angebot.",
+  "chatbot": "Wir entwickeln KI-gestützte Chatbots, die 24/7 für Ihre Kunden da sind.",
+  "danke": "Gerne! Kann ich sonst noch etwas für Sie tun?",
+  "media": "Wir bieten professionelle Foto- und Videoproduktion für Ihr Unternehmen an."
+};
 
-    return response.choices[0].message.content || "I apologize, I couldn't generate a response. Please try again.";
-  } catch (error) {
-    console.error("OpenAI API Error:", error);
-    return "Unser Chatbot ist derzeit in Wartung. Bitte versuchen Sie es später erneut oder buchen Sie einen kostenlosen Beratungstermin! [CTA_BUTTON]";
-  }
-}
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Enable CORS
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
-
-  // Handle OPTIONS request
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
-
+export default async function handler(req: Request, res: Response) {
+  // Only handle POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    const { message, context, conversationState } = req.body;
-    
+    // Get message from request body
+    const { message } = req.body;
+    console.log('Chat request received:', { message });
+
     if (!message) {
       return res.status(400).json({ error: 'Message is required' });
     }
 
-    // Log the request for debugging
-    console.log('Chat request received:', { 
-      message, 
-      context: context || 'not provided', 
-      conversationState: conversationState || 'not provided' 
-    });
+    // Try to find a simple response first
+    const lowerMessage = message.toLowerCase();
+    let response = "";
+    
+    // Check for simple responses
+    for (const [key, value] of Object.entries(SIMPLE_RESPONSES)) {
+      if (lowerMessage.includes(key)) {
+        response = value;
+        break;
+      }
+    }
+    
+    // If no simple response, provide a default response
+    if (!response) {
+      response = "Vielen Dank für Ihre Nachricht! Unser Team wird sich in Kürze bei Ihnen melden. Alternativ können Sie uns auch direkt unter info@cliffhangerstudios.de kontaktieren.";
+    }
 
-    const botResponse = await generateChatResponse(message);
-    
-    // Log the response
-    console.log('Chat response generated:', { response: botResponse });
-    
-    return res.status(200).json({ response: botResponse });
+    // Optionally notify via email for important chats
+    if (lowerMessage.includes("termin") || lowerMessage.includes("angebot") || lowerMessage.includes("preis")) {
+      try {
+        await resend.emails.send({
+          from: process.env.EMAIL_FROM || 'noreply@cliffhangerstudios.de',
+          to: process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de',
+          subject: "Neue Chat-Anfrage: Potentieller Kunde",
+          html: `
+            <h1>Neue Chat-Anfrage</h1>
+            <p>Ein Benutzer hat im Chat nach einem Termin, Angebot oder Preis gefragt.</p>
+            <p><strong>Nachricht:</strong> ${message}</p>
+            <p><strong>Zeitpunkt:</strong> ${new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' })}</p>
+          `
+        });
+      } catch (emailError) {
+        console.error('Failed to send chat notification email:', emailError);
+        // Continue with response even if email fails
+      }
+    }
+
+    // Return the response
+    return res.status(200).json({ response });
   } catch (error) {
-    console.error('Error in chat endpoint:', error);
-    return res.status(500).json({
-      error: 'Es gab einen Fehler bei der Verarbeitung deiner Nachricht.'
+    console.error('Error in chat API:', error);
+    
+    return res.status(500).json({ 
+      error: 'Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.',
+      response: "Entschuldigung, es ist ein Fehler aufgetreten. Bitte kontaktieren Sie uns direkt unter info@cliffhangerstudios.de."
     });
   }
 }

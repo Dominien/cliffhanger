@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { Request, Response } from 'express';
 
-export const config = {
-  runtime: 'edge',
-};
-
-export default async function handler(req: NextRequest) {
-  return NextResponse.json({ status: 'ok', timestamp: new Date().toISOString() });
+export default function handler(req: Request, res: Response) {
+  res.status(200).json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    env: process.env.NODE_ENV || 'development'
+  });
 }
