@@ -1073,7 +1073,6 @@ export default function WebAppService() {
                         </div>
                       </div>
                     </div>
-                    </div>
                   </div>
                 </div>
               </motion.div>
