@@ -169,13 +169,22 @@ export default function FunnelPage() {
 
   async function onSubmit(data: InsertFunnelResponse) {
     try {
-      await apiRequest("POST", "/api/funnel-responses", data);
+      console.log("Submitting form data:", data);
+      const response = await apiRequest("POST", "/api/funnel-responses", data);
+      const responseData = await response.json();
+      console.log("Form submission response:", responseData);
+      
       toast({
         title: "Vielen Dank!",
         description: "Wir werden uns in Kürze bei Ihnen melden.",
       });
-      setLocation("/");
+      
+      // Add a slight delay before redirecting
+      setTimeout(() => {
+        setLocation("/");
+      }, 1500);
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         variant: "destructive",
         title: "Fehler",

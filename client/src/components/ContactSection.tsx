@@ -20,7 +20,11 @@ export default function ContactSection() {
   const { toast } = useToast();
   const { mutate, isPending } = useMutation({
     mutationFn: async (data: FormData) => {
-      await apiRequest("POST", "/api/contact", data);
+      console.log("Submitting contact form:", data);
+      const response = await apiRequest("POST", "/api/contact", data);
+      const responseData = await response.json();
+      console.log("Contact form response:", responseData);
+      return responseData;
     },
     onSuccess: () => {
       toast({
@@ -101,7 +105,7 @@ export default function ContactSection() {
 
             <div>
               <Input
-                placeholder="Website (optional)"
+                placeholder="Website (optional, z.B. www.name.de)"
                 {...form.register("website")}
                 className="w-full"
               />
