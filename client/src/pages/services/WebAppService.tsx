@@ -148,7 +148,7 @@ export default function WebAppService() {
                 <div className="absolute top-0 left-0 w-2 h-2 md:w-2.5 md:h-2.5 bg-[#db9e22] rounded-full animate-ping" />
               </div>
               <span className="text-xs md:text-sm font-medium text-white/90">
-                NEU: KI-generierte Web-App Ideen, professionell umgesetzt
+                NEU: KI-App-Design + Profi-Entwicklung
               </span>
             </div>
           </motion.div>
@@ -164,7 +164,7 @@ export default function WebAppService() {
                 Web-App Entwicklung
               </span>
               
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
                 Geschäftsprobleme lösen mit <span className="text-[#db9e22]">Web-Apps</span>,<br/>
                 die wirklich helfen
               </h1>
@@ -215,77 +215,86 @@ export default function WebAppService() {
       </section>
 
       {/* Problem Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-b from-white to-[#f7f7f7]">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
+            className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mb-12">
+            <span className="text-[#db9e22] font-semibold text-sm uppercase tracking-wider mb-2 inline-block px-4 py-1 bg-[#db9e22]/10 rounded-full">Herausforderungen</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#101010] mt-3">
               Was bremst Ihr Unternehmen aus?
             </h2>
+          </motion.div>
 
-            <div className="space-y-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="flex items-start gap-4 text-left"
-              >
-                <div className="w-10 h-10 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-[#db9e22] font-semibold">1</span>
-                </div>
-                <p className="text-lg text-gray-700">
-                  Zu viel Zeitverschwendung durch manuelle Prozesse und Papierkram
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="flex items-start gap-4 text-left"
-              >
-                <div className="w-10 h-10 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-[#db9e22] font-semibold">2</span>
-                </div>
-                <p className="text-lg text-gray-700">
-                  Unsicherheit, welche digitale Lösung wirklich helfen würde
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="flex items-start gap-4 text-left"
-              >
-                <div className="w-10 h-10 rounded-full bg-[#db9e22]/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-[#db9e22] font-semibold">3</span>
-                </div>
-                <p className="text-lg text-gray-700">
-                  Angst vor komplizierten IT-Projekten, die viel kosten und wenig bringen
-                </p>
-              </motion.div>
-            </div>
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-[#db9e22]"
+            >
+              <div className="bg-[#db9e22]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-[#db9e22] text-3xl font-bold">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-[#101010] text-center">Zeitverschwendung</h3>
+              <p className="text-gray-600 text-center">
+                Zu viel verlorene Zeit durch manuelle Prozesse und Papierkram
+              </p>
+              <div className="w-12 h-1 bg-[#db9e22]/30 mx-auto mt-6"></div>
+            </motion.div>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-12 border-t pt-8 border-gray-200"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-[#db9e22]"
             >
-              <p className="text-xl text-gray-800 font-medium">
-                Ohne die richtige Web-App bleibt Ihr Unternehmen im digitalen Zeitalter zurück.
+              <div className="bg-[#db9e22]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-[#db9e22] text-3xl font-bold">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-[#101010] text-center">Unsicherheit</h3>
+              <p className="text-gray-600 text-center">
+                Zweifel, welche digitale Lösung wirklich helfen würde
               </p>
+              <div className="w-12 h-1 bg-[#db9e22]/30 mx-auto mt-6"></div>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-t-4 border-[#db9e22]"
+            >
+              <div className="bg-[#db9e22]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <span className="text-[#db9e22] text-3xl font-bold">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-[#101010] text-center">Risiko</h3>
+              <p className="text-gray-600 text-center">
+                Angst vor IT-Projekten, die teuer sind und wenig bringen
+              </p>
+              <div className="w-12 h-1 bg-[#db9e22]/30 mx-auto mt-6"></div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-16 max-w-3xl mx-auto bg-[#101010] rounded-2xl p-8 shadow-xl text-center relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -mr-32 -mt-32 opacity-50"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#db9e22]/10 rounded-full -ml-32 -mb-32 opacity-50"></div>
+            <p className="text-xl md:text-2xl text-white font-medium relative z-10">
+              Ohne die richtige Web-App bleibt Ihr Unternehmen im digitalen Zeitalter zurück.
+            </p>
           </motion.div>
         </Container>
       </section>
