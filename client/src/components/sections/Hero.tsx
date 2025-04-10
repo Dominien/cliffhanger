@@ -7,7 +7,7 @@ export default function Hero() {
   const [, setLocation] = useLocation();
 
   return (
-    <section className="relative pt-28 pb-28 md:pt-36 md:pb-36 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
+    <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#101010] text-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0" 
