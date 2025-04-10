@@ -1,12 +1,12 @@
 import { Container } from "@/components/ui/container";
 import { motion } from "framer-motion";
-import { Globe, MessageSquare, Search, Palette } from "lucide-react";
+import { Globe, MessageSquare, Code, Palette } from "lucide-react";
 
 const services = [
   {
     icon: Globe,
-    title: "Web-Erstellung & Landing Pages",
-    description: "Individuelle, conversion-optimierte Websites und Landing Pages, die Besucher in Kunden verwandeln.",
+    title: "Express Websites & Landing Pages",
+    description: "Professionelle Websites in nur 7 Tagen – schnell online gehen und sofort mit deinem Marketing starten, statt monatelang zu warten.",
   },
   {
     icon: MessageSquare,
@@ -14,9 +14,9 @@ const services = [
     description: "Intelligente Chatbot-Lösungen, die automatisiert Kundenanfragen bearbeiten und deine Lead-Generierung verbessern.",
   },
   {
-    icon: Search,
-    title: "SEO & Online Marketing",
-    description: "Strategien zur Steigerung deiner Sichtbarkeit in Suchmaschinen und nachhaltigem organischem Wachstum.",
+    icon: Code,
+    title: "Web App Entwicklung",
+    description: "Maßgeschneiderte Webanwendungen mit modernen Technologien, die dein Business digitalisieren und Prozesse automatisieren.",
   },
   {
     icon: Palette,
