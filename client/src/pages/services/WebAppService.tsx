@@ -852,37 +852,35 @@ export default function WebAppService() {
                     </div>
                   </div>
                   
-                  {/* Desktop Layout - Floating cards */}
-                  <div className="hidden md:block">
-                    {/* Competitor Moving Forward */}
-                    <div className="absolute right-4 top-8 w-32 h-32 bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20 transform rotate-6">
-                      <div className="w-full h-full flex flex-col items-center justify-center">
-                        <Rocket className="w-12 h-12 text-[#db9e22] mb-3" />
-                        <span className="text-white text-sm font-semibold text-center">Ihre Wettbewerber</span>
+                  {/* Desktop Layout - Regular grid layout */}
+                  <div className="hidden md:grid md:grid-cols-3 md:gap-8">
+                    <div className="col-span-3 flex justify-center mb-8">
+                      <div className="w-64 h-64 bg-[#151515] backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-[#db9e22]/30">
+                        <div className="w-full h-full flex flex-col items-center justify-center">
+                          <AlertTriangleIcon className="w-20 h-20 text-[#db9e22] mb-6" />
+                          <span className="text-white text-xl font-semibold text-center">Sie verlieren den Anschluss</span>
+                        </div>
                       </div>
                     </div>
                     
-                    {/* Money Loss */}
-                    <div className="absolute left-12 top-24 w-28 h-28 bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20 transform -rotate-6">
-                      <div className="w-full h-full flex flex-col items-center justify-center">
-                        <BanknoteIcon className="w-10 h-10 text-red-500 mb-2" />
-                        <span className="text-white text-xs font-semibold text-center">Verlorenes Potenzial</span>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 h-full">
+                      <div className="flex flex-col items-center justify-center h-full">
+                        <Rocket className="w-14 h-14 text-[#db9e22] mb-4" />
+                        <span className="text-white text-base font-semibold text-center">Ihre Wettbewerber gewinnen Marktanteile</span>
                       </div>
                     </div>
                     
-                    {/* Time Waste */}
-                    <div className="absolute right-10 bottom-24 w-28 h-28 bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/20 transform rotate-6">
-                      <div className="w-full h-full flex flex-col items-center justify-center">
-                        <Clock className="w-10 h-10 text-red-500 mb-2" />
-                        <span className="text-white text-xs font-semibold text-center">Verlorene Zeit</span>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 h-full">
+                      <div className="flex flex-col items-center justify-center h-full">
+                        <BanknoteIcon className="w-14 h-14 text-red-500 mb-4" />
+                        <span className="text-white text-base font-semibold text-center">Verlorenes Potenzial und Umsatz</span>
                       </div>
                     </div>
                     
-                    {/* Main Element - You Falling Behind */}
-                    <div className="mx-auto w-44 h-44 bg-[#151515] backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#db9e22]/30 relative z-10">
-                      <div className="w-full h-full flex flex-col items-center justify-center">
-                        <AlertTriangleIcon className="w-16 h-16 text-[#db9e22] mb-4" />
-                        <span className="text-white text-base font-semibold text-center">Sie verlieren den Anschluss</span>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20 h-full">
+                      <div className="flex flex-col items-center justify-center h-full">
+                        <Clock className="w-14 h-14 text-red-500 mb-4" />
+                        <span className="text-white text-base font-semibold text-center">Verlorene Zeit und Effizienz</span>
                       </div>
                     </div>
                   </div>
