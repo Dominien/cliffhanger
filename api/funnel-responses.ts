@@ -39,24 +39,12 @@ const insertFunnelResponseSchema = z.object({
   })
 });
 
-// Initialize Resend with API key - with more logging for debugging
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
-console.log('RESEND_API_KEY available:', !!RESEND_API_KEY);
-console.log('RESEND_API_KEY first 4 chars:', RESEND_API_KEY ? RESEND_API_KEY.substring(0, 4) : 'none');
+// Initialize Resend exactly according to the documentation
+console.log('RESEND_API_KEY available:', !!process.env.RESEND_API_KEY);
+console.log('RESEND_API_KEY first 4 chars:', process.env.RESEND_API_KEY ? process.env.RESEND_API_KEY.substring(0, 4) : 'none');
 
-let resend;
-try {
-  if (!RESEND_API_KEY) {
-    console.warn('WARNING: RESEND_API_KEY is not set - email notifications will be logged but not sent');
-    resend = {} as any;
-  } else {
-    console.log('Initializing Resend with API key');
-    resend = new Resend(RESEND_API_KEY);
-  }
-} catch (err) {
-  console.error('Error initializing Resend:', err);
-  resend = {} as any;
-}
+// Initialize Resend exactly as in the documentation
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: Request, res: Response) {
   console.log('Funnel endpoint called with method:', req.method);
@@ -152,12 +140,13 @@ export default async function handler(req: Request, res: Response) {
         htmlLength: emailHtml?.length || 0
       });
       
-      // Use identical Resend call structure as in chat.ts
+      // Follow the exact format from Resend documentation
       const emailResult = await resend.emails.send({
-        from: process.env.EMAIL_FROM || 'noreply@cliffhangerstudios.de',
-        to: process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de',
+        from: 'Cliffhanger Studios <onboarding@resend.dev>',
+        to: [process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de'],
         subject: `Neue Formular-Einreichung: ${data.firstName} ${data.lastName}`,
-        html: emailHtml
+        html: emailHtml,
+        text: `Neue Anfrage von ${data.firstName} ${data.lastName} (${data.email})`,
       });
       
       console.log('Email sent successfully:', emailResult);
