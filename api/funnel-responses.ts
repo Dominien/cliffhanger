@@ -119,6 +119,9 @@ export default async function handler(req: Request, res: Response) {
       timestamp: new Date().toISOString()
     });
     
+    // Add a timestamp to separate logs from different invocations
+    console.log(`\n\n----- EMAIL SENDING ATTEMPT ${new Date().toISOString()} -----\n`);
+    
     // Then try to send the email
     try {
       console.log('Attempting to send email with Resend...');
@@ -140,16 +143,34 @@ export default async function handler(req: Request, res: Response) {
         htmlLength: emailHtml?.length || 0
       });
       
-      // Follow the exact format from Resend documentation
-      const emailResult = await resend.emails.send({
-        from: 'Cliffhanger Studios <onboarding@resend.dev>',
-        to: [process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de'],
-        subject: `Neue Formular-Einreichung: ${data.firstName} ${data.lastName}`,
-        html: emailHtml,
-        text: `Neue Anfrage von ${data.firstName} ${data.lastName} (${data.email})`,
-      });
+      console.log('⏳ Sending email with Resend...');
       
-      console.log('Email sent successfully:', emailResult);
+      try {
+        // Follow the exact format from Resend documentation
+        const emailResult = await resend.emails.send({
+          from: 'Cliffhanger Studios <onboarding@resend.dev>',
+          to: [process.env.NOTIFICATION_EMAIL || 'info@cliffhangerstudios.de'],
+          subject: `Neue Formular-Einreichung: ${data.firstName} ${data.lastName}`,
+          html: emailHtml,
+          text: `Neue Anfrage von ${data.firstName} ${data.lastName} (${data.email})`,
+        });
+        
+        console.log('✅ Email sent successfully!');
+        console.log('📧 Email details:', {
+          id: emailResult.id,
+          data: emailResult.data,
+          to: emailResult.to || 'not provided in response'
+        });
+        
+        // Log the full response for debugging
+        console.log('📬 Full Resend response:', JSON.stringify(emailResult, null, 2));
+      } catch (innerEmailError) {
+        console.error('❌ Error in email sending inner try/catch:', innerEmailError);
+        if (innerEmailError.response) {
+          console.error('📋 Resend API response:', innerEmailError.response);
+        }
+        throw innerEmailError; // Re-throw to be caught by outer catch
+      }
     } catch (emailError) {
       console.error('Failed to send email notification:', emailError);
       if (emailError instanceof Error) {
